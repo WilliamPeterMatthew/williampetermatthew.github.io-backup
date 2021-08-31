@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      复现 CPPU第五届“精武杯”电子数据取证竞赛 | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+    <script src="/js/qrious.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    <script src="/js/local-search.js"></script>
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <script src="/js/Waline.min.js"></script>
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">关于</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">关于</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>复现 CPPU第五届“精武杯”电子数据取证竞赛</h2>
+  <p class="post-date">2021-05-19</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">2,475</span>字，大约需要阅读<span class="post-count">8</span>分钟。</i>
+  
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><h2 id="案情简介"><a href="#案情简介" class="headerlink" title="案情简介"></a>案情简介</h2><p>某市公安机关在侦办一起贩毒案件中，抓获嫌疑人王勇，缴获毒品数十克。通过现场勘查，扣押了犯罪嫌疑人王勇的一台计算机、两部手机、及一个 U盘，现已将证据进行固定并生成镜像（备份）文件，请对以上检材进行取证分析。</p>
+<h2 id="检材列表"><a href="#检材列表" class="headerlink" title="检材列表"></a>检材列表</h2><ul>
+<li>检材1-Wangy Disk.E01</li>
+<li>检材2-Wangy U.E01</li>
+<li>检材3-iphone backup.rar</li>
+<li>检材4-Huawei Backup.rar</li>
+<li>涉毒样本库.xml</li>
+</ul>
+<h2 id="所需工具"><a href="#所需工具" class="headerlink" title="所需工具"></a>所需工具</h2><ul>
+<li>取证大师（FMP）</li>
+<li>手机大师</li>
+<li>火眼证据分析软件</li>
+<li>火眼证据仿真软件</li>
+</ul>
+<h2 id="预处理工作"><a href="#预处理工作" class="headerlink" title="预处理工作"></a>预处理工作</h2><p>用取证大师跑检材1和检材2，用手机大师跑检材3和检材4，用火眼证据分析软件跑检材1至4。<br>在跑的时候要将所有的选项都点上（至少我是这么做的，我的电脑取证大师和手机大师都是很快跑完的，火眼可以后台慢慢跑）。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>注：此顺序为美亚发的pdf文件中的顺序，和实际比武时的顺序有出入，不影响答案正确性。</p>
+<h3 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h3><p><strong>通过对计算机检材的用户痕迹分析，找出该对象关闭计算机前最后访问的文档，请写出其文件名（格式如: abc.txt）。（3分）</strong></p>
+<p>在取证大师中，查看取证结果，找到检材1的用户痕迹—最近访问记录—最近访问的文档，将文档按照最后访问时间降序排序，第一个文件即为所求。<br><img src="/pic/cppuqz2021-1.png" alt="cppuqz2021-1"><br>答案：wang.txt</p>
+<h3 id="第二关"><a href="#第二关" class="headerlink" title="第二关"></a>第二关</h3><p><strong>请对所给检材进行分析,找出 BitLocker 驱动器解密的恢复密钥（格式如: 139689-758052-869353-054631-172373-167809-346820-267891）。（4分）</strong></p>
+<p>BitLocker恢复密钥的结构为48位数字，每六位数字一组中间用“-”隔开，本题可以利用正则表达式用原始数据搜索找到；也可以用数据恢复—格式化恢复，选中检材2恢复即可看到。<br><img src="/pic/cppuqz2021-2.png" alt="cppuqz2021-2"><br>答案：239019-657052-019393-056331-170973-182809-325820-284911</p>
+<p><em>在此关通过后，最好使用恢复密钥串将驱动器解密，然后再进行一次自动取证，收集到所有信息。</em></p>
+<h3 id="第三关"><a href="#第三关" class="headerlink" title="第三关"></a>第三关</h3><p><strong>请使用取证大师软件找出该对象即时通讯工具“SKYPE”账号关联的邮件地址（格式如: <a href="mailto:abc123@abc.com" target="_blank" rel="noopener">abc123@abc.com</a>）。（4分）</strong></p>
+<p>在取证大师中，查看取证结果，找到检材1的即时通讯—SKYPE—petter.petter56的资料信息，电子邮件即为所求。<br><img src="/pic/cppuqz2021-3.png" alt="cppuqz2021-3"><br>答案：<a href="mailto:64906054@qq.com" target="_blank" rel="noopener">64906054@qq.com</a></p>
+<h3 id="第四关"><a href="#第四关" class="headerlink" title="第四关"></a>第四关</h3><p><strong>请对检材分析，获取邮箱账号“<a href="mailto:wangy2015@sina.com" target="_blank" rel="noopener">wangy2015@sina.com</a>”的密码（格式如: wwyong123）。（4分）</strong></p>
+<p>在取证大师中，查看案例概览，找到检材1的密码列表，第一个即为所求。<br><img src="/pic/cppuqz2021-4.png" alt="cppuqz2021-4"><br>答案：wangy0401</p>
+<h3 id="第五关"><a href="#第五关" class="headerlink" title="第五关"></a>第五关</h3><p><strong>请写出对象的iCloud同步账号（格式如: <a href="mailto:wope123@icloud.com" target="_blank" rel="noopener">wope123@icloud.com</a>）。（4分）</strong></p>
+<p>在手机大师中，查看取证结果，找到检材3的文件信息—同步账号，第一个即为所求。<br><img src="/pic/cppuqz2021-5.png" alt="cppuqz2021-5"><br>答案：<a href="mailto:wangyong000328@icloud.com" target="_blank" rel="noopener">wangyong000328@icloud.com</a></p>
+<h3 id="第六关"><a href="#第六关" class="headerlink" title="第六关"></a>第六关</h3><p><strong>请对检材分析，获取该计算机Windows操作系统可疑登录密码（格式如:13678929322）。（4分）</strong></p>
+<p>用火眼镜像仿真检材1进入登录画面，得到密码提示为Tel，即电话号码。<br><img src="/pic/cppuqz2021-6-1.png" alt="cppuqz2021-6-1"><br>接着在手机大师中，查看取证结果，找到检材3的文件信息—备忘录，可以看到第一个备忘录的内容是“登录密码：18900001111”。结合我们刚刚仿真得到的密码提示，我们使用这个手机号码登录，确认了这个登录密码指的是操作系统的登录密码。<br><img src="/pic/cppuqz2021-6-2.png" alt="cppuqz2021-6-2"><br>答案：18900001111</p>
+<h3 id="第七关"><a href="#第七关" class="headerlink" title="第七关"></a>第七关</h3><p><strong>请对检材分析，提取记录有常联络QQ好友的文档，写出涉案QQ好友“信”的真实姓名（格式如:林市中）。（5分）</strong></p>
+<p>在取证大师中，查看取证结果，找到检材1的文件分析—文件分类—办公文档—Word文档中的“常联络QQ好友信息.doc”，文件内容中记录的第一个QQ相关信息即包含答案。<br><img src="/pic/cppuqz2021-7.png" alt="cppuqz2021-7"><br>答案：陈音信</p>
+<h3 id="第八关"><a href="#第八关" class="headerlink" title="第八关"></a>第八关</h3><p><strong>通过对计算机检材JPG格式图片进行数据恢复，请写出物理扇区为21936520图片的逻辑大小（格式如:1029字节）。（5分）</strong></p>
+<p>在取证大师中用数据恢复—签名恢复，设置参数为图片—JPEG图片，选中检材1恢复，在分区3_本地磁盘[E]中，按照物理扇区排序，找到物理扇区为21,936,520的图片，在摘要中即可看到逻辑大小。<br><img src="/pic/cppuqz2021-8.png" alt="cppuqz2021-8"><br>答案：649380字节</p>
+<h3 id="第九关"><a href="#第九关" class="headerlink" title="第九关"></a>第九关</h3><p><strong>请找出对象计算机中涉案图片“块. jpg”，并计算解密后的MD5值（格式如:35A437BF4B1F84193CA7D74EAO3D69FF）。（6分）</strong></p>
+<p>通过第六关，我们用火眼镜像仿真检材1进入Windows操作系统，找到图片文件，对图片右键，选择属性，点击高级，将保护关闭。<br><img src="/pic/cppuqz2021-9-1.png" alt="cppuqz2021-9-1"><br>然后我们将解密的文件计算MD5值即可。<br><img src="/pic/cppuqz2021-9-2.png" alt="cppuqz2021-9-2"><br>答案：21E6371F841BF474EA037DD69FFB93CA</p>
+<h3 id="第十关"><a href="#第十关" class="headerlink" title="第十关"></a>第十关</h3><p><strong>根据对检材中邮件的解析，提取邮件附件压缩包甲的涉案图片“猪头肉.jpg”，请写出其MD5值（格式如:35A437BF4B1F84193CA7D74EAO3D69FF）。（6分）</strong></p>
+<p>我没有做出来。</p>
+<p>答案：2bce78b48c8e55240030734c21041b02</p>
+<h3 id="第十一关"><a href="#第十一关" class="headerlink" title="第十一关"></a>第十一关</h3><p><strong>通过提取检材中7月-10月的话单，对话单进行关联分析，请写出与该对象四个月联系次数最多的联系人手机号码（格式如:13812345678）。（4分）</strong></p>
+<p>在取证大师中，查看取证结果，找到检材1的文件分析—文件分类—办公文档—Excel电子表格中的“2016年07月全部详单.xls”、“2016年08月全部详单.xls”、“2016年09月全部详单.xls”和“2016年10月全部详单.xls”。<br><img src="/pic/cppuqz2021-11-1.png" alt="cppuqz2021-11-1"><br>将文件内容中记录的信息合并到一个Excel文件中。<br><img src="/pic/cppuqz2021-11-2.png" alt="cppuqz2021-11-2"><br>使用Excel自带的函数MODE.SNGL统计出出现次数最多的号码。<br><img src="/pic/cppuqz2021-11-3.png" alt="cppuqz2021-11-3"><br>答案：15659832975</p>
+<h3 id="第十二关"><a href="#第十二关" class="headerlink" title="第十二关"></a>第十二关</h3><p><strong>通过提取检材中7月-10月的话单，对话单进行关联分析，请写出该对象与李四的通话总时长（格式如:45678秒）。（4分）</strong></p>
+<p>在手机大师中，查看取证结果，找到检材3的文件信息—通讯录—手机，找到李四的手机号。<br><img src="/pic/cppuqz2021-12-1.png" alt="cppuqz2021-12-1"><br>使用第十一关制作的Excel文件，筛选出李四手机号对应的记录。<br><img src="/pic/cppuqz2021-12-2.png" alt="cppuqz2021-12-2"><br>使用Excel自带的函数SUBTOTAL将通信时长加和即可得到结果。<br><img src="/pic/cppuqz2021-12-3.png" alt="cppuqz2021-12-3"><br>答案：131828秒</p>
+<h3 id="第十三关"><a href="#第十三关" class="headerlink" title="第十三关"></a>第十三关</h3><p><strong>通过对检材分析，获取对象7月-10月的收支记录，请统计这四个月的净收入（格式如:23.8万）。（5分）</strong></p>
+<p>在手机大师中，查看取证结果，找到检材3的文件信息—备忘录，可以看到后个备忘录的标题和内容分别是7-10月的开支情况。我们将净收入加和即可得到答案。<br><img src="/pic/cppuqz2021-13.png" alt="cppuqz2021-13"><br>答案：35.8万</p>
+<h3 id="第十四关"><a href="#第十四关" class="headerlink" title="第十四关"></a>第十四关</h3><p><strong>通过题目中提供的“涉毒样本库.xml”文件，分析提取计算机检材中涉案的文件，请填写命中的文件个数（格式如:2）。（5分）</strong><br>打开“涉毒样本库.xml”，复制第一个样本文件的MD5值。<br><img src="/pic/cppuqz2021-14-2.png" alt="cppuqz2021-14-2"><br>在取证大师中，选中所有文件后，计算所有文件的MD5值，筛选出MD5值对应的文件。<br><img src="/pic/cppuqz2021-14-1.png" alt="cppuqz2021-14-1"><br>跳转到源文件，可以找到其余三个MD5值对应的文件，同时可以找到4个文件经过修改的对应文件，涉案文件一共八个。<br><img src="/pic/cppuqz2021-14-3.png" alt="cppuqz2021-14-3"><br>答案：8</p>
+<h3 id="第十五关"><a href="#第十五关" class="headerlink" title="第十五关"></a>第十五关</h3><p><strong>通过对检材分析，请找出王勇的支付宝账号（格式如:<a href="mailto:abc123@qq.com" target="_blank" rel="noopener">abc123@qq.com</a>）。（6分）</strong></p>
+<p>在火眼取证分析中，查看分析页面，找到检材1的微软便签(Sticky Notes)，第一个便签的内容即为答案。<br><img src="/pic/cppuqz2021-15.png" alt="cppuqz2021-15"><br>答案：<a href="mailto:wy1080@163.com" target="_blank" rel="noopener">wy1080@163.com</a></p>
+<h3 id="第十六关"><a href="#第十六关" class="headerlink" title="第十六关"></a>第十六关</h3><p><strong>请对嫌疑人手机检材进行分析，写出SSID为“leo”的WiFi密码(格式如: abc123）。（6分）</strong></p>
+<p>在火眼取证分析中，查看分析页面，找到检材4的基本信息—Wi-Fi连接记录，第二条记录对应的密码即为答案。<br><img src="/pic/cppuqz2021-16.png" alt="cppuqz2021-16"><br>答案：qwer1350</p>
+<h3 id="第十七关"><a href="#第十七关" class="headerlink" title="第十七关"></a>第十七关</h3><p><strong>请对嫌疑人手机检材进行分析，找出联系人为“大山”的手机号码（格式如:18912345678）。（6分）</strong></p>
+<p>在手机大师中，查看取证结果，找到检材4的文件信息—通讯录—手机，可以找到大山的手机号。离谱的是姓名和手机号码居然是反的。<br><img src="/pic/cppuqz2021-17.png" alt="cppuqz2021-17"><br>答案：18725715233</p>
+<h3 id="第十八关"><a href="#第十八关" class="headerlink" title="第十八关"></a>第十八关</h3><p><strong>通过对检材的综合分析，找到王勇供货上线的微信号（格式如: abcd123）。（5分）</strong></p>
+<p>在取证大师中，查看取证结果，找到检材1的文件分析—文件分类—办公文档—Word文档中的“1.docx”，文件内容中记录的微信号码相关信息即为答案。<br><img src="/pic/cppuqz2021-18.png" alt="cppuqz2021-18"><br>答案：13800100809</p>
+<h3 id="第十九关"><a href="#第十九关" class="headerlink" title="第十九关"></a>第十九关</h3><p><strong>通过对检材的综合分析，请写出涉案关系人“李四”的真实姓名（格式如:李发）。（7分）</strong></p>
+<p>在取证大师中，查看取证结果，找到检材1的即时通讯—SKYPE—petter.petter5—聊天消息—好友聊天消息—tin12317。通过对聊天内容中“小李”、“四”等词，我们不难分析出该好友即为“李四”，根据一条消息中的“另一个手机号是18684676356”，我们得到了李四的另一个手机号。<br><img src="/pic/cppuqz2021-19-1.png" alt="cppuqz2021-19-1"><br>在手机大师中，查看取证结果，找到检材4的文件信息—通讯录—手机，可以找到手机号对应的姓名，即为李四的真实姓名。离谱的是姓名和手机号码居然是反的。<br><img src="/pic/cppuqz2021-19-2.png" alt="cppuqz2021-19-2"><br>答案：李安</p>
+<h3 id="第二十关"><a href="#第二十关" class="headerlink" title="第二十关"></a>第二十关</h3><p><strong>通过对检材进行分析，根据对象记录账号的文档，请获取百度网盘的登录密码（格式如: abc123）。（7分）</strong></p>
+<p>找到了“Accounts .docx”但不知道密码。。。<br>答案：yong168</p>
+</section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span
+        id="/blog/reproduction-cppu2021/" class="waline-visitor-count"></span>次阅读，<span
+        id="/blog/reproduction-cppu2021/" class="waline-comment-count"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>标签:</span>
+        
+  <a href="/tags#复现" >
+    <span class="tag-code">复现</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/Autobiography-04/">
+        <span class="nav-arrow">← </span>
+        
+          我很好，也值得更好
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/solution-cppu2021/">
+        
+          题解 CPPU第五届“精武杯”计算机算法设计网络赛
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+        <div class="qrcode">
+            <canvas id="share-qrcode"></canvas>
+            <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#案情简介"><span class="toc-nav-text">案情简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#检材列表"><span class="toc-nav-text">检材列表</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#所需工具"><span class="toc-nav-text">所需工具</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#预处理工作"><span class="toc-nav-text">预处理工作</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#问题"><span class="toc-nav-text">问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第一关"><span class="toc-nav-text">第一关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第二关"><span class="toc-nav-text">第二关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第三关"><span class="toc-nav-text">第三关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第四关"><span class="toc-nav-text">第四关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第五关"><span class="toc-nav-text">第五关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第六关"><span class="toc-nav-text">第六关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第七关"><span class="toc-nav-text">第七关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第八关"><span class="toc-nav-text">第八关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第九关"><span class="toc-nav-text">第九关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十关"><span class="toc-nav-text">第十关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十一关"><span class="toc-nav-text">第十一关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十二关"><span class="toc-nav-text">第十二关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十三关"><span class="toc-nav-text">第十三关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十四关"><span class="toc-nav-text">第十四关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十五关"><span class="toc-nav-text">第十五关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十六关"><span class="toc-nav-text">第十六关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十七关"><span class="toc-nav-text">第十七关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十八关"><span class="toc-nav-text">第十八关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第十九关"><span class="toc-nav-text">第十九关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第二十关"><span class="toc-nav-text">第二十关</span></a></li></ol></li></ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.zhangkai.xin/blog/reproduction-cppu2021/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+  <script>
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+  </script>
+
+
+
+<script>
+    Waline({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkai.xin",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        avatar: 'identicon',
+        visitor: true,
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        copyright: false
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 - 2021 张开昕 版权所有 | 使用了 <a href="https://hexo.io" target="_blank">Hexo</a> 生成
+    <br>
+    主题作者为 <a href="https://github.com/yanm1ng">yanm1ng</a> | 经过 <a href="https://github.com/WilliamPeterMatthew">WilliamPeterMatthew</a> 修改
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

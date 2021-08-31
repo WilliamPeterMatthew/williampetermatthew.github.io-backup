@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+    <script src="/js/qrious.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    <script src="/js/local-search.js"></script>
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <script src="/js/Waline.min.js"></script>
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">关于</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">关于</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/friend-links/">【置顶】友链了解一下</a>
+      </h2>
+      <p class="article-date">2018年7月27日</p>
+      
+        
+  <a href="/tags#友链" >
+    <span class="tag-code">友链</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          我？张开昕（男，2002/04/20 — ），（经常使用WilliamPeterMatthew、Peter_Matthew作为用户名，）一个曾经的HA省OIer，一名大学本科在读生，喜爱计算机。。。.Xin博客 RSS订阅  
+ 
+    var online= new Array(); 
+ ...
+        
+      </div>
+      <a class="more" href="/blog/friend-links/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Cpp-Binary-Storage/">C++内置数据类型与二进制存储</a>
+      </h2>
+      <p class="article-date">2021年8月1日</p>
+      
+        
+  <a href="/tags#科技" >
+    <span class="tag-code">科技</span>
+  </a>
+
+  <a href="/tags#CPPUAPA周刊" >
+    <span class="tag-code">CPPUAPA周刊</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          平时，很多同学因为两个int类型的变量相乘变成了负数的问题而头疼，将变量换成了long long类型后便可以解决，但不知道为什么。本文笔者就将向大家介绍C++内置数据类型与二进制存储，以便大家理解。
+C++内置数据类型C++有非常多的数据类型，尤其是STL预写了十分多的数据类型，本文仅介绍原 ...
+        
+      </div>
+      <a class="more" href="/blog/Cpp-Binary-Storage/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/solution-cppu2021/">题解 CPPU第五届“精武杯”计算机算法设计网络赛</a>
+      </h2>
+      <p class="article-date">2021年5月20日</p>
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          本篇题解所使用的语言是C++，部分其他语言的选手可能需要理解做法后自行编写对应语言的代码。
+本次比赛我认为值得一提的是7-1、7-6、7-7、7-10、和7-15，可以考虑重点看看这几道题的代码。
+7-1 连续因子一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3× ...
+        
+      </div>
+      <a class="more" href="/blog/solution-cppu2021/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/reproduction-cppu2021/">复现 CPPU第五届“精武杯”电子数据取证竞赛</a>
+      </h2>
+      <p class="article-date">2021年5月19日</p>
+      
+        
+  <a href="/tags#复现" >
+    <span class="tag-code">复现</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          案情简介某市公安机关在侦办一起贩毒案件中，抓获嫌疑人王勇，缴获毒品数十克。通过现场勘查，扣押了犯罪嫌疑人王勇的一台计算机、两部手机、及一个 U盘，现已将证据进行固定并生成镜像（备份）文件，请对以上检材进行取证分析。
+检材列表
+检材1-Wangy Disk.E01
+检材2-Wangy U.E0 ...
+        
+      </div>
+      <a class="more" href="/blog/reproduction-cppu2021/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Autobiography-04/">我很好，也值得更好</a>
+      </h2>
+      <p class="article-date">2021年5月11日</p>
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          “为什么我总是很心累？”&emsp;&emsp;经常会莫名感到心累、有深深的无力感。&emsp;&emsp;&emsp;&emsp;生活压力大，忙忙碌碌却觉得迷茫、空虚、压抑；&emsp;&emsp;不管怎么努力，好像总是卡在某个地方；&emsp;&emsp;好像总是重复同样的错误，内心不安 ...
+        
+      </div>
+      <a class="more" href="/blog/Autobiography-04/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Happynintyo/">嘿，看到了就点进来吧！</a>
+      </h2>
+      <p class="article-date">2021年4月20日</p>
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          嘿，那边的路人，你好！可以耽误你几分钟听我讲点什么嘛？
+        
+      </div>
+      <a class="more" href="/blog/Happynintyo/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Course/Python/02/">【Python入门】02 Python基础1——输入输出</a>
+      </h2>
+      <p class="article-date">2021年1月19日</p>
+      
+        
+  <a href="/tags#Python入门" >
+    <span class="tag-code">Python入门</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          在上一期的末尾我们说到三段大差不差的代码
+代码的第一行都有计算100+200的意思，有的也得到了300，第二行都有显示Hello, World!的意思也都输出了
+第一段代码在Python交互模式下输出了
+12300Hello, World!
+
+第二段代码正常运行输出了
+12300Hello, ...
+        
+      </div>
+      <a class="more" href="/blog/Course/Python/02/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Course/Python/01/">【Python入门】01 环境设置＆交互模式</a>
+      </h2>
+      <p class="article-date">2021年1月13日</p>
+      
+        
+  <a href="/tags#Python入门" >
+    <span class="tag-code">Python入门</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          额，值得说明的是，这篇文章其实是在2019年1月13日写的，在两年后的2021年1月14日，在展开了对我的博客的大规模修复的工作时，这个当时被我鸽了的内容就得以残喘。至于当时写这篇博客的原因，其实是为了给我一个学长写教程，但显然文字教程不如实际教学，故我也就鸽了文字版的。今天，我开始重构这个 ...
+        
+      </div>
+      <a class="more" href="/blog/Course/Python/01/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Autobiography-03/">不要看这篇文章</a>
+      </h2>
+      <p class="article-date">2020年12月6日</p>
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          中国人民警察大学 张开昕
+
+&emsp;&emsp;学弟学妹们好，我相信你们翻开这册书的时候，一定多少都带有渴望从中汲取学习方法的想法。你们已经读了一些我们班通过报送、强基、高考进入清北等名校的同学的文章，相信你们已感受颇多；但很可惜，我并不优秀，不能给你们很好的学习方法，正如我在标题中提到 ...
+        
+      </div>
+      <a class="more" href="/blog/Autobiography-03/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Autobiography-02/">信竞要以和为贵，要讲码德！</a>
+      </h2>
+      <p class="article-date">2020年11月23日</p>
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          &emsp;&emsp;同学们好啊，我是中国人民警察大学学员张开昕。刚才有个同学问我说开昕发生什么事了？我说怎么回事？给我发了一个张照片，我一看！噢！原来是昨天有两个年轻人，十六七岁，一个拿了数学的省一，一个拿了物理的省一。&emsp;&emsp;塔们说，诶，有一个说是我在教室里学习编程不懂 ...
+        
+      </div>
+      <a class="more" href="/blog/Autobiography-02/">查看全文</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a class="unvisible" href="/"><span class="page-arrow">←</span> 上一页</a>
+  
+  
+    <a href="/page/2/">下一页<span class="page-arrow"> →</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 - 2021 张开昕 版权所有 | 使用了 <a href="https://hexo.io" target="_blank">Hexo</a> 生成
+    <br>
+    主题作者为 <a href="https://github.com/yanm1ng">yanm1ng</a> | 经过 <a href="https://github.com/WilliamPeterMatthew">WilliamPeterMatthew</a> 修改
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
