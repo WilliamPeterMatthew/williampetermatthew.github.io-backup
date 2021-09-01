@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.zhangkai.xin/blog/friend-links/</loc>
+    
+    <lastmod>2021-09-01T05:46:55.371Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.zhangkai.xin/about/index.html</loc>
+    
+    <lastmod>2021-09-01T05:46:21.170Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.zhangkai.xin/blog/hello-world/</loc>
     
     <lastmod>2021-08-03T14:51:17.302Z</lastmod>
@@ -58,7 +72,7 @@
   </url>
   
   <url>
-    <loc>https://www.zhangkai.xin/about/index.html</loc>
+    <loc>https://www.zhangkai.xin/about/backup.html</loc>
     
     <lastmod>2021-01-19T15:10:27.322Z</lastmod>
     
@@ -103,13 +117,6 @@
     <loc>https://www.zhangkai.xin/blog/solution-L1-001/</loc>
     
     <lastmod>2020-11-06T11:26:25.896Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.zhangkai.xin/blog/friend-links/</loc>
-    
-    <lastmod>2020-11-06T11:19:56.908Z</lastmod>
     
   </url>
   
