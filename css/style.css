@@ -23,7 +23,7 @@
   color: #fff;
 }
 body {
-  font-family: Consolas, 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
@@ -390,6 +390,7 @@ h2.article-head {
   color: #fff;
   font-size: 1.5em;
   line-height: 40px;
+  font-family: Consolas, 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 .right-list {
   list-style: none;
@@ -868,12 +869,14 @@ h2.article-head {
   transform: translateY(-20px);
   transition: all 0.4s;
   transition-delay: 0.05s;
+  font-family: Consolas, 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 .author .description {
   opacity: 1;
   transform: translateY(-20px);
   transition: all 0.4s;
   transition-delay: 0.1s;
+  font-family: Consolas, 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 .author .share-icons {
   opacity: 1;
