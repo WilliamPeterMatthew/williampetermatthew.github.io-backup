@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.zhangkai.xin/blog/BTPanel-L01/</loc>
+    <lastmod>2022-01-04</lastmod>
+  </url>  <url>
+    <loc>https://www.zhangkai.xin/blog/BTPanel-L00/</loc>
+    <lastmod>2022-01-04</lastmod>
+  </url>  <url>
+    <loc>https://www.zhangkai.xin/blog/data-construction-and-beat-program/</loc>
+    <lastmod>2022-01-03</lastmod>
+  </url>  <url>
     <loc>https://www.zhangkai.xin/blog/friend-links/</loc>
     <lastmod>2021-11-09</lastmod>
   </url>  <url>
@@ -104,9 +113,6 @@
     <lastmod>2020-08-06</lastmod>
   </url>  <url>
     <loc>https://www.zhangkai.xin/blog/crt-and-excrt/</loc>
-    <lastmod>2020-08-06</lastmod>
-  </url>  <url>
-    <loc>https://www.zhangkai.xin/blog/data-construction-and-beat-program/</loc>
     <lastmod>2020-08-06</lastmod>
   </url>  <url>
     <loc>https://www.zhangkai.xin/blog/gcd-and-exgcd/</loc>
@@ -254,9 +260,6 @@
     <lastmod>2020-03-03</lastmod>
   </url>  <url>
     <loc>https://www.zhangkai.xin/blog/lgrb-gcc-hei-ke-ji-zhi-builtin-ji-lie-han-shuo/</loc>
-    <lastmod>2020-03-03</lastmod>
-  </url>  <url>
-    <loc>https://www.zhangkai.xin/blog/lgrb-ghj1222-likes-npp/</loc>
     <lastmod>2020-03-03</lastmod>
   </url>  <url>
     <loc>https://www.zhangkai.xin/blog/lgrb-gnu-pbds/</loc>
