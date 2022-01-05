@@ -30,7 +30,7 @@
   <entry>
     <title>【宝塔面板使用心得】L01 宝塔面板的安装</title>
     <url>/blog/BTPanel-L01/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><blockquote>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p><em>本系列心得序号以L开头是Linux面板，以W开头是Windows面板。</em></p>
 </blockquote>
 <h2 id="什么是宝塔面板？"><a href="#什么是宝塔面板？" class="headerlink" title="什么是宝塔面板？"></a>什么是宝塔面板？</h2><p>一般，我们的个人电脑的操作系统都会安装带有桌面或者是可视化界面，但是服务器的操作系统为了追求运行服务的性能，不会带有桌面或者是可视化界面。一般服务器操作系统只有一个输入命令的框，这对初入服务器维护的学习者来说十分不友好；同时，一些大量的重复性操作也会浪费老手的很多时间，十分不方便。因此，一个为了方便新手与老手服务器运维人员的可视化界面——服务器面板便应运而生。宝塔面板就是众多服务器面板软件中的一种，也是目前服务器实操运维和电子数据取证竞赛出现频率较高的一种。  </p>
@@ -67,7 +67,7 @@
   <entry>
     <title>【宝塔面板使用心得】L00 安装服务器操作系统</title>
     <url>/blog/BTPanel-L00/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><blockquote>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p><em>本系列心得序号以L开头是Linux面板，以W开头是Windows面板。</em></p>
 </blockquote>
 <p>与桌面操作系统不同，服务器操作系统一般是安装在大型计算机上，用于提供例如Web、应用、数据库等特定服务的操作系统。</p>
