@@ -287,6 +287,11 @@ h2.article-head {
   padding: 5px;
   box-shadow: 0 0 1px #e3e3e3;
 }
+.addthis {
+  padding-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px dashed #e5e5e5;
+}
 #uyan_frame {
   margin-top: 20px;
 }
