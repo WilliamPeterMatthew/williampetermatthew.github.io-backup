@@ -699,10 +699,10 @@ h2.article-head {
   color: #000;
 }
 #tag-cloud .tag0 {
-  background: #ab82ff;
+  background: #789;
 }
 #tag-cloud .tag0:hover {
-  background: #d8bfd8;
+  background: #d3d3d3;
 }
 #tag-cloud .tag1 {
   background: #65b5f0;
@@ -733,6 +733,12 @@ h2.article-head {
 }
 #tag-cloud .tag5:hover {
   background: #ffb6c1;
+}
+#tag-cloud .tag6 {
+  background: #ab82ff;
+}
+#tag-cloud .tag6:hover {
+  background: #d8bfd8;
 }
 .tag-list {
   margin-left: 1em;
