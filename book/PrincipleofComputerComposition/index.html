@@ -13,14 +13,14 @@
       计算机的组成和程序运行的流程 | 我有昕想法 | Peter_Matthew的博客
     
   </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
   <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
   
   
@@ -45,7 +45,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <!-- MathJax support END -->
   
 
@@ -54,10 +54,10 @@
 
     <script src="/js/local-search.js"></script>
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/Waline.min.js"></script>
+  <script src="/js/comment/Waline.min.js"></script>
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -214,7 +214,7 @@
   
     <i class="fa fa-clock-o">本文共<span class="post-count">4,957</span>字，大约需要阅读<span class="post-count">17</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><h2 id="计算机系统的组成"><a href="#计算机系统的组成" class="headerlink" title="计算机系统的组成"></a>计算机系统的组成</h2><p>计算机系统分为硬件系统和软件系统。<br>硬件系统由各个看得见、摸得着的物理实体组件构成，是计算机完成各种操作的物质基础。<br>软件系统由与操作有关的各种程序以及与之相关的文档和数据的集合组成。其中程序是指用程序设计语言描述的语句指令序列。本书就将带您了解程序设计语言并教您如何编写用程序设计语言描述一序列的语句指令，形成一个程序，来完成一定要求的任务。<br>没有安装任何软件的计算机俗称“裸机”，是无法正常工作的。硬件系统脱离了软件系统，就会使计算机变成毫无用处的机器；软件系统脱离了硬件系统，就失去了运行的物质基础。因而二者相互依存，不可独立，共同构成了一个完整的计算机系统。</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><h2 id="计算机系统的组成"><a href="#计算机系统的组成" class="headerlink" title="计算机系统的组成"></a>计算机系统的组成</h2><p>计算机系统分为硬件系统和软件系统。<br>硬件系统由各个看得见、摸得着的物理实体组件构成，是计算机完成各种操作的物质基础。<br>软件系统由与操作有关的各种程序以及与之相关的文档和数据的集合组成。其中程序是指用程序设计语言描述的语句指令序列。本书就将带您了解程序设计语言并教您如何编写用程序设计语言描述一序列的语句指令，形成一个程序，来完成一定要求的任务。<br>没有安装任何软件的计算机俗称“裸机”，是无法正常工作的。硬件系统脱离了软件系统，就会使计算机变成毫无用处的机器；软件系统脱离了硬件系统，就失去了运行的物质基础。因而二者相互依存，不可独立，共同构成了一个完整的计算机系统。</p>
 <h3 id="计算机硬件系统的基本组成"><a href="#计算机硬件系统的基本组成" class="headerlink" title="计算机硬件系统的基本组成"></a>计算机硬件系统的基本组成</h3><p>现代的计算机结构虽然和冯·诺依曼结构有些不太一样，但是仍是基于冯·诺依曼结构的。数学家冯·诺依曼提出了冯·诺依曼结构计算机制造的三个基本原则：</p>
 <ol>
 <li>采用二进制逻辑，即计算机内部采用二进制来表示程序以及与之相关的文档和数据。</li>
@@ -625,14 +625,14 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  async("/js/fastclick/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+  async("/js/highlight.js/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine === 'false') {

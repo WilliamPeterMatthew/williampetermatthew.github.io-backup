@@ -13,14 +13,14 @@
       题解 CPPU第五届“精武杯”计算机算法设计网络赛 | 我有昕想法 | Peter_Matthew的博客
     
   </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
   <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
   
   
@@ -45,7 +45,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <!-- MathJax support END -->
   
 
@@ -54,10 +54,10 @@
 
     <script src="/js/local-search.js"></script>
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/Waline.min.js"></script>
+  <script src="/js/comment/Waline.min.js"></script>
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -214,7 +214,7 @@
   
     <i class="fa fa-clock-o">本文共<span class="post-count">7,274</span>字，大约需要阅读<span class="post-count">32</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><p>本篇题解所使用的语言是C++，部分其他语言的选手可能需要理解做法后自行编写对应语言的代码。</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><p>本篇题解所使用的语言是C++，部分其他语言的选手可能需要理解做法后自行编写对应语言的代码。</p>
 <p><strong>本次比赛我认为值得一提的是7-1、7-6、7-7、7-10、和7-15，可以考虑重点看看这几道题的代码。</strong></p>
 <h2 id="7-1-连续因子"><a href="#7-1-连续因子" class="headerlink" title="7-1 连续因子"></a>7-1 连续因子</h2><p>一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。</p>
 <h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入在一行中给出一个正整数 N（$1$&lt;N&lt;$2^{​31}$）。</p>
@@ -645,14 +645,14 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  async("/js/fastclick/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+  async("/js/highlight.js/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine === 'false') {

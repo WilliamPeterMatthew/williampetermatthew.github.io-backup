@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script> var dnpw502 = {
+<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script> var dnpw502 = {
         collage: document.querySelector('.collage-502'),
         collageImages: document.querySelector(".collage-502-images"),
         collageH1: document.querySelector('.collage-502 h1'),

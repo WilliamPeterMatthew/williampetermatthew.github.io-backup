@@ -13,14 +13,14 @@
       题解 T27523 【[开昕生日愚人题#5]三角圆函数】 | 我有昕想法 | Peter_Matthew的博客
     
   </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
   <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
   
   
@@ -45,7 +45,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <!-- MathJax support END -->
   
 
@@ -54,10 +54,10 @@
 
     <script src="/js/local-search.js"></script>
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/Waline.min.js"></script>
+  <script src="/js/comment/Waline.min.js"></script>
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -214,7 +214,7 @@
   
     <i class="fa fa-clock-o">本文共<span class="post-count">274</span>字，大约需要阅读<span class="post-count">1</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><p><a href="https://www.luogu.org/problemnew/show/T27523" target="_blank" rel="noopener">LuoguT27523</a>:</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><p><a href="https://www.luogu.org/problemnew/show/T27523" target="_blank" rel="noopener">LuoguT27523</a>:</p>
 <p>由于本题比较复杂，不再详细多少分对应什么问题或算法了，因为会出的错误千奇百怪，这其实是由于对“三角函数”的概念不是非常具体，我在题目中也说了，“三角函数”又叫“圆函数”。</p>
 <p>这里要科普下：三角函数可不止包括sin、cos和tan，还不止包括cot、sec和csc，更不止包括asin、acos、atan、acot、asec和acsc。</p>
 <p>有人会问了，那还有什么，其实还有很多，这题里面还有双曲三角函数sinh、cosh…及其反函数asinh、acosh…当然这题我皮了一下，还写了他们的全称，sine、tangent、secant、arc（例如arcsine）、hyperbolic（例如hyperbolicsine）。所以打字符表，写函数即可AC。</p>
@@ -412,14 +412,14 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  async("/js/fastclick/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+  async("/js/highlight.js/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine === 'false') {

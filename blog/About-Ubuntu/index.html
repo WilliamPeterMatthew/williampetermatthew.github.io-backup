@@ -13,14 +13,14 @@
       Ubuntu使用心得 | 我有昕想法 | Peter_Matthew的博客
     
   </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
   <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
   
   
@@ -45,7 +45,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <!-- MathJax support END -->
   
 
@@ -54,10 +54,10 @@
 
     <script src="/js/local-search.js"></script>
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/Waline.min.js"></script>
+  <script src="/js/comment/Waline.min.js"></script>
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -214,7 +214,7 @@
   
     <i class="fa fa-clock-o">本文共<span class="post-count">1,354</span>字，大约需要阅读<span class="post-count">5</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><p>由于NOI官网给出的NOI Linux 1.4.1是基于Ubuntu 14.04.5的，因此我特意使用Ubuntu 14.04.5</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><p>由于NOI官网给出的NOI Linux 1.4.1是基于Ubuntu 14.04.5的，因此我特意使用Ubuntu 14.04.5</p>
 <p>$\huge\color{red}{Warning}$ 请不要尝试在上个世纪的电脑上执行以下操作，这可能会导致严重的“Kernel panic - not syncing: Attempted to kill init!”错误<br>$\huge\color{blue}{Attention}$ 请在执行下述操作时确认自己为根目录管理员（root）或拥有根目录管理权限</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装比较类似NOI Linux的安装过程，不再过多阐述。</p>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>个人喜欢一些小设置。。。</p>
@@ -492,14 +492,14 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  async("/js/fastclick/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+  async("/js/highlight.js/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine === 'false') {

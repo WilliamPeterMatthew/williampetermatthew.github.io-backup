@@ -13,14 +13,14 @@
       数据构造与对拍程序 | 我有昕想法 | Peter_Matthew的博客
     
   </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
   <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
   
   
@@ -45,7 +45,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <!-- MathJax support END -->
   
 
@@ -54,10 +54,10 @@
 
     <script src="/js/local-search.js"></script>
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/Waline.min.js"></script>
+  <script src="/js/comment/Waline.min.js"></script>
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -214,7 +214,7 @@
   
     <i class="fa fa-clock-o">本文共<span class="post-count">3,226</span>字，大约需要阅读<span class="post-count">15</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><h1 id="数据构造"><a href="#数据构造" class="headerlink" title="数据构造"></a>数据构造</h1><p>作为一个<del>毒瘤</del>出题人，我们要学着出<del>毒瘤</del>数据<del>卡做题人</del>；作为一个<del>蒟蒻</del>做题人，我们要学着出<del>毒瘤</del>数据尝试<del>卡自己的程序并</del>调试，下面简单介绍出数据的一些方法。</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><h1 id="数据构造"><a href="#数据构造" class="headerlink" title="数据构造"></a>数据构造</h1><p>作为一个<del>毒瘤</del>出题人，我们要学着出<del>毒瘤</del>数据<del>卡做题人</del>；作为一个<del>蒟蒻</del>做题人，我们要学着出<del>毒瘤</del>数据尝试<del>卡自己的程序并</del>调试，下面简单介绍出数据的一些方法。</p>
 <h2 id="总程序的写法"><a href="#总程序的写法" class="headerlink" title="总程序的写法"></a>总程序的写法</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> T=<span class="number">10</span>,L=<span class="number">200</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* problemname=<span class="string">""</span>;<span class="comment">//your problem's name</span></span><br><span class="line"><span class="keyword">char</span> buf[L]=&#123;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">randomint</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (rand()+rand()*<span class="number">32768</span>)%(r-l+<span class="number">1</span>)+l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">make_data</span><span class="params">(<span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> t=<span class="number">1</span>;t&lt;=T;++t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span>&lt;&lt;<span class="string">"start time="</span>&lt;&lt;clock()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">"%s%d.in"</span>,problemname,t);</span><br><span class="line">        freopen(buf,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">        </span><br><span class="line">        make_data(t);</span><br><span class="line">        </span><br><span class="line">        fclose(<span class="built_in">stdout</span>);</span><br><span class="line">        <span class="built_in">cerr</span>&lt;&lt;<span class="string">"t1="</span>&lt;&lt;clock()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">"copy %s%d.in %s.in &gt;nul"</span>,problemname,t,problemname);</span><br><span class="line">        system(buf);</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">"\"%s.exe\""</span>,problemname);</span><br><span class="line">        system(buf);</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">"copy %s.out %s%d.ans &gt;nul"</span>,problemname,problemname,t);</span><br><span class="line">        system(buf);</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">"del %s.in"</span>,problemname);</span><br><span class="line">        system(buf);</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">"del %s.out"</span>,problemname);</span><br><span class="line">        system(buf);</span><br><span class="line">        <span class="built_in">cerr</span>&lt;&lt;<span class="string">"data "</span>&lt;&lt;t&lt;&lt;<span class="string">" has been made."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cerr</span>&lt;&lt;<span class="string">"end time="</span>&lt;&lt;clock()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>下面对上面的程序做出详细解释：</p>
@@ -500,14 +500,14 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  async("/js/fastclick/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+  async("/js/highlight.js/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine === 'false') {

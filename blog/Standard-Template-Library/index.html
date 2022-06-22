@@ -13,14 +13,14 @@
       STL的一些总结 | 我有昕想法 | Peter_Matthew的博客
     
   </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
   <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
   
   
@@ -45,7 +45,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <!-- MathJax support END -->
   
 
@@ -54,10 +54,10 @@
 
     <script src="/js/local-search.js"></script>
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/Waline.min.js"></script>
+  <script src="/js/comment/Waline.min.js"></script>
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -214,7 +214,7 @@
   
     <i class="fa fa-clock-o">本文共<span class="post-count">1,760</span>字，大约需要阅读<span class="post-count">7</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><h1 id="stdC-STL-C-标准STL"><a href="#stdC-STL-C-标准STL" class="headerlink" title="stdC++ STL|C++标准STL"></a>stdC++ STL|C++标准STL</h1><h2 id="Containers-容器"><a href="#Containers-容器" class="headerlink" title="Containers|容器"></a>Containers|容器</h2><h3 id="简单容器"><a href="#简单容器" class="headerlink" title="简单容器"></a>简单容器</h3><h4 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h4><p>定义于&lt;stl_pair.h&gt;中，需要使用命名空间std。</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><h1 id="stdC-STL-C-标准STL"><a href="#stdC-STL-C-标准STL" class="headerlink" title="stdC++ STL|C++标准STL"></a>stdC++ STL|C++标准STL</h1><h2 id="Containers-容器"><a href="#Containers-容器" class="headerlink" title="Containers|容器"></a>Containers|容器</h2><h3 id="简单容器"><a href="#简单容器" class="headerlink" title="简单容器"></a>简单容器</h3><h4 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h4><p>定义于&lt;stl_pair.h&gt;中，需要使用命名空间std。</p>
 <p>pair是一个 对 ，用于存储一对类型可能不同的量。</p>
 <p><strong>使用方法</strong>是</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;<span class="keyword">typename</span> A,<span class="keyword">typename</span> B&gt;p;<span class="comment">//即定义了一个拥有两个可以不同类型的对</span></span><br></pre></td></tr></table></figure>
@@ -497,14 +497,14 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  async("/js/fastclick/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+  async("/js/highlight.js/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine === 'false') {

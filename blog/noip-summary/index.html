@@ -13,14 +13,14 @@
       NOIp2011-2017总结 | 我有昕想法 | Peter_Matthew的博客
     
   </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
   <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
   
   
@@ -45,7 +45,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <!-- MathJax support END -->
   
 
@@ -54,10 +54,10 @@
 
     <script src="/js/local-search.js"></script>
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/Waline.min.js"></script>
+  <script src="/js/comment/Waline.min.js"></script>
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -214,7 +214,7 @@
   
     <i class="fa fa-clock-o">本文共<span class="post-count">6,335</span>字，大约需要阅读<span class="post-count">29</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><h1 id="NOIp2011"><a href="#NOIp2011" class="headerlink" title="NOIp2011"></a>NOIp2011</h1><p>Link to Francis_noco（孙启皓）</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><h1 id="NOIp2011"><a href="#NOIp2011" class="headerlink" title="NOIp2011"></a>NOIp2011</h1><p>Link to Francis_noco（孙启皓）</p>
 <h1 id="NOIp2012"><a href="#NOIp2012" class="headerlink" title="NOIp2012"></a>NOIp2012</h1><h2 id="D1T1LuoguP1079-Vigenere-密码"><a href="#D1T1LuoguP1079-Vigenere-密码" class="headerlink" title="D1T1LuoguP1079:Vigenère 密码"></a>D1T1<a href="https://www.luogu.org/problemnew/show/P1079" target="_blank" rel="noopener">LuoguP1079</a>:Vigenère 密码</h2><h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给你一串加密后的字符串和一串加密钥匙，给你加密函数（以表的方式给出），求原字符串。</p>
 <h3 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h3><p>这是一道很水的模拟题，我们可以建一张表大小52$\times$52（注意字母的大小写只与原串与加密串有关）暴力模拟。但是作为一个<del>研究字符串很久的</del>蒟蒻，我们利用这张表的性质（假设A-Z表示1-26，那么表上的第i行第j列的值为(i+j-2)%26+1），反推加密串与加密钥匙的表的性质（假设A-Z表示1-26，那么表上的第行第j列的值为(j-i+26)%26+1）。</p>
 <h3 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> m[<span class="number">1005</span>],k[<span class="number">105</span>],c[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dxx</span><span class="params">(<span class="keyword">char</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="string">'a'</span>&amp;&amp;x&lt;=<span class="string">'z'</span>)<span class="keyword">return</span> <span class="string">'a'</span><span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="string">'A'</span>&amp;&amp;x&lt;=<span class="string">'Z'</span>)<span class="keyword">return</span> <span class="string">'A'</span><span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">R</span><span class="params">(<span class="keyword">int</span> m_i,<span class="keyword">int</span> k_i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (m[m_i]-dxx(m[m_i])+k[k_i%<span class="built_in">strlen</span>(k)]-dxx(k[k_i%<span class="built_in">strlen</span>(k)])<span class="number">-2</span>)%<span class="number">26</span>+<span class="number">1</span>+dxx(m[m_i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">R_1</span><span class="params">(<span class="keyword">int</span> c_i,<span class="keyword">int</span> k_i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (c[c_i]-dxx(c[c_i])-k[k_i%<span class="built_in">strlen</span>(k)]+dxx(k[k_i%<span class="built_in">strlen</span>(k)])+<span class="number">26</span>)%<span class="number">26</span>+<span class="number">1</span>+dxx(c[c_i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,k);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,c);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(c);i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c"</span>,R_1(i,i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -493,14 +493,14 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  async("/js/fastclick/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+  async("/js/highlight.js/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine === 'false') {
