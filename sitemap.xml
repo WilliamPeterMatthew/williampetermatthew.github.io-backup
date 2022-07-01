@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.zhangkai.xin/blog/writeup-pwn-so-brop-ret2text/</loc>
+    
+    <lastmod>2022-07-01T07:14:27.677Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.zhangkai.xin/blog/writeup-cppu-hm2022sv1/</loc>
     
-    <lastmod>2022-06-30T12:32:40.388Z</lastmod>
+    <lastmod>2022-07-01T07:14:19.546Z</lastmod>
     
   </url>
   
