@@ -205,6 +205,88 @@
   
     <article class="article-card">
       <h2 class="article-head">
+        <a href="/blog/Input-and-output-optimization/">输入输出优化代码</a>
+      </h2>
+      <p class="article-date">2018年7月22日</p>
+      
+        
+  <a href="/tags#科技" >
+    <span class="tag-code">科技</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          输入输出效率比较一份摘自LOJ的一份读入测试数据，若干读入整数速度测试的结果（单位：毫秒）。输入：$3×10^6$个在区间中随机生成的十进制整数。
+
+
+
+#
+Lanuage
+$[0,2)$
+$[0,8)$
+$[0,2^{15})$
+$[0,2^{31})$
+$[0,2^{63})$
+
+
+
+f ...
+        
+      </div>
+      <a class="more" href="/blog/Input-and-output-optimization/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/solution-u30206/">题解 U30206 【BZ游戏#1 草雉剑游戏（CZJ Game）】</a>
+      </h2>
+      <p class="article-date">2018年7月21日</p>
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguU30206:
+k=1：直接全部异或起来。
+k=2：假设出现奇数次的是a和b，那么把所有数异或起来得到的就是s=a^b。
+对每个二进制位维护一个数xw[i]，当读入一个x，x的第j位为1的时候，就把xw[j]^=x。 
+对于s的最高位的1，那么一定是a和b之中，一个这一位为1，一个 ...
+        
+      </div>
+      <a class="more" href="/blog/solution-u30206/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/solution-u30211/">题解 U30211 【BZ游戏#6 纸壳箱游戏（ZKX Game）】</a>
+      </h2>
+      <p class="article-date">2018年7月20日</p>
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguU30211:
+DP+博弈论
+限制一下取数，从一边取DP即可。
+用f[i][j]表示该取i，上一次取了j个的最大得分，则因为所有块的权值都&gt;0，所以只要用2$\times $j和2$\times $j-1来更新答案就可以了，具体DP方程见代码
+1234567891011121 ...
+        
+      </div>
+      <a class="more" href="/blog/solution-u30211/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
         <a href="/blog/lgrb-Run-Ubuntu-On-Windows10/">【转载】练习Linux？其实你的Win10自带一个Ubuntu</a>
       </h2>
       <p class="article-date">2018年7月17日</p>
@@ -366,66 +448,6 @@
       <a class="more" href="/blog/solution-t27508/">查看全文</a>
     </article>
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/solution-u23374/">题解 U23374 【PP游戏#6 矩阵游戏（Matrix Game）】</a>
-      </h2>
-      <p class="article-date">2018年4月15日</p>
-      
-        
-  <a href="/tags#题解" >
-    <span class="tag-code">题解</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          LuoguU23374:
-我在小学时订阅了一本杂志叫《趣味数学》（免费打个广告），这杂志里面就是讲了样例里面的这么个矩阵。他所讲的故事背景是一个人要吃火鸡，但是火鸡不愿意，于是他和火鸡打赌，要是火鸡按照规则选择数后加和为一个数，就让火鸡被吃，火鸡同意了，然后。。。就没有然后了，因为之后火鸡就 ...
-        
-      </div>
-      <a class="more" href="/blog/solution-u23374/">查看全文</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/solution-u22412/">题解 U22412 【PP游戏#5 种树游戏（Tree Game）】</a>
-      </h2>
-      <p class="article-date">2018年4月1日</p>
-      
-        
-  <a href="/tags#题解" >
-    <span class="tag-code">题解</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          LuoguU22412:
-这是我一次晚自习无聊翻数学必修五书时看到了一张图，我觉得很好玩就延伸了以下找到了一个规律。
-
-首先，对于n==1时的情况输出$2^{n-1}$，因为每个枝干每年都会分成两个枝干，所以说输出$2^{n-1}$。于是就有以下代码：
-12345if(n==1)   &#1 ...
-        
-      </div>
-      <a class="more" href="/blog/solution-u22412/">查看全文</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/hello-world/">Hello World</a>
-      </h2>
-      <p class="article-date">2002年4月20日</p>
-      
-      <div class="article-summary">
-        
-          WOW!你没有看错，这个是HA省大蒟蒻Peter_Matthew的博客。。。
-123456#include&lt;iostream&gt;using namespace std;int main()&#123;    cout&lt;&lt;"Hello,world!"&lt;&lt;end ...
-        
-      </div>
-      <a class="more" href="/blog/hello-world/">查看全文</a>
-    </article>
-  
 
   
     <div class="guide-pager">
@@ -433,7 +455,7 @@
     <a href="/page/9/"><span class="page-arrow">← </span>上一页</a>
   
   
-    <a class="unvisible" href="/">下一页 <span class="page-arrow">→</span></a>
+    <a href="/page/11/">下一页<span class="page-arrow"> →</span></a>
   
 </div>
   

@@ -205,6 +205,75 @@
   
     <article class="article-card">
       <h2 class="article-head">
+        <a href="/blog/Course/Cpp/Cpp-01/">【C++入门】01 环境设置</a>
+      </h2>
+      <p class="article-date">2019年1月13日</p>
+      
+        
+  <a href="/tags#C++入门" >
+    <span class="tag-code">C++入门</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          C++入门主要方便的是OI选手，OI选手一般的系统环境为Windows而竞赛环境为Linux。所以我们对环境的介绍会以Windows为主，Linux为辅。
+编译器我们要将一份代码转化为计算机能读懂能运行的程序，必不可少的就是编译器。C++的编译器名字叫做g++，请注意gcc是C语言的编译器而 ...
+        
+      </div>
+      <a class="more" href="/blog/Course/Cpp/Cpp-01/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Bisection/">二分</a>
+      </h2>
+      <p class="article-date">2019年1月9日</p>
+      
+        
+  <a href="/tags#算法" >
+    <span class="tag-code">算法</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          何为二分？举个例子，你和你的智障好友两人在一起玩猜数字游戏，你的智障好友想一个$[1,100]$的数让你猜。
+线性扫显然是从1猜到100，当然为了防止你的好友故意卡你想了个98之类的数，你也可以从100猜到1。这样一定能得到正确答案因为你一个也不漏地猜完了。
+但是如果给你说个条件，比如他每次 ...
+        
+      </div>
+      <a class="more" href="/blog/Bisection/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/data-Persistent/">可持久化数据结构</a>
+      </h2>
+      <p class="article-date">2019年1月7日</p>
+      
+        
+  <a href="/tags#数据结构" >
+    <span class="tag-code">数据结构</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          主席树（可持久化线段树）权值线段树普通的线段树维护的是单点的值，比方说一个数组是{1,1,2,4,2,4,3,4}，开成普通线段树长这样
+
+而权值线段树维护的是这个数出现了几次，就比方说上面的数组维护成了这样
+
+主席树现在我们在树中插入一个数2
+
+观察修改过后的权值线段树，发现只有红色的链有 ...
+        
+      </div>
+      <a class="more" href="/blog/data-Persistent/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
         <a href="/blog/About-Ubuntu/">Ubuntu使用心得</a>
       </h2>
       <p class="article-date">2019年1月7日</p>
@@ -384,89 +453,6 @@ $\huge\color{red}{Warning}$ 请不要尝试在上个世纪的电脑上执行以�
         
       </div>
       <a class="more" href="/blog/data-BalancedTree/">查看全文</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/data-TreeChainPartition/">树链剖分</a>
-      </h2>
-      <p class="article-date">2019年1月3日</p>
-      
-        
-  <a href="/tags#数据结构" >
-    <span class="tag-code">数据结构</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          树链剖分的一些操作：
-
-查询子树范围
-查询两点最短路径
-求LCA ← 树剖LCA
-最大子树
-结合线段树可以做到：
-修改单点值/子树/两点间的值
-查询单点值/子树/两点间的和/最大值/最小值
-······
-
-
-······
-
-模板树剖+线段树（维护区间和）
-123456789101112131 ...
-        
-      </div>
-      <a class="more" href="/blog/data-TreeChainPartition/">查看全文</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/data-SegmentTree/">线段树</a>
-      </h2>
-      <p class="article-date">2018年11月8日</p>
-      
-        
-  <a href="/tags#数据结构" >
-    <span class="tag-code">数据结构</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          12int ls(int x)&#123;return x&lt;&lt;1;&#125;int rs(int x)&#123;return x&lt;&lt;1|1;&#125;
-
-线段树1区间加减，区间查询
-1void push_up(int x)&#123;ans[x]=ans[ls( ...
-        
-      </div>
-      <a class="more" href="/blog/data-SegmentTree/">查看全文</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/data-BinaryIndexTree/">树状数组</a>
-      </h2>
-      <p class="article-date">2018年11月8日</p>
-      
-        
-  <a href="/tags#数据结构" >
-    <span class="tag-code">数据结构</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          1234int lowbit(int x)&#123;    return x&amp;(-x);&#125;
-
-树状数组1单点修改，区间查询。
-12//需要先    add(i,a[i]);
-
-123456void add(int x,long long d)&#123;    for(; ...
-        
-      </div>
-      <a class="more" href="/blog/data-BinaryIndexTree/">查看全文</a>
     </article>
   
 

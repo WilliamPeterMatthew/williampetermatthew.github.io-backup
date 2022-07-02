@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.zhangkai.xin/blog/writeup-pwn-so-brop-ret2libc/</loc>
+    
+    <lastmod>2022-07-02T05:22:30.274Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.zhangkai.xin/blog/writeup-pwn-so-brop-ret2syscall/</loc>
+    
+    <lastmod>2022-07-01T18:32:38.152Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.zhangkai.xin/blog/writeup-pwn-so-brop-ret2text/</loc>
     
-    <lastmod>2022-07-01T07:14:27.677Z</lastmod>
+    <lastmod>2022-07-01T17:31:46.195Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.zhangkai.xin/blog/writeup-pwn-so-brop-ret2shellcode/</loc>
+    
+    <lastmod>2022-07-01T17:24:25.509Z</lastmod>
     
   </url>
   
