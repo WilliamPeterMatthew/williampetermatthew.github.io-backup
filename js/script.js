@@ -1,6 +1,7 @@
 (function ($) {
   var NowYear = new Date().getFullYear()
   console.log(`Proudly powered by Hexo                                     | https://hexo.io\nTheme-Vexo                                                  | https://github.com/yanm1ng/hexo-theme-vexo\nTheme by yanm1ng                                            | https://github.com/yanm1ng\nModified by WilliamPeterMatthew                             | https://github.com/WilliamPeterMatthew\nUsing CC BY-NC-SA 4.0 License                               | \n© 2018 - ${NowYear} Zhang Kaixin All rights reserved              | \nHA Internet Content Provider Registration Num.20022692-1    | http://beian.miit.gov.cn/\nHA Public Internet Security Registration Num.41030502000313 | http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313`)
+  console.log('+-----------------------------------------------------------+\n|                                                           |\n|    National Security Protection of Information System     |\n|             of the People\'s Republic of China             |\n|             Level 1 ( Self Protection Level )             |\n|                                                           |\n+-----------------------------------------------------------+')
   var app = $('.app-body')
   var header = $('.header')
   var banner = document.getElementById('article-banner') || false
