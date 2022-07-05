@@ -4,6 +4,6 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /js/
 Disallow: /errorpage/
-Sitemap: https://www.gh.zhangkaixin.cc/sitemap.xml
-Sitemap: https://www.gh.zhangkaixin.cc/baidusitemap.xml
-Sitemap: https://www.gh.zhangkaixin.cc/atom.xml
+Sitemap: https://www.cf.zhangkaixin.cc/sitemap.xml
+Sitemap: https://www.cf.zhangkaixin.cc/baidusitemap.xml
+Sitemap: https://www.cf.zhangkaixin.cc/atom.xml
