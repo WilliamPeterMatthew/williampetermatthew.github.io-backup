@@ -57,7 +57,9 @@
   <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/comment/Waline.min.js"></script>
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel="stylesheet">
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -222,9 +224,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,k,xsum,xw[<span class="number">35</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,x;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">        xsum^=x;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">31</span>;j++)</span><br><span class="line">            <span class="keyword">if</span>(x&amp;(<span class="number">1</span>&lt;&lt;j))</span><br><span class="line">                xw[j]^=x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(k==<span class="number">1</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,xsum);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">31</span>,x,y;j&gt;=<span class="number">0</span>;j--)</span><br><span class="line">            <span class="keyword">if</span>(xsum&amp;(<span class="number">1</span>&lt;&lt;j))</span><br><span class="line">            &#123;</span><br><span class="line">                x=xw[j],y=xsum^xw[j];</span><br><span class="line">                <span class="keyword">if</span>(x&gt;y)</span><br><span class="line">                    swap(x,y);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,x,y);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
     
     
-        <em class="post-meta-item-text">当前页共有<span
-        id="/blog/solution-u30206/" class="waline-visitor-count"></span>次阅读，<span
-        id="/blog/solution-u30206/" class="waline-comment-count"></span>条评论。</em>
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/solution-u30206/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/solution-u30206/"></span>条评论。</em>
     
     
     <!-- Tags START -->
@@ -364,15 +364,27 @@
 
 
 <script>
-    Waline({
+    Waline.init({
         el: '#waline',
         serverURL: "https://api.www.zhangkaixin.cc",
-        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-        avatar: 'identicon',
-        visitor: true,
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
         requiredMeta: ['nick', 'mail'],
         login: 'force',
-        copyright: false
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
     });
 </script>
 

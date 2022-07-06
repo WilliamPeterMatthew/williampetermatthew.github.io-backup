@@ -57,7 +57,9 @@
   <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/js/comment/Waline.min.js"></script>
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel="stylesheet">
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -224,9 +226,7 @@
 <h1 id="NTT"><a href="#NTT" class="headerlink" title="NTT"></a>NTT</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> P=<span class="number">998244353</span>,G=<span class="number">3</span>,Gi=<span class="number">332748118</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,l,r[<span class="number">3000005</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> f[<span class="number">3000005</span>],g[<span class="number">3000005</span>];</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">pow</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">long</span> <span class="keyword">long</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k&amp;<span class="number">1</span>)ans=(ans*a)%P;</span><br><span class="line">        a=(a*a)%P;</span><br><span class="line">        k&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%P;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ntt</span><span class="params">(<span class="keyword">int</span> lim,<span class="keyword">long</span> <span class="keyword">long</span> *a,<span class="keyword">int</span> tp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lim;i++)</span><br><span class="line">        <span class="keyword">if</span>(i&lt;r[i])</span><br><span class="line">            swap(a[i],a[r[i]]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> mid=<span class="number">1</span>;mid&lt;lim;mid&lt;&lt;=<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> Wn=<span class="built_in">pow</span>(tp==<span class="number">1</span>?G:Gi,(P<span class="number">-1</span>)/(mid&lt;&lt;<span class="number">1</span>));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> R=mid&lt;&lt;<span class="number">1</span>,j=<span class="number">0</span>;j&lt;lim;j+=R)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> w=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;mid;k++,w=(w*Wn)%P)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> x=a[j+k],y=w*a[j+mid+k]%P;</span><br><span class="line">                a[j+k]=(x+y)%P;</span><br><span class="line">                a[j+mid+k]=(x-y+P)%P;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;f[i]),f[i]=(f[i]+P)%P;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;g[i]),g[i]=(g[i]+P)%P;</span><br><span class="line">    <span class="keyword">int</span> lim=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(lim&lt;=n+m)lim&lt;&lt;=<span class="number">1</span>,l++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lim;i++)</span><br><span class="line">        r[i]=(r[i&gt;&gt;<span class="number">1</span>]&gt;&gt;<span class="number">1</span>)|((i&amp;<span class="number">1</span>)&lt;&lt;(l<span class="number">-1</span>));</span><br><span class="line">    ntt(lim,f,<span class="number">1</span>);</span><br><span class="line">    ntt(lim,g,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=lim;i++)</span><br><span class="line">        f[i]=(f[i]*g[i])%P;</span><br><span class="line">    ntt(lim,f,<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> inv=<span class="built_in">pow</span>(lim,P<span class="number">-2</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n+m;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld "</span>,(f[i]*inv)%P);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
     
     
-        <em class="post-meta-item-text">当前页共有<span
-        id="/blog/Polynomial/" class="waline-visitor-count"></span>次阅读，<span
-        id="/blog/Polynomial/" class="waline-comment-count"></span>条评论。</em>
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/Polynomial/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/Polynomial/"></span>条评论。</em>
     
     
     <!-- Tags START -->
@@ -366,15 +366,27 @@
 
 
 <script>
-    Waline({
+    Waline.init({
         el: '#waline',
         serverURL: "https://api.www.zhangkaixin.cc",
-        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-        avatar: 'identicon',
-        visitor: true,
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
         requiredMeta: ['nick', 'mail'],
         login: 'force',
-        copyright: false
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
     });
 </script>
 

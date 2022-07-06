@@ -11,7 +11,7 @@
   src: url("../fonts/micross.ttf");
 }
 @font-face {
-  font-family: 'msyh';
+  font-family: 'Microsoft YaHei';
   src: url("../fonts/msyh.ttc"), url("../fonts/msyhbd.ttc"), url("../fonts/msyhl.ttc");
 }
 @font-face {
@@ -526,7 +526,7 @@ h2.article-head {
 .article-summary pre,
 .markdown-content code,
 .article-summary code {
-  font-family: Consolas, Symbol, 'Microsoft Sans Serif', 'msyh';
+  font-family: Consolas, Symbol, 'Microsoft Sans Serif', 'Microsoft YaHei';
   font-size: 15px;
   tab-size: 4;
 }
