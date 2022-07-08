@@ -102,6 +102,17 @@ pre {
   border-radius: 2px;
   white-space: nowrap;
 }
+.pintop-code {
+  font-family: 'Roboto Mono', Monaco, courier, monospace;
+  font-size: 0.1em;
+  display: inline-block;
+  background-color: #f8f8f8;
+  color: #65b5f0;
+  padding: 3px 5px;
+  margin: 0 2px 5px 0;
+  border-radius: 2px;
+  white-space: nowrap;
+}
 .article-card {
   padding-bottom: 20px;
 }
