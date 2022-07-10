@@ -2,44 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.cf.zhangkaixin.cc/blog/writeup-pwn-so-brop-ret2libc/</loc>
+    <loc>https://www.cf.zhangkaixin.cc/blog/reproduction-bluehat2022-pre/</loc>
     
-    <lastmod>2022-07-02T15:28:46.973Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cf.zhangkaixin.cc/blog/writeup-pwn-so-brop-ret2shellcode/</loc>
-    
-    <lastmod>2022-07-02T13:58:26.241Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.cf.zhangkaixin.cc/blog/writeup-pwn-so-brop-ret2syscall/</loc>
-    
-    <lastmod>2022-07-02T13:58:20.329Z</lastmod>
+    <lastmod>2022-07-10T13:47:24.914Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.cf.zhangkaixin.cc/blog/writeup-pwn-so-brop-ret2text/</loc>
     
-    <lastmod>2022-07-02T13:58:08.556Z</lastmod>
+    <lastmod>2022-07-10T12:21:42.473Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.cf.zhangkaixin.cc/blog/writeup-cppu-hm2022sv1/</loc>
+    <loc>https://www.cf.zhangkaixin.cc/blog/writeup-pwn-so-brop-ret2syscall/</loc>
     
-    <lastmod>2022-07-02T09:43:44.756Z</lastmod>
+    <lastmod>2022-07-10T12:21:42.460Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cf.zhangkaixin.cc/blog/writeup-pwn-so-brop-ret2shellcode/</loc>
+    
+    <lastmod>2022-07-10T12:21:42.451Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cf.zhangkaixin.cc/blog/writeup-pwn-so-brop-ret2libc/</loc>
+    
+    <lastmod>2022-07-10T12:21:42.437Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.cf.zhangkaixin.cc/blog/writeup-isa2022shm1/</loc>
+    
+    <lastmod>2022-07-10T12:21:42.426Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.cf.zhangkaixin.cc/blog/reproduction-cppu2021/</loc>
     
-    <lastmod>2022-06-22T03:22:51.795Z</lastmod>
+    <lastmod>2022-07-10T12:21:42.233Z</lastmod>
     
   </url>
   
