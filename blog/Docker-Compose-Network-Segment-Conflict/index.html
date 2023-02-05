@@ -234,7 +234,7 @@
 <p>接着，针对容器，进行查询。例如，我们想查找容器 oj-backend (6ada6469fe6d) 的ip地址，输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 6ada6469fe6d</span><br></pre></td></tr></table></figure>
 
-<p>IPAddress后面跟的就是容器的ip地址，Gateway后面更的就是虚拟网关。</p>
+<p>IPAddress后面跟的就是容器的ip地址，Gateway后面跟的就是虚拟网关。</p>
 <p>我们找到所有我们需要重新分配ip的容器，记住容器名称，例如 oj-backend 、 oj-judge 、 oj-redis 。</p>
 <h1 id="0x04-查找网桥"><a href="#0x04-查找网桥" class="headerlink" title="0x04 查找网桥"></a>0x04 查找网桥</h1><p>首先列出所有docker网桥</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network ls</span><br></pre></td></tr></table></figure>
@@ -242,7 +242,7 @@
 <p>接着，针对网桥id，查看详细信息。例如，针对 docker_default (4969db1ebd36) 查找输入以下指令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network inspect 5bc11281f0ae</span><br></pre></td></tr></table></figure>
 
-<p>Subnet后面跟的就是网桥的网段，Gateway后面更的就是虚拟网关。</p>
+<p>Subnet后面跟的就是网桥的网段，Gateway后面跟的就是虚拟网关。</p>
 <p>我们找到我们需要重新分配网段的网桥，记住网桥名称，例如 docker_default 。</p>
 <h1 id="0x05-停止容器"><a href="#0x05-停止容器" class="headerlink" title="0x05 停止容器"></a>0x05 停止容器</h1><p>进入文件所在的文件夹，输入以下指令停止服务。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose stop</span><br></pre></td></tr></table></figure>
@@ -455,7 +455,7 @@
     <br>
     主题作者为<a href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
     <br>
-    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2022 张开昕 版权所有
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2023 张开昕 版权所有
     <br>
     <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
     <br>
