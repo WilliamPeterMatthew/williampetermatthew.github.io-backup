@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      《Ｃ程序设计（第五版）谭浩强 著》课本例题 | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    <script src="/js/local-search.js"></script>
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel="stylesheet">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>《Ｃ程序设计（第五版）谭浩强 著》课本例题</h2>
+  <p class="post-date">2023-10-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">487</span>字，大约需要阅读<span class="post-count">2</span>分钟。</i>
+  
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><p>本文所列例题的程序均不含注释文本。</p>
+<h2 id="第1章-程序设计和C语言"><a href="#第1章-程序设计和C语言" class="headerlink" title="第1章 程序设计和C语言"></a>第1章 程序设计和C语言</h2><h3 id="1-4-1-最简单的C语言程序举例"><a href="#1-4-1-最简单的C语言程序举例" class="headerlink" title="1.4.1 最简单的C语言程序举例"></a>1.4.1 最简单的C语言程序举例</h3><p>【例 1.1】要求在屏幕上输出以下一行信息。<br>This is a C program.</p>
+<p><strong>解题思路：</strong> 在主函数中用printf函数原样输出以上文字。</p>
+<p><strong>编写程序：</strong> </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"This is a C program.\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is a C program.</span><br></pre></td></tr></table></figure>
+
+<p>【例 1.2】求两个整数之和</p>
+<p><strong>解题思路：</strong> 设置3个变量，a和b用来存放两个整数，sum用来存放和数。用赋值运算符“=”把相加的结果传给sum。</p>
+<p><strong>编写程序：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,sum;</span><br><span class="line">    a=<span class="number">123</span>;</span><br><span class="line">    b=<span class="number">456</span>;</span><br><span class="line">    sum=a+b;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"sum is %d\n"</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum is 579</span><br></pre></td></tr></table></figure>
+
+<p>【例 1.3】求两个整数中的较大者。</p>
+<p><strong>解题思路：</strong> 用一个函数来实现求两个整数中的较大者。在主函数中调用此函数并输出结果。</p>
+<p><strong>编写程序：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d,%d"</span>,&amp;a,&amp;b);</span><br><span class="line">    c=max(a,b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"max=%d\n"</span>,c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> z;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;y)z=x;</span><br><span class="line">    <span class="keyword">else</span> z=y;</span><br><span class="line">    <span class="keyword">return</span>(z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">===Input===</span><br><span class="line">8,5</span><br><span class="line">===Output===</span><br><span class="line">max=8</span><br></pre></td></tr></table></figure>
+
+<h2 id="第2章-算法——程序的灵魂"><a href="#第2章-算法——程序的灵魂" class="headerlink" title="第2章 算法——程序的灵魂"></a>第2章 算法——程序的灵魂</h2><h2 id="第3章-最简单的C程序设计——顺序程序设计"><a href="#第3章-最简单的C程序设计——顺序程序设计" class="headerlink" title="第3章 最简单的C程序设计——顺序程序设计"></a>第3章 最简单的C程序设计——顺序程序设计</h2><h2 id="第4章-选择结构程序设计"><a href="#第4章-选择结构程序设计" class="headerlink" title="第4章 选择结构程序设计"></a>第4章 选择结构程序设计</h2><h2 id="第5章-循环结构程序设计"><a href="#第5章-循环结构程序设计" class="headerlink" title="第5章 循环结构程序设计"></a>第5章 循环结构程序设计</h2><h2 id="第6章-利用数组处理批量数据"><a href="#第6章-利用数组处理批量数据" class="headerlink" title="第6章 利用数组处理批量数据"></a>第6章 利用数组处理批量数据</h2><h2 id="第7章-用函数实现模块化程序设计"><a href="#第7章-用函数实现模块化程序设计" class="headerlink" title="第7章 用函数实现模块化程序设计"></a>第7章 用函数实现模块化程序设计</h2><h2 id="第8章-善于利用指针"><a href="#第8章-善于利用指针" class="headerlink" title="第8章 善于利用指针"></a>第8章 善于利用指针</h2><h2 id="第9章-用户自己建立数据类型"><a href="#第9章-用户自己建立数据类型" class="headerlink" title="第9章 用户自己建立数据类型"></a>第9章 用户自己建立数据类型</h2><h2 id="第10章-对文件的输入输出"><a href="#第10章-对文件的输入输出" class="headerlink" title="第10章 对文件的输入输出"></a>第10章 对文件的输入输出</h2><p>To be continued…</p>
+<p><strong>解题思路：</strong> </p>
+<p><strong>编写程序：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong> </p>
+<p><strong>编写程序：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong> </p>
+<p><strong>编写程序：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/Book-Examples-of-PLC-5th-THQ/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/Book-Examples-of-PLC-5th-THQ/"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        
+        
+          <span>标签:</span>
+          
+  <a href="/tags/#例题与习题" >
+    <span class="tag-code">例题与习题</span>
+  </a>
+
+        
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/Book-Exercises-of-PLC-5th-THQ/">
+        <span class="nav-arrow">← </span>
+        
+          《Ｃ程序设计（第五版）谭浩强 著》课后习题
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/Book-Exercises-of-CN-8th-XXR/">
+        
+          《计算机网络（第8版）谢希仁 编著》课后习题
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 分享 START -->
+    
+    <!-- 分享 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第1章-程序设计和C语言"><span class="toc-nav-text">第1章 程序设计和C语言</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-4-1-最简单的C语言程序举例"><span class="toc-nav-text">1.4.1 最简单的C语言程序举例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第2章-算法——程序的灵魂"><span class="toc-nav-text">第2章 算法——程序的灵魂</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第3章-最简单的C程序设计——顺序程序设计"><span class="toc-nav-text">第3章 最简单的C程序设计——顺序程序设计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第4章-选择结构程序设计"><span class="toc-nav-text">第4章 选择结构程序设计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第5章-循环结构程序设计"><span class="toc-nav-text">第5章 循环结构程序设计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第6章-利用数组处理批量数据"><span class="toc-nav-text">第6章 利用数组处理批量数据</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第7章-用函数实现模块化程序设计"><span class="toc-nav-text">第7章 用函数实现模块化程序设计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第8章-善于利用指针"><span class="toc-nav-text">第8章 善于利用指针</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第9章-用户自己建立数据类型"><span class="toc-nav-text">第9章 用户自己建立数据类型</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第10章-对文件的输入输出"><span class="toc-nav-text">第10章 对文件的输入输出</span></a></li></ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/blog/Book-Examples-of-PLC-5th-THQ/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+
+
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkaixin.cc",
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2023 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
