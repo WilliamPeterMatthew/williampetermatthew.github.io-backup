@@ -30,7 +30,13 @@
   <entry>
     <title>《计算机网络（第8版）谢希仁 编著》课本例题</title>
     <url>/blog/Book-Examples-of-CN-8th-XXR/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>To be continued…</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>To be completed…</p>
+<hr>
+<blockquote>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>例题与习题</tag>
@@ -39,7 +45,13 @@
   <entry>
     <title>《计算机网络（第8版）谢希仁 编著》课后习题</title>
     <url>/blog/Book-Exercises-of-CN-8th-XXR/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>To be continued…</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>To be completed…</p>
+<hr>
+<blockquote>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>例题与习题</tag>
@@ -48,9 +60,8 @@
   <entry>
     <title>《Ｃ程序设计（第五版）谭浩强 著》课本例题</title>
     <url>/blog/Book-Examples-of-PLC-5th-THQ/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文所列例题的程序均不含注释文本。</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文所列例题的程序均不含注释文本，但均为课本上的源代码。</p>
 <h2 id="第1章-程序设计和C语言"><a href="#第1章-程序设计和C语言" class="headerlink" title="第1章 程序设计和C语言"></a>第1章 程序设计和C语言</h2><h3 id="1-4-1-最简单的C语言程序举例"><a href="#1-4-1-最简单的C语言程序举例" class="headerlink" title="1.4.1 最简单的C语言程序举例"></a>1.4.1 最简单的C语言程序举例</h3><p>【例 1.1】要求在屏幕上输出以下一行信息。<br>This is a C program.</p>
-<p><strong>解题思路：</strong> 在主函数中用printf函数原样输出以上文字。</p>
 <p><strong>编写程序：</strong> </p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"This is a C program.\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -58,7 +69,6 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">This is a C program.</span><br></pre></td></tr></table></figure>
 
 <p>【例 1.2】求两个整数之和</p>
-<p><strong>解题思路：</strong> 设置3个变量，a和b用来存放两个整数，sum用来存放和数。用赋值运算符“=”把相加的结果传给sum。</p>
 <p><strong>编写程序：</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,sum;</span><br><span class="line">    a=<span class="number">123</span>;</span><br><span class="line">    b=<span class="number">456</span>;</span><br><span class="line">    sum=a+b;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"sum is %d\n"</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -66,35 +76,44 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sum is 579</span><br></pre></td></tr></table></figure>
 
 <p>【例 1.3】求两个整数中的较大者。</p>
-<p><strong>解题思路：</strong> 用一个函数来实现求两个整数中的较大者。在主函数中调用此函数并输出结果。</p>
 <p><strong>编写程序：</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d,%d"</span>,&amp;a,&amp;b);</span><br><span class="line">    c=max(a,b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"max=%d\n"</span>,c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> z;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;y)z=x;</span><br><span class="line">    <span class="keyword">else</span> z=y;</span><br><span class="line">    <span class="keyword">return</span>(z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>运行结果：</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">===Input===</span><br><span class="line">8,5</span><br><span class="line">===Output===</span><br><span class="line">max=8</span><br></pre></td></tr></table></figure>
 
-<h2 id="第2章-算法——程序的灵魂"><a href="#第2章-算法——程序的灵魂" class="headerlink" title="第2章 算法——程序的灵魂"></a>第2章 算法——程序的灵魂</h2><h2 id="第3章-最简单的C程序设计——顺序程序设计"><a href="#第3章-最简单的C程序设计——顺序程序设计" class="headerlink" title="第3章 最简单的C程序设计——顺序程序设计"></a>第3章 最简单的C程序设计——顺序程序设计</h2><h2 id="第4章-选择结构程序设计"><a href="#第4章-选择结构程序设计" class="headerlink" title="第4章 选择结构程序设计"></a>第4章 选择结构程序设计</h2><h2 id="第5章-循环结构程序设计"><a href="#第5章-循环结构程序设计" class="headerlink" title="第5章 循环结构程序设计"></a>第5章 循环结构程序设计</h2><h2 id="第6章-利用数组处理批量数据"><a href="#第6章-利用数组处理批量数据" class="headerlink" title="第6章 利用数组处理批量数据"></a>第6章 利用数组处理批量数据</h2><h2 id="第7章-用函数实现模块化程序设计"><a href="#第7章-用函数实现模块化程序设计" class="headerlink" title="第7章 用函数实现模块化程序设计"></a>第7章 用函数实现模块化程序设计</h2><h2 id="第8章-善于利用指针"><a href="#第8章-善于利用指针" class="headerlink" title="第8章 善于利用指针"></a>第8章 善于利用指针</h2><h2 id="第9章-用户自己建立数据类型"><a href="#第9章-用户自己建立数据类型" class="headerlink" title="第9章 用户自己建立数据类型"></a>第9章 用户自己建立数据类型</h2><h2 id="第10章-对文件的输入输出"><a href="#第10章-对文件的输入输出" class="headerlink" title="第10章 对文件的输入输出"></a>第10章 对文件的输入输出</h2><p>To be continued…</p>
-<p><strong>解题思路：</strong> </p>
+<h2 id="第2章-算法——程序的灵魂"><a href="#第2章-算法——程序的灵魂" class="headerlink" title="第2章 算法——程序的灵魂"></a>第2章 算法——程序的灵魂</h2><h2 id="第3章-最简单的C程序设计——顺序程序设计"><a href="#第3章-最简单的C程序设计——顺序程序设计" class="headerlink" title="第3章 最简单的C程序设计——顺序程序设计"></a>第3章 最简单的C程序设计——顺序程序设计</h2><h2 id="第4章-选择结构程序设计"><a href="#第4章-选择结构程序设计" class="headerlink" title="第4章 选择结构程序设计"></a>第4章 选择结构程序设计</h2><h2 id="第5章-循环结构程序设计"><a href="#第5章-循环结构程序设计" class="headerlink" title="第5章 循环结构程序设计"></a>第5章 循环结构程序设计</h2><p>【例 5.7】用公式 $\frac{\pi}{4} \approx 1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots$ 求 $\pi$ 的近似值，直到发现某一项的绝对值小于 $10^{-6}$ 为止（该项不累加）。</p>
+<p><strong>编写程序：</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sign=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">double</span> pi=<span class="number">0.0</span>,n=<span class="number">1.0</span>,term=<span class="number">1.0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">fabs</span>(term)&gt;=<span class="number">1e-6</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        pi=pi+term;</span><br><span class="line">        n=n+<span class="number">2</span>;</span><br><span class="line">        sign=-sign;</span><br><span class="line">        term=sign/n;</span><br><span class="line">    &#125;</span><br><span class="line">    pi=pi*<span class="number">4</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pi=%10.8f\n"</span>,pi);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi=3.14159065</span><br></pre></td></tr></table></figure>
+
+<h2 id="第6章-利用数组处理批量数据"><a href="#第6章-利用数组处理批量数据" class="headerlink" title="第6章 利用数组处理批量数据"></a>第6章 利用数组处理批量数据</h2><h2 id="第7章-用函数实现模块化程序设计"><a href="#第7章-用函数实现模块化程序设计" class="headerlink" title="第7章 用函数实现模块化程序设计"></a>第7章 用函数实现模块化程序设计</h2><h2 id="第8章-善于利用指针"><a href="#第8章-善于利用指针" class="headerlink" title="第8章 善于利用指针"></a>第8章 善于利用指针</h2><h2 id="第9章-用户自己建立数据类型"><a href="#第9章-用户自己建立数据类型" class="headerlink" title="第9章 用户自己建立数据类型"></a>第9章 用户自己建立数据类型</h2><h2 id="第10章-对文件的输入输出"><a href="#第10章-对文件的输入输出" class="headerlink" title="第10章 对文件的输入输出"></a>第10章 对文件的输入输出</h2><p>To be completed…</p>
 <p><strong>编写程序：</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>运行结果：</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><strong>解题思路：</strong> </p>
 <p><strong>编写程序：</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>运行结果：</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><strong>解题思路：</strong> </p>
 <p><strong>编写程序：</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>运行结果：</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<hr>
+<blockquote>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>例题与习题</tag>
@@ -303,19 +322,19 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Input a positive number less than 1000:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">while</span>(n&lt;=<span class="number">0</span>||n&gt;=<span class="number">1000</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Input Error! Input a positive number less than 1000:"</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    &#125;</span><br><span class="line">    m=(<span class="keyword">int</span>)<span class="built_in">sqrt</span>(n);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The square root is %d\n"</span>,m);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="6">
-<li>有一个函数：<br><img src="/pic/Book-Exercises-of-PLC-5th-THQ-4-6-1.png" alt="Book-Exercises-of-PLC-5th-THQ-4-6-1"><br>写程序，输入 $x$ 的值，输出 $y$ 相应的值。</li>
+<li>有一个函数：<br><img src="/pic/Book-Exercises-of-PLC-5th-THQ-4-6-1.svg" alt="Book-Exercises-of-PLC-5th-THQ-4-6-1"><br>写程序，输入 $x$ 的值，输出 $y$ 相应的值。</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x,y;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;x);</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">1</span>)y=x;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(x&lt;<span class="number">10</span>)y=<span class="number">2</span>*x<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> y=<span class="number">3</span>*x<span class="number">-11</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%f\n"</span>,y);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="7">
-<li>有一函数：<br><img src="/pic/Book-Exercises-of-PLC-5th-THQ-4-7-1.png" alt="Book-Exercises-of-PLC-5th-THQ-4-7-1"><br>有人编写了以下两个程序，请分析它们是否能实现题目要求。不要急于上机运行程序，先分析两个程序的逻辑，画出它们的流程图，分析它们的运行情况。然后上机运行程序，观察和分析结果。<br>（1）<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"enter x:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">    y=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x!=<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span>(x&gt;<span class="number">0</span>)</span><br><span class="line">            y=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        y=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x=%d,y=%d\n"</span>,x,y);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>有一函数：<br><img src="/pic/Book-Exercises-of-PLC-5th-THQ-4-7-1.svg" alt="Book-Exercises-of-PLC-5th-THQ-4-7-1"><br>有人编写了以下两个程序，请分析它们是否能实现题目要求。不要急于上机运行程序，先分析两个程序的逻辑，画出它们的流程图，分析它们的运行情况。然后上机运行程序，观察和分析结果。<br>（1）<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"enter x:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">    y=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x!=<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span>(x&gt;<span class="number">0</span>)</span><br><span class="line">            y=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        y=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x=%d,y=%d\n"</span>,x,y);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
 <p>（2）</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"enter x:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">    y=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span>(x&gt;<span class="number">0</span>) y=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> y=<span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x=%d,y=%d\n"</span>,x,y);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>均不行。else总是向上找离它最近的if配对，因此（1）和（2）的函数实际如下：<br><img src="/pic/Book-Exercises-of-PLC-5th-THQ-4-7-2.png" alt="Book-Exercises-of-PLC-5th-THQ-4-7-2"><br>事实上，如果加上一个代码段括号{}，就可以正常，修改如下：<br>（1）</p>
+<p>均不行。else总是向上找离它最近的if配对，因此（1）和（2）的函数实际如下：<br><img src="/pic/Book-Exercises-of-PLC-5th-THQ-4-7-2.svg" alt="Book-Exercises-of-PLC-5th-THQ-4-7-2"><br>事实上，如果加上一个代码段括号{}，就可以正常，修改如下：<br>（1）</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"enter x:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">    y=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x!=<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x&gt;<span class="number">0</span>)</span><br><span class="line">            y=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        y=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x=%d,y=%d\n"</span>,x,y);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>（2）</p>
@@ -350,7 +369,478 @@
 </ol>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h;</span><br><span class="line">    <span class="keyword">double</span> d1,d2,d3,d4,x,y;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf %lf"</span>,&amp;x,&amp;y);</span><br><span class="line">    d1=<span class="built_in">sqrt</span>(<span class="built_in">pow</span>(x<span class="number">-2</span>,<span class="number">2</span>)+<span class="built_in">pow</span>(y<span class="number">-2</span>,<span class="number">2</span>));</span><br><span class="line">    d2=<span class="built_in">sqrt</span>(<span class="built_in">pow</span>(x+<span class="number">2</span>,<span class="number">2</span>)+<span class="built_in">pow</span>(y<span class="number">-2</span>,<span class="number">2</span>));</span><br><span class="line">    d3=<span class="built_in">sqrt</span>(<span class="built_in">pow</span>(x+<span class="number">2</span>,<span class="number">2</span>)+<span class="built_in">pow</span>(y+<span class="number">2</span>,<span class="number">2</span>));</span><br><span class="line">    d4=<span class="built_in">sqrt</span>(<span class="built_in">pow</span>(x<span class="number">-2</span>,<span class="number">2</span>)+<span class="built_in">pow</span>(y+<span class="number">2</span>,<span class="number">2</span>));</span><br><span class="line">    <span class="keyword">if</span>(d1&lt;=<span class="number">1</span>||d2&lt;=<span class="number">1</span>||d3&lt;=<span class="number">1</span>||d4&lt;=<span class="number">1</span>)</span><br><span class="line">        h=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        h=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,h);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="第5章-循环结构程序设计"><a href="#第5章-循环结构程序设计" class="headerlink" title="第5章 循环结构程序设计"></a>第5章 循环结构程序设计</h2><h2 id="第6章-利用数组处理批量数据"><a href="#第6章-利用数组处理批量数据" class="headerlink" title="第6章 利用数组处理批量数据"></a>第6章 利用数组处理批量数据</h2><h2 id="第7章-用函数实现模块化程序设计"><a href="#第7章-用函数实现模块化程序设计" class="headerlink" title="第7章 用函数实现模块化程序设计"></a>第7章 用函数实现模块化程序设计</h2><h2 id="第8章-善于利用指针"><a href="#第8章-善于利用指针" class="headerlink" title="第8章 善于利用指针"></a>第8章 善于利用指针</h2><h2 id="第9章-用户自己建立数据类型"><a href="#第9章-用户自己建立数据类型" class="headerlink" title="第9章 用户自己建立数据类型"></a>第9章 用户自己建立数据类型</h2><h2 id="第10章-对文件的输入输出"><a href="#第10章-对文件的输入输出" class="headerlink" title="第10章 对文件的输入输出"></a>第10章 对文件的输入输出</h2><p>To be continued…</p>
+<h2 id="第5章-循环结构程序设计"><a href="#第5章-循环结构程序设计" class="headerlink" title="第5章 循环结构程序设计"></a>第5章 循环结构程序设计</h2><ol>
+<li><p>请画出例5.6中给出的3个程序段的流程图。</p>
+</li>
+<li><p>请补充<a href="/blog/Book-Examples-of-PLC-5th-THQ/#第5章-循环结构程序设计">例5.7</a>程序，分别统计当“fabs(t)&gt;=1e-6”和“fabs(t)&gt;=1e-8”时执行循环体的次数。</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sign=<span class="number">1</span>,times=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">double</span> pi=<span class="number">0.0</span>,n=<span class="number">1.0</span>,term=<span class="number">1.0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">fabs</span>(term)&gt;=<span class="number">1e-6</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        times++;</span><br><span class="line">        pi=pi+term;</span><br><span class="line">        n=n+<span class="number">2</span>;</span><br><span class="line">        sign=-sign;</span><br><span class="line">        term=sign/n;</span><br><span class="line">    &#125;</span><br><span class="line">    pi=pi*<span class="number">4</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pi=%10.8f\n"</span>,pi);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"times:%d\n"</span>,times);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>“fabs(t)&gt;=1e-6”时执行循环体500000次。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sign=<span class="number">1</span>,times=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">double</span> pi=<span class="number">0.0</span>,n=<span class="number">1.0</span>,term=<span class="number">1.0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">fabs</span>(term)&gt;=<span class="number">1e-8</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        times++;</span><br><span class="line">        pi=pi+term;</span><br><span class="line">        n=n+<span class="number">2</span>;</span><br><span class="line">        sign=-sign;</span><br><span class="line">        term=sign/n;</span><br><span class="line">    &#125;</span><br><span class="line">    pi=pi*<span class="number">4</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pi=%10.8f\n"</span>,pi);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"times:%d\n"</span>,times);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>“fabs(t)&gt;=1e-8”时执行循环体50000000次。</p>
+<ol start="3">
+<li>输入两个正整数m和n，求其最大公约数和最小公倍数。</li>
+</ol>
+<p>辗转相除法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m,n,t,gcd,lcm;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;m,&amp;n);</span><br><span class="line">    lcm=m*n;</span><br><span class="line">    <span class="keyword">while</span>(n!=<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        m%=n;</span><br><span class="line">        t=m;m=n;n=t;</span><br><span class="line">    &#125;</span><br><span class="line">    gcd=m;</span><br><span class="line">    lcm/=m;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"gcd=%d,lcm=%d\n"</span>,gcd,lcm);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更相减损法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m,n,gcd,lcm;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;m,&amp;n);</span><br><span class="line">    lcm=m*n;</span><br><span class="line">    <span class="keyword">while</span>(m!=n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(m&lt;n)n-=m;</span><br><span class="line">        <span class="keyword">if</span>(m&gt;n)m-=n;</span><br><span class="line">    &#125;</span><br><span class="line">    gcd=m;</span><br><span class="line">    lcm/=m;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"gcd=%d,lcm=%d\n"</span>,gcd,lcm);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>输入一行字符，分别统计出其中英文字母、空格、数字和其他字符的个数。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,zm=<span class="number">0</span>,kg=<span class="number">0</span>,sz=<span class="number">0</span>,qt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">100</span>];</span><br><span class="line">    gets(s);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;s[i]!=<span class="string">'\0'</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]&gt;=<span class="string">'a'</span>&amp;&amp;s[i]&lt;=<span class="string">'z'</span>||s[i]&gt;=<span class="string">'A'</span>&amp;&amp;s[i]&lt;=<span class="string">'Z'</span>)</span><br><span class="line">            zm++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">' '</span>)</span><br><span class="line">            kg++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s[i]&gt;=<span class="string">'0'</span>&amp;&amp;s[i]&lt;=<span class="string">'9'</span>)</span><br><span class="line">            sz++;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            qt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"zm=%d,kg=%d,sz=%d,qt=%d\n"</span>,zm,kg,sz,qt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>求 $S_n=a+aa+aaa+\cdots+\overset{n个a}{aa \cdots a}$ 之值，其中 $a$ 是一个数字， $n$ 表示 $a$ 的位数， $n$ 由键盘输入。例如：<br>2+22+222+2222+22222 （此时 $n=$ 5）</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,n,Si=<span class="number">0</span>,Sn=<span class="number">0</span>,i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Si=Si*<span class="number">10</span>+a;</span><br><span class="line">        Sn+=Si;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,Sn);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>求 $\sum_{n=1}^{20}n!$ （即求 $1!+2!+3!+4!+\cdots+20!$ ）</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> i,Sn=<span class="number">0</span>,Si=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">20</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Si*=i;</span><br><span class="line">        Sn+=Si;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,Sn);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>求  $\sum_{k=1}^{100}k+\sum_{k=1}^{50}k^2+\sum_{k=1}^{10}\frac{1}{k}$ 。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> i,Sn=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++)</span><br><span class="line">        Sn+=i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">50</span>;i++)</span><br><span class="line">        Sn+=i*i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        Sn+=<span class="number">1.0</span>/i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%f\n"</span>,Sn);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>输出所有的“水仙花数”，所谓“水仙花数”是指一个3位数，其各位数字立方和等于该数本身。例如， $153$ 是水仙花数，因为 $153=1^3+5^3+3^3$ 。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,a,b,c;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">100</span>;i&lt;<span class="number">1000</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a=i/<span class="number">100</span>;</span><br><span class="line">        b=i/<span class="number">10</span>%<span class="number">10</span>;</span><br><span class="line">        c=i%<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span>(i==a*a*a+b*b*b+c*c*c)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>一个数如果恰好等于它的因子之和，这个数就称为“完数”。例如，6的因子为1,2,3，而6=1+2+3，因此6是“完数”。编程序找出1000之内的所有完数，并按下面格式输出其因子：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">6 its factors are 1,2,3</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,s;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">1000</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        s=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;i;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i%j==<span class="number">0</span>)</span><br><span class="line">                s+=j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s==i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d its factors are 1"</span>,i);</span><br><span class="line">            <span class="keyword">for</span>(j=<span class="number">2</span>;j&lt;i;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j==<span class="number">0</span>)</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">",%d"</span>,j);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>有一个分数序列<br>$\frac{2}{1},\frac{3}{2},\frac{5}{3},\frac{8}{5},\frac{13}{8},\frac{21}{8},\cdots$<br>求出这个数列的前20项之和。</li>
+</ol>
+<p>分母是斐波那契数列，分子是斐波那契数列中分母的下一项数字。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> fm=<span class="number">1</span>,fz=<span class="number">2</span>,t,Sn=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Sn+=fz/fm;</span><br><span class="line">        t=fm;</span><br><span class="line">        fm=fz;</span><br><span class="line">        fz+=t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%f\n"</span>,Sn);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li>一个球从100m高度自由落下，每次落地后反弹回原高度的一半，再落下，再反弹。求它在第10次落地时共经过多少米，第10次反弹多高。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> h=<span class="number">100</span>,s=<span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        h/=<span class="number">2</span>;</span><br><span class="line">        s+=<span class="number">2</span>*h;</span><br><span class="line">    &#125;</span><br><span class="line">    h/=<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"s=%f,h=%f\n"</span>,s,h);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="12">
+<li>猴子吃桃问题。猴子第1填摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个。第2天早上又将剩下的桃子吃掉一半，又多吃了一个。以后每天早上都吃了前一天剩下的一半零一个。到第10天早上想再吃时，就只剩一个桃子了。求第1天共摘多少个桃子。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,s=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">9</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        s=(s+<span class="number">1</span>)*<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,s);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li>用迭代法求 $x=\sqrt{a}$ 。求平方根的迭代公式为<br>$x_{n+1}=\frac{1}{2}(x_n+\frac{a}{x_n})$<br>要求前后两次求出的 $x$ 的差的绝对值小于 $10^{-5}$ 。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a,x,x1;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;a);</span><br><span class="line">    x=x1=a;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        x=x1;</span><br><span class="line">        x1=(x+a/x)/<span class="number">2</span>;</span><br><span class="line">    &#125;<span class="keyword">while</span>(<span class="built_in">fabs</span>(x-x1)&gt;=<span class="number">1e-5</span>);</span><br><span class="line">    x=x1;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%f\n"</span>,x);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="14">
+<li>用牛顿迭代法求下面方程在1.5附近的根：<br>$2x^3-4x^2+3x-6=0$</li>
+</ol>
+<p>牛顿迭代法（牛顿切线法）假设一个接近根的值 $x_0$ 求出 $f(x_0)$ ，过该点作切线，交 $x$ 轴于 $(x_1,0)$ ，用 $x_1$ 代替 $x_0$ 重复操作，最后得到的值会慢慢接近真正的根 $x^*$ 。<br>由 $f’(x_0)=\frac{f(x_0)}{x_0-x_1}$ ，得 $x_1=x_0-\frac{f(x_0)}{f’(x_0)}$ 。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x0=<span class="number">1.5</span>,x1=<span class="number">1.5</span>,f,f_;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        x0=x1;</span><br><span class="line">        f=((<span class="number">2</span>*x0<span class="number">-4</span>)*x0+<span class="number">3</span>)*x0<span class="number">-6</span>;</span><br><span class="line">        f_=(<span class="number">6</span>*x0<span class="number">-8</span>)*x0+<span class="number">3</span>;</span><br><span class="line">        x1=x0-f/f_;</span><br><span class="line">    &#125;<span class="keyword">while</span>(<span class="built_in">fabs</span>(x1-x0)&gt;=<span class="number">1e-5</span>);</span><br><span class="line">    x0=x1;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%f\n"</span>,x0);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li>用二分法求下面方程在 $(-10,10)$ 的根：<br>$2x^3-4x^2+3x-6=0$</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> l=<span class="number">-10</span>,r=<span class="number">10</span>,mid,fl=<span class="number">-2436</span>,fr=<span class="number">1624</span>,fmid;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">        fmid=((<span class="number">2</span>*mid<span class="number">-4</span>)*mid+<span class="number">3</span>)*mid<span class="number">-6</span>;</span><br><span class="line">        <span class="keyword">if</span>(fmid*fl&lt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            r=mid;</span><br><span class="line">            fr=fmid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            l=mid;</span><br><span class="line">            fl=fmid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">while</span>(<span class="built_in">fabs</span>(l-r)&gt;=<span class="number">1e-5</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%f\n"</span>,mid);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="16">
+<li>输出以下图案：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   *</span><br><span class="line">  ***</span><br><span class="line"> *****</span><br><span class="line">*******</span><br><span class="line"> *****</span><br><span class="line">  ***</span><br><span class="line">   *</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">3</span>-i;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">2</span>*i+<span class="number">1</span>;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"*"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">3</span>-i;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">2</span>*i+<span class="number">1</span>;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"*"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li>两个乒乓球队进行比赛，各出3人。甲队为A,B,C 3人，乙队为X,Y,Z 3人。已抽签决定比赛名单。有人向队员打听比赛的名单，A所他不和X比，C所他不和X,Z比，请编程序找出3对赛手的名单。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> A,B,C,X=<span class="string">'X'</span>,Y=<span class="string">'Y'</span>,Z=<span class="string">'Z'</span>;</span><br><span class="line">    <span class="keyword">for</span>(A=X;A&lt;=Z;A++)</span><br><span class="line">        <span class="keyword">for</span>(B=X;B&lt;=Z;B++)</span><br><span class="line">            <span class="keyword">for</span>(C=X;C&lt;=Z;C++)</span><br><span class="line">                <span class="keyword">if</span>(A!=B&amp;&amp;B!=C&amp;&amp;A!=C)</span><br><span class="line">                    <span class="keyword">if</span>(A!=X&amp;&amp;C!=X&amp;&amp;C!=Z)</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">"A-%c B-%c C-%c\n"</span>,A,B,C);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注：本章习题13~15所用的方法，可参考《C程序设计（第五版）学习辅导》第5章习题解答中的介绍。</p>
+<h2 id="第6章-利用数组处理批量数据"><a href="#第6章-利用数组处理批量数据" class="headerlink" title="第6章 利用数组处理批量数据"></a>第6章 利用数组处理批量数据</h2><ol>
+<li>用筛选法求100之内的素数。</li>
+</ol>
+<p>①先把1挖掉；<br>②把2标记为素数，将2的其他倍数挖掉；<br>③把3标记为素数，将3的其他倍数挖掉；<br>④4被挖掉，跳过；<br>⑤……</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> notprime[<span class="number">105</span>]=&#123;<span class="number">0</span>&#125;,i,j;</span><br><span class="line">    notprime[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=<span class="number">100</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!notprime[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">            <span class="keyword">for</span>(j=<span class="number">2</span>;i*j&lt;=<span class="number">100</span>;j++)</span><br><span class="line">                notprime[i*j]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>用选择法对10个整数排序。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>],i,j,t,min;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">9</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        min=i;</span><br><span class="line">        <span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;<span class="number">10</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[j]&lt;a[min])</span><br><span class="line">                min=j;</span><br><span class="line">        &#125;</span><br><span class="line">        t=a[i];</span><br><span class="line">        a[i]=a[min];</span><br><span class="line">        a[min]=t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>求一个 $3 \times 3$ 的整型矩阵对角线元素之和。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">3</span>],i,j,s=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][j]);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)</span><br><span class="line">        s+=a[i][i];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,s);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>有一个已排好序的数组，要求输入一个数后，按原来排序的规律将它插入数组中。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">11</span>],b,i,pos;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="keyword">if</span>(b&lt;a[i])</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    pos=i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">10</span>;i&gt;pos;i--)</span><br><span class="line">        a[i]=a[i<span class="number">-1</span>];</span><br><span class="line">    a[pos]=b;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>将一个数组中的值按逆序重新存放。例如，原来顺序为8,6,5,4,1。要求改为1,4,5,6,8。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>],i,t;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>/<span class="number">2</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        t=a[i];</span><br><span class="line">        a[i]=a[<span class="number">4</span>-i];</span><br><span class="line">        a[<span class="number">4</span>-i]=t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>输出以下的杨辉三角形（要求输出10行）。  <table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">3</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">4</td>
+<td align="left">6</td>
+<td align="left">4</td>
+<td align="left">1</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">5</td>
+<td align="left">10</td>
+<td align="left">10</td>
+<td align="left">5</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">$\vdots$</td>
+<td align="left">$\vdots$</td>
+<td align="left">$\vdots$</td>
+<td align="left">$\vdots$</td>
+<td align="left">$\vdots$</td>
+<td align="left">$\vdots$</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>][<span class="number">10</span>],i,j;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        a[i][<span class="number">0</span>]=a[i][i]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;i;j++)</span><br><span class="line">            a[i][j]=a[i<span class="number">-1</span>][j<span class="number">-1</span>]+a[i<span class="number">-1</span>][j];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;=i;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>输出“魔方阵”。所谓魔方阵是指这样的方阵，它的每一行、每一列和对角线之和均相等。例如，三阶魔方阵为<br>8 1 6<br>3 5 7<br>4 9 2<br>要求输出 1 ~ $n^2$ 的自然数构成的魔方阵。</li>
+</ol>
+<p>奇数阶魔方阵的生成规律如下：<br>① $1$ 位于第 $1$ 行第 $\frac{n+1}{2}$ 列；<br>② $2$ 到 $n^2$ 的各数，每一个数存放的行比前一个数少 $1$ ，若前一个数已放在第 $1$ 行，则这一个放在第 $n$ 行；<br>③ $2$ 到 $n^2$ 的各数，每一个数存放的列比前一个数多 $1$ ，若前一个数已放在第 $n$ 列，则这一个放在第 $1$ 列；<br>④ 若当前数要放的位置已经有数，则存放到前一个数同一列的下一行的位置，若前一个数已放在第 $n$ 行，则这一个放在第 $1$ 行。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">11</span>][<span class="number">11</span>],i,j,k,n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Only Odd Number!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            a[i][j]=<span class="number">0</span>;</span><br><span class="line">    i=<span class="number">1</span>;</span><br><span class="line">    j=(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">    a[i][j]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(k=<span class="number">2</span>;k&lt;=n*n;k++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">1</span>)i=n;</span><br><span class="line">        <span class="keyword">else</span> i--;</span><br><span class="line">        <span class="keyword">if</span>(j==n)j=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> j++;</span><br><span class="line">        <span class="keyword">if</span>(a[i][j])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i==n)i=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> i++;</span><br><span class="line">            <span class="keyword">if</span>(j==<span class="number">1</span>)j=n;</span><br><span class="line">            <span class="keyword">else</span> j--;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i==n)i=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> i++;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i][j]=k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%2d "</span>,a[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>找出一个二维数组中的鞍点，即该位置上的元素在该行上最大、在该列上最小。也可能没有鞍点。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>][<span class="number">5</span>],i,j,max,flag,num=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">5</span>;j++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][j]);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        max=<span class="number">0</span>;</span><br><span class="line">        flag=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">5</span>;j++)</span><br><span class="line">            max=a[i][max]&lt;a[i][j]?j:max;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">5</span>;j++)</span><br><span class="line">            <span class="keyword">if</span>(a[i][max]&gt;a[j][max])</span><br><span class="line">            &#123;</span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"a[%d][%d]=%d\n"</span>,i,max,a[i][max]);</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!num)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"It does not exist!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>有15个数按由大到小顺序存放在一个数组中，输入一个数，要求用折半查找法找出该数是数组中第几个元素的值。如果该数不在数组中，则输出“无此数”。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">15</span>],b,i,l=<span class="number">0</span>,r=<span class="number">14</span>,mid;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">15</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;b)</span><br><span class="line">            l=mid+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a[mid]&lt;b)</span><br><span class="line">            r=mid<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            l=r=mid;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(a[l]==b)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"a[%d]=%d\n"</span>,l,b);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"No Found!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>有一篇文章，共有3行文字，每行有80个字符。要求分别统计出其中英文大写字母、小写字母、数字、空格以及其它字符的个数。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,dx=<span class="number">0</span>,xx=<span class="number">0</span>,sz=<span class="number">0</span>,kg=<span class="number">0</span>,qt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">3</span>][<span class="number">81</span>];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        gets(s[i]);</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;s[i][j]!=<span class="string">'\0'</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i][j]&gt;=<span class="string">'A'</span>&amp;&amp;s[i][j]&lt;=<span class="string">'Z'</span>)</span><br><span class="line">                dx++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i][j]&gt;=<span class="string">'a'</span>&amp;&amp;s[i][j]&lt;=<span class="string">'z'</span>)</span><br><span class="line">                xx++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i][j]==<span class="string">' '</span>)</span><br><span class="line">                kg++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i][j]&gt;=<span class="string">'0'</span>&amp;&amp;s[i][j]&lt;=<span class="string">'9'</span>)</span><br><span class="line">                sz++;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                qt++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"dx=%d,xx=%d,sz=%d,kg=%d,qt=%d\n"</span>,dx,xx,sz,kg,qt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li>输出以下图案：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* * * * *</span><br><span class="line">  * * * * *</span><br><span class="line">    * * * * *</span><br><span class="line">      * * * * *</span><br><span class="line">        * * * * *</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"  "</span>);</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">5</span>;j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"* "</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="12">
+<li>有一行电文，已按下面规律译成密码：<br>A→Z a→z<br>B→Y b→y<br>C→X C→x<br>$\; \; \vdots \; \; \; \; \; \vdots$<br>即第1个字母变成第26个字母，第i个字母变成第(26-i+1)个字母，非字母字符不变。要求编程序将密码译回原文，并输出密码和原文。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">100</span>];</span><br><span class="line">    gets(s);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,s);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;s[i]!=<span class="string">'\0'</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]&gt;=<span class="string">'A'</span>&amp;&amp;s[i]&lt;=<span class="string">'Z'</span>)</span><br><span class="line">            s[i]=<span class="number">25</span>-(s[i]-<span class="string">'A'</span>)+<span class="string">'A'</span>;</span><br><span class="line">        <span class="keyword">if</span>(s[i]&gt;=<span class="string">'a'</span>&amp;&amp;s[i]&lt;=<span class="string">'z'</span>)</span><br><span class="line">            s[i]=<span class="number">25</span>-(s[i]-<span class="string">'a'</span>)+<span class="string">'a'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,s);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li>编一程序，将两个字符串连接起来，不要用strcat函数。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">char</span> s1[<span class="number">200</span>],s2[<span class="number">100</span>];</span><br><span class="line">    gets(s1);</span><br><span class="line">    gets(s2);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;s1[i]!=<span class="string">'\0'</span>;i++);</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;s2[j]!=<span class="string">'\0'</span>;i++,j++)</span><br><span class="line">        s1[i]=s2[j];</span><br><span class="line">    s1[i]=<span class="string">'\0'</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,s1);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="14">
+<li>编一个程序，将两个字符串s1和s2比较，若s1&gt;s2，输出一个正数；若s1=s2，输出0；若s1&lt;s2，输出一个负数。不要用strcpy函数。两个字符串用gets函数读入。输出的正数或负数的绝对值应是相比较的两个字符串相应字符的ASCII码的差值。例如，”A”与”C”相比，由于”A”&lt;”C”，应输出负数，同时由于’A’与’C’的ASCII码差值为2，因此应输出“-2”。同理：”And”和”Aid”比较，根据第2个字符比较结果，”n”比”i”大5，因此应输出“5”。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">char</span> s1[<span class="number">200</span>],s2[<span class="number">100</span>];</span><br><span class="line">    gets(s1);</span><br><span class="line">    gets(s2);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;s1[i]==s2[i]&amp;&amp;s1[i]!=<span class="string">'\0'</span>;i++);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,s1[i]-s2[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li>编写一个程序，将字符数组s2中的全部字符复制到字符数组s1中。不用strcpy函数。复制时，’\0’也要复制过去。’\0’后面的字符不复制。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">char</span> s1[<span class="number">200</span>],s2[<span class="number">100</span>];</span><br><span class="line">    gets(s1);</span><br><span class="line">    gets(s2);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;s2[i]!=<span class="string">'\0'</span>;i++)</span><br><span class="line">        s1[i]=s2[i];</span><br><span class="line">    s1[i]=<span class="string">'\0'</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,s1);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="第7章-用函数实现模块化程序设计"><a href="#第7章-用函数实现模块化程序设计" class="headerlink" title="第7章 用函数实现模块化程序设计"></a>第7章 用函数实现模块化程序设计</h2><ol>
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="第8章-善于利用指针"><a href="#第8章-善于利用指针" class="headerlink" title="第8章 善于利用指针"></a>第8章 善于利用指针</h2><ol>
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="19">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="21">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="第9章-用户自己建立数据类型"><a href="#第9章-用户自己建立数据类型" class="headerlink" title="第9章 用户自己建立数据类型"></a>第9章 用户自己建立数据类型</h2><ol>
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="第10章-对文件的输入输出"><a href="#第10章-对文件的输入输出" class="headerlink" title="第10章 对文件的输入输出"></a>第10章 对文件的输入输出</h2><ol>
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>To be completed…</p>
+<hr>
+<blockquote>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>例题与习题</tag>
@@ -3417,126 +3907,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu使用心得</title>
-    <url>/blog/About-Ubuntu/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>由于NOI官网给出的NOI Linux 1.4.1是基于Ubuntu 14.04.5的，因此我特意使用Ubuntu 14.04.5</p>
-<p>$\huge\color{red}{Warning}$ 请不要尝试在上个世纪的电脑上执行以下操作，这可能会导致严重的“Kernel panic - not syncing: Attempted to kill init!”错误<br>$\huge\color{blue}{Attention}$ 请在执行下述操作时确认自己为根目录管理员（root）或拥有根目录管理权限</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装比较类似NOI Linux的安装过程，不再过多阐述。</p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>个人喜欢一些小设置。。。</p>
-<h2 id="VMware-Tools"><a href="#VMware-Tools" class="headerlink" title="VMware Tools"></a>VMware Tools</h2><p>这个工具是方便虚拟机与Ubuntu之间交互的一个软件，NOI Linux自带了这个工具，但是我们的纯净版不带，所以我们来安装它。</p>
-<p>首先点击VMware的菜单栏里的 虚拟机 ，点击 安装VMware Tools，然后下方会出来一个提示，让我们用文档管理打开VMwareTools-9.6.1-1378637.tar.gz，并执行vmware-install.pl。具体做法是先将那个包复制到桌面，然后双击打开，将文件夹拖到桌面，然后召唤终端，到文件夹下执行</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">./vmware-<span class="keyword">install</span>.pl</span><br></pre></td></tr></table></figure>
-
-<p>然后出来提示就敲回车（无脑安装），最后出现VMware团队的祝福后重启Ubuntu再查看菜单栏，显示出 重新安装VMware Tools 就证明安装成功了。</p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><ul>
-<li>点开 全部设置 ，找 语言支持 ，更新</li>
-<li>点 软件和更新 ，除了 提前释放出的更新 都勾上</li>
-<li>点 详细信息 更新</li>
-</ul>
-<p>最后，我不更新到Ubuntu 16.04.1<del>（绝对不是因为更新不到）</del>。</p>
-<h2 id="其他系统"><a href="#其他系统" class="headerlink" title="其他系统"></a>其他系统</h2><p>我之前安装的其他系统去哪儿了？<br>明明已经安装但是仍显示只有Ubuntu，这时候不要急，打开终端，输入</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line">sudo <span class="keyword">update</span>-grub2</span><br></pre></td></tr></table></figure>
-
-<p>当屏幕出现 done 即表示完成，重启后就能看到其他系统了。</p>
-<h2 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h2><p>Ubuntu的密码要求要有一定的强度，所以我们打开终端，输入</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo -s</span></span><br></pre></td></tr></table></figure>
-
-<p>得到了root权限。<br>然后输入原密码。<br>现在我们输入</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">passwd</span> XXX（你的用户名）</span><br></pre></td></tr></table></figure>
-
-<p>输入新密码就好了，就比如我的密码就是六位纯数字，</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">*****</span>*（我又不傻）</span><br></pre></td></tr></table></figure>
-
-<p>若修改成功，则会返回</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">password updated successfully</span></span><br></pre></td></tr></table></figure>
-
-<p>如果忘记密码怎么办？<br>额，开机按Shift键，出现如下界面。（手速要快，Shift键要按时间久一点）<br>在开机菜单里选择Ubuntu高级选项（第二项）<br><img src="/pic/20161213175823266.jpg" alt=""><br>按回车键进入如下界面，然后选中有recovery mode的选项（第三项）<br><img src="/pic/20161213175947735.jpg" alt=""><br>按e进入如下界面，并找到图中红色框的</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">recovery nomodeset</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/pic/20161213180034937.jpg" alt=""><br>删除，并在这一行的后面输入</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">quiet splash rw <span class="attribute">init</span>=/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>后，按F10<br><img src="/pic/20161213180105876.jpg" alt=""><br>如果忘记用户名，可以键入</p>
-<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">mount -o rw,remount /</span><br><span class="line"><span class="keyword">ls</span> <span class="string">/home</span></span><br></pre></td></tr></table></figure>
-
-<p>查询用户名。</p>
-<p>然后，在命令行输入</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">passwd</span> XXX（XXX是你的用户名）</span><br></pre></td></tr></table></figure>
-
-<p>此时注意小键盘的指示灯是否亮起。。。<br>然后输入两遍123456（即新密码）来修改密码，若修改成功，则会返回</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">password updated successfully</span></span><br></pre></td></tr></table></figure>
-
-<p>然后关机后正常启动，输入123456（即新密码）就能访问了</p>
-<p><strong>切记不可使用此手段进行违法的密码破解行为</strong></p>
-<h2 id="外观"><a href="#外观" class="headerlink" title="外观"></a>外观</h2><p>桌面主题选的是Radiance，壁纸选的是Foggy Forest (2560 x 1709)<br>应用程序-&gt;系统工具-&gt;首选项-&gt;主菜单，把所有勾点上<br>开启工作区，添加“显示桌面”图标到启动器<br>显示窗口菜单在窗口的标题栏</p>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>我主要安装的字体是 YaHei Consolas Hybrid</p>
-<p>如何安装字体？<br>请在执行以下操作时确定自己为根目录管理员（root），也可以通过终端完成操作。</p>
-<ol>
-<li>在/usr/share/fonts/内创建一个文件夹</li>
-<li>在文件夹内放入字体文件（最好是.ttf格式的文件，其他格式的我还没测试）</li>
-<li>在终端执行下面两行命令<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mkfontscale</span></span><br><span class="line"><span class="attribute">mkfontdir</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>如何检验字体是否安装？  </p>
-<p>请在终端执行：  </p>
-<p>查看系统中的字体  </p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">fc-<span class="built_in">list</span></span><br></pre></td></tr></table></figure>
-
-<p>查看系统中的中文字体  </p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">fc-list <span class="symbol">:lang=zh</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Gedit"><a href="#Gedit" class="headerlink" title="Gedit"></a>Gedit</h2><p>作为一名OIer，我按NOI Linux使用心得介绍的方法配置完Gedit后，兴高采烈地敲好了hello world，正要编译，突然提示我g++没有安装。。。</p>
-<p>我们点开Ubuntu软件中心，搜索<del>gcc然后发现已经安装，于是重新搜索</del>g++，安装它。重启打开Gedit后就能用了(＾－＾)V。</p>
-<h2 id="FireFox"><a href="#FireFox" class="headerlink" title="FireFox"></a>FireFox</h2><p>正常设置字体，可以正常登陆洛谷<del>3.5</del>。</p>
-<h2 id="LibreOffice"><a href="#LibreOffice" class="headerlink" title="LibreOffice"></a>LibreOffice</h2><p>其实这是一款非常好用的Office软件，因为它免费而且开源，相比WPS的来说快，相比MS的来说……</p>
-<h2 id="Notepadqq"><a href="#Notepadqq" class="headerlink" title="Notepadqq"></a>Notepadqq</h2><p>其实这是Notepad++的非官方Linux版，然后是Notepadqq的官方版。。。<br>我们在终端执行</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">sudo apt-get <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> snapd</span><br><span class="line">sudo snap <span class="keyword">install</span> <span class="comment">--classic notepadqq</span></span><br></pre></td></tr></table></figure>
-
-<p>即可安装，可惜的是笔者暂未研究出如何使其具有编译能力，所以暂时无法分享OI用的技巧不过这仍是一款优秀的文本编辑器。</p>
-<h2 id="Ubuntu的其他应用"><a href="#Ubuntu的其他应用" class="headerlink" title="Ubuntu的其他应用"></a>Ubuntu的其他应用</h2><p>按Super键（即键盘上的Win键）打开搜索，搜索</p>
-<ul>
-<li>AisleRiot接龙游戏：即Windows自带的纸牌</li>
-<li>Mahjongg对对碰：即Windows自带的麻将消除游戏</li>
-<li>Mines扫雷：即Windows自带的扫雷</li>
-<li>Sudoku数独：即Windows10可以安装的数独</li>
-</ul>
-<hr>
-<blockquote>
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
-<p>本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>科技</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NOI Linux使用心得</title>
     <url>/blog/About-NOI-Linux/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我使用的版本是NOI Linux 1.4.1</p>
-<p>$\huge\color{red}{Warning}$ 请不要尝试在上个世纪的电脑上执行以下操作，这可能会导致严重的“Kernel panic - not syncing: Attempted to kill init!”错误<br>$\huge\color{blue}{Attention}$ 请在执行下述操作时确认自己为根目录管理员（root）或拥有根目录管理权限</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装过程比较苟，给出<a href="https://sys-code.oss-cn-beijing.aliyuncs.com/NOI/noilinux%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3.docx" target="_blank" rel="noopener">官方说明文档</a>和几个可参考的博客地址：</p>
-<ul>
-<li><a href="https://www.luogu.org/blog/Peter-Matthew/Run-Ubuntu-On-Windows10" target="_blank" rel="noopener">【转载】练习Linux？其实你的Win10自带一个Ubuntu</a></li>
-<li><a href="https://www.luogu.org/blog/Peter-Matthew/zhen-zheng-di-quan-zhen-xu-ni-ji-vmware-workstation" target="_blank" rel="noopener">【转载】真正的全真虚拟机：VmWare Workstation</a></li>
-<li><a href="https://www.luogu.org/blog/Peter-Matthew/play-linux-on-your-android-phone" target="_blank" rel="noopener">【转载】在你的Android手机上运行Linux</a></li>
-<li><a href="https://www.luogu.org/blog/Peter-Matthew/multi-os-install-ubuntu" target="_blank" rel="noopener">【转载】运行linux的第四种方式：双系统</a></li>
-</ul>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>个人比较喜欢一些小配置，为了方便我很快地完成所有设置，在这里罗列。。。</p>
-<h2 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h2><p>NOI Linux的默认密码是123456，我们修改密码却要求要有一定的强度，所以我们打开终端，输入</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo -s</span></span><br></pre></td></tr></table></figure>
-
-<p>得到了root权限。<br>然后输入123456（即原密码）。<br>现在我们输入</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">passwd noilinux</span></span><br></pre></td></tr></table></figure>
-
-<p>输入新密码就好了，就比如我的密码就是六位纯数字，</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">*****</span>*（我又不傻）</span><br></pre></td></tr></table></figure>
-
-<p>若修改成功，则会返回</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">password updated successfully</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="外观"><a href="#外观" class="headerlink" title="外观"></a>外观</h2><p>桌面主题选的是Radiance，壁纸选的是Foggy Forest (2560 x 1709)<br>应用程序-&gt;系统工具-&gt;首选项-&gt;主菜单，把所有勾点上</p>
 <h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>我主要安装的字体是 YaHei Consolas Hybrid</p>
 <p>如何安装字体？<br>请在执行以下操作时确定自己为根目录管理员（root），也可以通过终端完成操作。</p>
