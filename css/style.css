@@ -3,18 +3,6 @@
   src: url("../fonts/SourceSansPro.ttf");
 }
 @font-face {
-  font-family: Consolas;
-  src: url("../fonts/consola.ttf"), url("../fonts/consolab.ttf"), url("../fonts/consolai.ttf"), url("../fonts/consolaz.ttf");
-}
-@font-face {
-  font-family: 'Microsoft Sans Serif';
-  src: url("../fonts/micross.ttf");
-}
-@font-face {
-  font-family: 'Microsoft YaHei';
-  src: url("../fonts/msyh.ttc"), url("../fonts/msyhbd.ttc"), url("../fonts/msyhl.ttc");
-}
-@font-face {
   font-family: Symbol;
   src: url("../fonts/symbol.ttf");
 }
@@ -537,7 +525,7 @@ h2.article-head {
 .article-summary pre,
 .markdown-content code,
 .article-summary code {
-  font-family: Consolas, Symbol, 'Microsoft Sans Serif', 'Microsoft YaHei';
+  font-family: Consolas, Symbol, "Microsoft YaHei", "微软雅黑", sans-serif;
   font-size: 15px;
   tab-size: 4;
 }
