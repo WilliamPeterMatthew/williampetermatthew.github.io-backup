@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head><meta name="generator" content="Hexo 3.9.0">
+  <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="A Blog About Information and Technology">
@@ -16,7 +16,9 @@
   <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
   <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
   <script src="/js/jquery/jquery.min.js"></script>
   <script src="/js/geopattern/geopattern.min.js"></script>
@@ -52,17 +54,20 @@
 
   
 
-    <script src="/js/local-search.js"></script>
+    
+<script src="/js/local-search.js"></script>
+
 
   <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
   <!-- <script src="/js/comment/Waline.min.js"></script> -->
   <script src="/js/walinev2/waline.js"></script>
-  <link href="/js/walinev2/waline.css" rel="stylesheet">
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
 </head>
 <div class="wechat-share">
-  <img src="/css/images/logo.png">
+  <img src="/css/images/logo.png" />
 </div>
 
   <body>
@@ -106,13 +111,13 @@
       
         <li class="list-item">
           
-            <a href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
           
         </li>
       
         <li class="list-item">
           
-            <a href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
           
         </li>
       
@@ -164,13 +169,13 @@
         
           <li class="menu-item">
             
-              <a href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
             
           </li>
         
           <li class="menu-item">
             
-              <a href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
             
           </li>
         
@@ -214,17 +219,17 @@
   <!-- Article START -->
   <article class="post-article">
   
-    <i class="fa fa-clock-o">本文共<span class="post-count">1.3k</span>字，大约需要阅读<span class="post-count">4</span>分钟。</i>
+    <i class="fa fa-clock-o">本文共<span class="post-count">1.4k</span>字，大约需要阅读<span class="post-count">4</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><blockquote>
-<p>本文提出了一种可以解决使用 docker compose 的容器其默认网段172.17.0.0/16与实际网络环境网段冲突问题的方法——重建网桥。</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><blockquote>
+<p>本文提出了一种可以解决使用 docker compose 的容器其默认网段172.17.0.0&#x2F;16与实际网络环境网段冲突问题的方法——重建网桥。</p>
 </blockquote>
 <h1 id="0x00-引言"><a href="#0x00-引言" class="headerlink" title="0x00 引言"></a>0x00 引言</h1><p>为了方便校内举行算法编程比赛，我们在学校服务器上通过 docker compose 搭建了一个OJ，平常使用都没有问题，但有一次在学校综合教学楼B区机房组织进行比赛的时候，发现登不上去，ping服务器也ping不通，只能走WebVPN访问。</p>
 <p>在和信网处的老师确认过B区机房可以正常访问服务器的网关后，我和老师确认是因为docker服务造成的网段冲突问题。</p>
 <h1 id="0x01-学校的网络结构"><a href="#0x01-学校的网络结构" class="headerlink" title="0x01 学校的网络结构"></a>0x01 学校的网络结构</h1><p>我们学校的网络结构大概如下（仅作原理说明，非真实链路结构）：</p>
-<p><img src="/pic/DCNSC1.png" alt=""></p>
+<p><img src="/pic/DCNSC1.png"></p>
 <p>机房的每一台电脑会连接到机房后面的交换机上，机房后面的交换机会和这栋楼的交换机相连接，然后与学校数据中心的主交换机连接。<br>学校数据中心的主交换机还连接着互联网。<br>同时，学校的数据中心还放着其他服务器。每台服务器都连着它所在的机柜的交换机，机柜的交换机与服务器管理交换机连接，然后与数据中心的主交换机连接。<br>然后，服务器会因为docker服务而在路由表上加入连接容器的虚拟网段和网关。</p>
-<h1 id="0x02-故障原因"><a href="#0x02-故障原因" class="headerlink" title="0x02 故障原因"></a>0x02 故障原因</h1><p><strong>简单来说，就是机房电脑的网段为172.17.0.0/16，而docker的默认网段也为172.17.0.0/16。</strong></p>
+<h1 id="0x02-故障原因"><a href="#0x02-故障原因" class="headerlink" title="0x02 故障原因"></a>0x02 故障原因</h1><p><strong>简单来说，就是机房电脑的网段为172.17.0.0&#x2F;16，而docker的默认网段也为172.17.0.0&#x2F;16。</strong></p>
 <p>比如我将OJ搭建在服务器172.28.11.4这台服务器上，正常情况下，我在宿舍或WebVPN访问时，数据会带着ip地址例如172.31.0.100告知服务器返回数据的位置，服务器接收到数据并进行处理后，准备返回数据，这时发现要返回的地址不在路由表上，于是就向机柜交换机发送数据，让机柜交换机查找目标地址然后一直向上级交换机发送数据，直到找到路由表里有这个地址的交换机，然后向下转发数据，这样我们就可以收到服务器的回复数据。</p>
 <p>然而，如果我们在机房电脑172.17.1.2访问服务器，服务器接收到数据并进行处理后，准备返回数据，这时发现要返回的地址在路由表上，这个路由表是docker写上去的，和机房的电脑的网段正好相一致，于是他就会直接通过路由表所写的信息，将数据转发给对应ip的docker容器（即使这个容器不存在），这样，我们就收不到服务器所返回的数据，就会造成无法访问，ping也ping不通。</p>
 <p><strong>解决方法也很简单，就是重新分配docker的网段。</strong></p>
@@ -237,7 +242,7 @@
 <p>IPAddress后面跟的就是容器的ip地址，Gateway后面跟的就是虚拟网关。</p>
 <p>我们找到所有我们需要重新分配ip的容器，记住容器名称，例如 oj-backend 、 oj-judge 、 oj-redis 。</p>
 <h1 id="0x04-查找网桥"><a href="#0x04-查找网桥" class="headerlink" title="0x04 查找网桥"></a>0x04 查找网桥</h1><p>首先列出所有docker网桥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network ls</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 
 <p>接着，针对网桥id，查看详细信息。例如，针对 docker_default (4969db1ebd36) 查找输入以下指令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network inspect 5bc11281f0ae</span><br></pre></td></tr></table></figure>
@@ -248,7 +253,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose stop</span><br></pre></td></tr></table></figure>
 
 <h1 id="0x06-修改容器设置"><a href="#0x06-修改容器设置" class="headerlink" title="0x06 修改容器设置"></a>0x06 修改容器设置</h1><p>我们找到 <code>docker-compose.yml</code> 文件，打开编辑，在下面找是否有类似以下内容的部分</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">networks:</span></span><br><span class="line"><span class="attr">  default:</span></span><br><span class="line"><span class="attr">    ipam:</span></span><br><span class="line"><span class="attr">      config:</span></span><br><span class="line"><span class="attr">      - subnet:</span> <span class="string">"192.168.2.0/24"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">default:</span></span><br><span class="line">    <span class="attr">ipam:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">subnet:</span> <span class="string">&quot;192.168.2.0/24&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>如果有，则修改网段，如果没有，则复制上面的内容在文件下方粘贴。</p>
 <h1 id="0x07-删除原网桥"><a href="#0x07-删除原网桥" class="headerlink" title="0x07 删除原网桥"></a>0x07 删除原网桥</h1><p>我们使用刚刚记住的网桥名称，删除它</p>
@@ -262,7 +267,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 
 <p>此时会报错，这是因为我们虽然新建了网桥，但是容器并未连接到新网桥，我们不用管。此时我们列出所有docker网桥，会发现网桥已经重建好了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network ls</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="0x0a-让容器连接新网桥"><a href="#0x0a-让容器连接新网桥" class="headerlink" title="0x0a 让容器连接新网桥"></a>0x0a 让容器连接新网桥</h1><p>使用我们记住的网桥名称和网络名称，使用指令让容器连接到新网桥。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker network connect docker_default oj-backend</span><br><span class="line">docker network connect docker_default oj-judge</span><br><span class="line">docker network connect docker_default oj-redis</span><br></pre></td></tr></table></figure>
@@ -272,9 +277,9 @@
 
 <hr>
 <blockquote>
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
-<p>本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
 </blockquote>
 </section>
     
@@ -289,7 +294,7 @@
         
           <span>标签:</span>
           
-  <a href="/tags/#科技" >
+  <a href="/tags#科技" >
     <span class="tag-code">科技</span>
   </a>
 
@@ -360,7 +365,7 @@
     <strong class="toc-title">目录</strong>
     
       
-        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x00-引言"><span class="toc-nav-text">0x00 引言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x01-学校的网络结构"><span class="toc-nav-text">0x01 学校的网络结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x02-故障原因"><span class="toc-nav-text">0x02 故障原因</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x03-查找容器ip地址"><span class="toc-nav-text">0x03 查找容器ip地址</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x04-查找网桥"><span class="toc-nav-text">0x04 查找网桥</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x05-停止容器"><span class="toc-nav-text">0x05 停止容器</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x06-修改容器设置"><span class="toc-nav-text">0x06 修改容器设置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x07-删除原网桥"><span class="toc-nav-text">0x07 删除原网桥</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x08-重启docker服务"><span class="toc-nav-text">0x08 重启docker服务</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x09-重建网桥"><span class="toc-nav-text">0x09 重建网桥</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x0a-让容器连接新网桥"><span class="toc-nav-text">0x0a 让容器连接新网桥</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x0b-启动容器"><span class="toc-nav-text">0x0b 启动容器</span></a></li></ol>
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x00-%E5%BC%95%E8%A8%80"><span class="toc-nav-text">0x00 引言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x01-%E5%AD%A6%E6%A0%A1%E7%9A%84%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84"><span class="toc-nav-text">0x01 学校的网络结构</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x02-%E6%95%85%E9%9A%9C%E5%8E%9F%E5%9B%A0"><span class="toc-nav-text">0x02 故障原因</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x03-%E6%9F%A5%E6%89%BE%E5%AE%B9%E5%99%A8ip%E5%9C%B0%E5%9D%80"><span class="toc-nav-text">0x03 查找容器ip地址</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x04-%E6%9F%A5%E6%89%BE%E7%BD%91%E6%A1%A5"><span class="toc-nav-text">0x04 查找网桥</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x05-%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="toc-nav-text">0x05 停止容器</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x06-%E4%BF%AE%E6%94%B9%E5%AE%B9%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="toc-nav-text">0x06 修改容器设置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x07-%E5%88%A0%E9%99%A4%E5%8E%9F%E7%BD%91%E6%A1%A5"><span class="toc-nav-text">0x07 删除原网桥</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x08-%E9%87%8D%E5%90%AFdocker%E6%9C%8D%E5%8A%A1"><span class="toc-nav-text">0x08 重启docker服务</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x09-%E9%87%8D%E5%BB%BA%E7%BD%91%E6%A1%A5"><span class="toc-nav-text">0x09 重建网桥</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x0a-%E8%AE%A9%E5%AE%B9%E5%99%A8%E8%BF%9E%E6%8E%A5%E6%96%B0%E7%BD%91%E6%A1%A5"><span class="toc-nav-text">0x0a 让容器连接新网桥</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#0x0b-%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8"><span class="toc-nav-text">0x0b 启动容器</span></a></li></ol>
       
     
   </div>
@@ -460,9 +465,9 @@
   <p class="copyright">
     博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
     <br>
-    主题作者为<a href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
     <br>
-    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2023 张开昕 版权所有
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
     <br>
     <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
     <br>
@@ -512,6 +517,8 @@
 
 <!-- Baidu Tongji -->
 
+
 <script src="/js/script.js"></script>
+
   </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head><meta name="generator" content="Hexo 3.9.0">
+  <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="A Blog About Information and Technology">
@@ -16,7 +16,9 @@
   <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
   <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
   <script src="/js/jquery/jquery.min.js"></script>
   <script src="/js/geopattern/geopattern.min.js"></script>
@@ -52,17 +54,20 @@
 
   
 
-    <script src="/js/local-search.js"></script>
+    
+<script src="/js/local-search.js"></script>
+
 
   <script src="/js/comment/av-min.js"></script>
   <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
   <!-- <script src="/js/comment/Waline.min.js"></script> -->
   <script src="/js/walinev2/waline.js"></script>
-  <link href="/js/walinev2/waline.css" rel="stylesheet">
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
 </head>
 <div class="wechat-share">
-  <img src="/css/images/logo.png">
+  <img src="/css/images/logo.png" />
 </div>
 
   <body>
@@ -106,13 +111,13 @@
       
         <li class="list-item">
           
-            <a href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
           
         </li>
       
         <li class="list-item">
           
-            <a href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
           
         </li>
       
@@ -164,13 +169,13 @@
         
           <li class="menu-item">
             
-              <a href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
             
           </li>
         
           <li class="menu-item">
             
-              <a href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
             
           </li>
         
@@ -214,13 +219,13 @@
   <!-- Article START -->
   <article class="post-article">
   
-    <i class="fa fa-clock-o">本文共<span class="post-count">213</span>字，大约需要阅读<span class="post-count">1</span>分钟。</i>
+    <i class="fa fa-clock-o">本文共<span class="post-count">219</span>字，大约需要阅读<span class="post-count">1</span>分钟。</i>
   
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><p><a href="https://www.luogu.org/problemnew/show/U30211" target="_blank" rel="noopener">LuoguU30211</a>:</p>
+    <section class="markdown-content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/U30211">LuoguU30211</a>:</p>
 <p>DP+博弈论</p>
 <p>限制一下取数，从一边取DP即可。</p>
 <p>用f[i][j]表示该取i，上一次取了j个的最大得分，则因为所有块的权值都&gt;0，所以只要用2$\times $j和2$\times $j-1来更新答案就可以了，具体DP方程见代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,ans,a[<span class="number">2005</span>],f[<span class="number">2005</span>][<span class="number">2005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">        a[i]+=a[i<span class="number">-1</span>],f[i][i]=a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            f[i][j]=f[i][j<span class="number">-1</span>];</span><br><span class="line">     		<span class="keyword">if</span>(i&gt;=<span class="number">2</span>*j)</span><br><span class="line">             	f[i][j]=max(f[i][j],a[i]-f[i<span class="number">-2</span>*j][<span class="number">2</span>*j]);</span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&gt;=<span class="number">2</span>*j)</span><br><span class="line">                f[i][j]=max(f[i][j],a[i]-f[i<span class="number">-2</span>*j+<span class="number">1</span>][<span class="number">2</span>*j<span class="number">-1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,f[n][<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,ans,a[<span class="number">2005</span>],f[<span class="number">2005</span>][<span class="number">2005</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=n;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">        a[i]+=a[i<span class="number">-1</span>],f[i][i]=a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            f[i][j]=f[i][j<span class="number">-1</span>];</span><br><span class="line">     		<span class="keyword">if</span>(i&gt;=<span class="number">2</span>*j)</span><br><span class="line">             	f[i][j]=<span class="built_in">max</span>(f[i][j],a[i]-f[i<span class="number">-2</span>*j][<span class="number">2</span>*j]);</span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&gt;=<span class="number">2</span>*j)</span><br><span class="line">                f[i][j]=<span class="built_in">max</span>(f[i][j],a[i]-f[i<span class="number">-2</span>*j+<span class="number">1</span>][<span class="number">2</span>*j<span class="number">-1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,f[n][<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
     
     
         <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/solution-u30211/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/solution-u30211/"></span>条评论。</em>
@@ -233,7 +238,7 @@
         
           <span>标签:</span>
           
-  <a href="/tags/#题解" >
+  <a href="/tags#题解" >
     <span class="tag-code">题解</span>
   </a>
 
@@ -404,9 +409,9 @@
   <p class="copyright">
     博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
     <br>
-    主题作者为<a href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
     <br>
-    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2023 张开昕 版权所有
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
     <br>
     <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
     <br>
@@ -456,6 +461,8 @@
 
 <!-- Baidu Tongji -->
 
+
 <script src="/js/script.js"></script>
+
   </body>
 </html>

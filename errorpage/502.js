@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/css/hexo-tag-hint/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script> var dnpw502 = {
+ var dnpw502 = {
         collage: document.querySelector('.collage-502'),
         collageImages: document.querySelector(".collage-502-images"),
         collageH1: document.querySelector('.collage-502 h1'),
@@ -15,7 +15,40 @@
             c=(1-Math.abs(2*l-1))*s;
             x=c*(1-Math.abs(((h/60)%2)-1));
             m=l-c/2;
-            if(h>=0&&h<60) rgb="[c,x,0];" if(h="">=60&&h<120) rgb="[x,c,0];" if(h="">=120&&h<180) rgb="[0,c,x];" if(h="">=180&&h<240) rgb="[0,x,c];" if(h="">=240&&h<300) rgb="[x,0,c];" if(h="">=300&&h<=360) rgb="[c,0,x];" return="" rgb.map(function(v){="" 255*(v+m)|0;="" });="" },="" rgb2hex:="" function(r,="" g,="" b)="" {="" var="" |="" (g="" <<="" 8)="" (r="" 16);="" '#'="" +="" (0x1000000="" rgb).tostring(16).slice(1)="" hsl2hex:="" function(h,="" s,="" l){="" l)="" this.rgb2hex(="" rgb[0],="" rgb[1],="" rgb[2]="" )="" huefromrangevalue:="" function(val)="" ((val="" 100)*360).tofixed(0)="" inputsupported:="" function(type){="" x="document.createElement("input");" x.setattribute("type",="" type);="" x.type="==" type;="" listenforkeycombo:="" function(combo,callback){="" if="" (="" window.addeventlistener="" keys="[]" konami="window.addEventListener("keydown"," (function(e){="" keys.push(="" e.keycode="" keys.tostring().indexof(="" combo="">= 0 ){
+            if(h>=0&&h<60) rgb=[c,x,0];
+            if(h>=60&&h<120) rgb=[x,c,0];
+            if(h>=120&&h<180) rgb=[0,c,x];
+            if(h>=180&&h<240) rgb=[0,x,c];
+            if(h>=240&&h<300) rgb=[x,0,c];
+            if(h>=300&&h<=360) rgb=[c,0,x];
+
+            return rgb.map(function(v){
+              return 255*(v+m)|0;
+            });
+          },
+          rgb2Hex: function(r, g, b) {
+            var rgb = b | (g << 8) | (r << 16);
+            return '#' + (0x1000000 + rgb).toString(16).slice(1)
+          },
+          hsl2Hex: function(h, s, l){
+            var rgb = this.hsl2Rgb(h, s, l)
+            return this.rgb2Hex( rgb[0], rgb[1], rgb[2] )
+          },
+          hueFromRangeValue: function(val) {
+            return ((val/100)*360).toFixed(0)
+          },
+          inputSupported: function(type){
+            var x = document.createElement("input");
+            x.setAttribute("type", type);
+            return x.type === type;
+          },
+          listenForKeyCombo: function(combo,callback){
+            if ( window.addEventListener ) {
+              var keys = []
+              var konami =
+              window.addEventListener("keydown", (function(e){
+                  keys.push( e.keyCode )
+                  if ( keys.toString().indexOf( combo ) >= 0 ){
                     keys = []
                     callback()
                   }
@@ -49,7 +82,7 @@
           this.html.classList.add('loaded')
         },
         konami: function(){
-          this.collageH1.innerHTML = '<svg width="176" height="128" viewbox="0 0 176 128" fill="black" xmlns="http:www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48 0H32V16H48V32H32V48H16V64H0V112H16V80H32V112H48V128H80V112H48V96H128V112H96V128H128V112H144V80H160V112H176V64H160V48H144V32H128V16H144V0H128V16H112V32H64V16H48V0ZM48 64V48H64V64H48ZM128 48H112V64H128V48Z"/></svg>'
+          this.collageH1.innerHTML = '<svg width="176" height="128" viewBox="0 0 176 128" fill="black" xmlns="http:www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48 0H32V16H48V32H32V48H16V64H0V112H16V80H32V112H48V128H80V112H48V96H128V112H96V128H128V112H144V80H160V112H176V64H160V48H144V32H128V16H144V0H128V16H112V32H64V16H48V0ZM48 64V48H64V64H48ZM128 48H112V64H128V48Z"/></svg>'
           this.collage.classList.add("arkanoid")
           this.loading()
           this.build502Shots(this.shots)
@@ -157,4 +190,3 @@
 document.write('<script src="https://www.dnpw.org/cn/api-thank?you=' + document.domain + '&style=0"><\/script>');
 
 
-</script></=360)></300)></240)></180)></120)></60)>
