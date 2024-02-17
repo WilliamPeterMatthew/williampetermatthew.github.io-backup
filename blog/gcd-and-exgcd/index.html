@@ -232,7 +232,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">exgcd</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> &amp;x,<span class="type">int</span> &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!b)&#123;x=<span class="number">1</span>,y=<span class="number">0</span>;<span class="keyword">return</span> a;&#125;</span><br><span class="line">    <span class="type">int</span> t=<span class="built_in">gcd</span>(b,a%b,y,x);y-=a/b*x;<span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>非递归版：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">exgcd</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> &amp;x,<span class="type">int</span> &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t=a%b,x0=<span class="number">1</span>,y0=<span class="number">0</span>,x1=<span class="number">0</span>,y1=<span class="number">1</span>;x=x1;y=y1;</span><br><span class="line">    <span class="keyword">while</span>(t)</span><br><span class="line">    &#123;</span><br><span class="line">        x=x0-a/b*x1,y=y0-a/b*y1;</span><br><span class="line">        x0=x1,y0=y1;x1=x,y1=y;</span><br><span class="line">        a=b,b=t,t=a%b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</section>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></section>
     
     
         <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/gcd-and-exgcd/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/gcd-and-exgcd/"></span>条评论。</em>
@@ -258,7 +258,7 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/solution-t53818/">
+      <a class="nav-left" href="/blog/Solution/solution-t53818/">
         <span class="nav-arrow">← </span>
         
           题解 T53818 【[退役欢乐赛Day2T3]谁是退役的人】

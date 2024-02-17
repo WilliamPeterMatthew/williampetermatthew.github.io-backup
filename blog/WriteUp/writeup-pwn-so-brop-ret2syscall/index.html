@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      撰解 【Pwn】栈溢出基本ROP——ret2syscall | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>撰解 【Pwn】栈溢出基本ROP——ret2syscall</h2>
+  <p class="post-date">2022-06-29</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">414</span>字，大约需要阅读<span class="post-count">1</span>分钟。</i>
+  
+    <section class="markdown-content"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您的输入不正确。" data-whm="抱歉，您所填写的内容与哈希校验不符，但你仍可查看此文。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="d45c1f7535217ad8f43455e4e4af434466df7834c41be75c62e44dc1d5a2f679">40e65372b53142ce66afa8eee6834c5b0fb81dabf70cab732463966a4c6504d11a70220dc45fcf4b075d7b054cfce884c16b5fd9ca3c8ceed1ec705dda6919149cf9f41d5eb490a518bd489d890ee74283b211b7f8801bdf34bb29bca29dac9a8e9f998c53384367b2801e02bd6161041bf38c75f40daf069106e64b643bf5ee9bb16758724fff7a207027aa5e28272671701cb60521e17f080f27bfa75b6074c9a68060898748c6cf50584cf208c84fc460812c54fbd630b1c0f24c8a3bf9bcc942eb3c2d2f71691b17110f32c7a3a04e2ffe25f4fe55df6696a52071e569a1543ab4b2779b998265ce2213e779c74b1422a812f260e9aa0f47b8d92801d2969b0ad5501524d9fd8cf2961734ec6546a222670ee8d478e58ceba5b6cef5351ea70fb93ca0278b2a4f3d43d928fbadd34e486f1d9235db60960ac1e93022920b91f1afd7a7d13730375e96270412588c6a067b1ed952247842a53cabab5dec07856b335cce16bb0f541a04bf91fb8fefbb25357c413783599e65ae1b4e8e8e1726cc091164d29af5dc7f7381b8c887bc9b72d6760c119e3eaa9766220f1ef02ed0c1509d53bfc8b8d0cb6db338f0b1ab3457036634bb424721972de9f17a074fa26a5463d2748cffdf85190a6cf0155a020218030464a3c4402af952daf007dd368f4e398cb82702a4089ff38de940d0601115d6013d37835bef7e5d79cf0ff1eedc0c3ca5545faad5de136a4d6637e7da36e1753a88d6f591be2de747c986ce46dbb80896c4bba2a55b9d0a83ee94ad1eecf1d4e730a5e3c2299f52435e5606b8baf0c5acc3511bfc1caf21da8aa32618d1173c8d1045303f6d99da74cb185f993deaf70e6a194970f62518b6bdfe5c072dd2a6bfaf3a7b531dc96f80d55a8b539ea1b853477ac849afc031ae5af47cfe1f9c61eb4869fe5fbe5b6de8ef08124abe5d174307f3c23677afa734c7e1a9f33491f7eef59068bc5afb407c1a0cdabb4bb17903482f7b687269a0fe0e4a29edba984fab9d6e5335097876d9eb7242e26f92343895fb003e953507992ba5f69b68932fc7284780888938addb728818d0d3a3f158c6d57fced987f942c19ac257b10cd209e9b27ea2b851de04263bd95dc15863f5b84ee255bbe7cecff748e671e109ffe3d6f9deaa05c376f7ab1abbf29fd031e0671a7a67c55f8406559457d036f3e4ad3131a4c3cac658a41d0fae610725b51b7828a8e59cea42b9cc12cb08ad10bcbb9b79168ca6fc8f0ab7d1ef93a4da809d98a7a7e3aae21e026aa3d26887cedece6c2ae884d76b944428bf01767278790be69939eda237529832daf5d385d8916f2f9e3b2569f190d587682273ca10616380457c2162c141cecf9c7a044686c189ee7490246f027607a325748c56d7e457d227de2bb5d9895774fc949d9322e542cd363432160bfe25411f6752ba16e44a6dc0fd347a0cf8121b1cf985d830bce6e28c252e3317f6cca939a2dac2b3ffef5fef9f645c01661c85d8e8b996f5ac6ca357915e6213de81d0c3d128fee5418635edee5ac35ae3a0cac19457a156f9c412c32e29e9a46d08c78966a7ef86e785679f14ba8b2c900a5a1eefcf41195bd3d12602a7243b605cac7e395fc92b7871ebc9862eb76ee64647fcc28bcaae1debe54dbcc605ca1200662ddd4021a413554a5fce00bfa991a995994f2028e9b86bc95e764f171532d6d1a2a9504f48e94504700d4e618b4b32d72c7cb56a092e452d7460f5ff3dfc1269bc2907e72bca902f6190006d1572fd6fa60fbcccf75cdeeef58f0d007fcb832327f090c75d1085d2a1a8c942f9a9e27d22af16bfdaf34372e59f5bff19222b9de0325781fee732ead4347ed5752f249996d5c649ee167e378d9fb7a670ca6db6d09062beaaab3fc80825d6f27195cd00802c74d3b3c7c5541d46c8253662e8ae9f98df0fd1bc9406aabe4be61d3bff0568950c0da7144a5b4df4c9e1c356eb873c7603bd66b117c347b93e1a47f912bb511cc6d6527cac0bef20d90a3656d405af063c1784cf5d3b64c8623e1b9efc8098c6565696154d34ed42d9b4e5130c15390b8ac0e2ac6a65e9c15023eadaf8abe6a2dd543a36b6a664dfaf1a0d7ac5ac7228ac5e5b53967e80ccb91e8e2f31ce9615eda5a6d0578c9c8d883d4299b28c693ef5c84e3d732e03c0ff59728bfe7d7dca444881b521896fc600475437fe47335e9f8e3af6e598567b5a6421e00f0a464def62fc19807f609578a815b9812a1a61630f61afe3467fbe70751ba5d0f0ebdc425179656a85ae76473e9db966e45a16d7119c118a12786a34fb33c461c2845274b837b64087e5fabf70c51d6da8cb0ed6b7869e67f7902702f577c41f8a1ae5a49581d4757d2d3609f7fc663a38e5e97b00120b3498fee4336335454984181f6dc3fda2890998bbeb4ebde76138dfde672b8f04ba2de883a466aff861d4bb7c69aa7cc8c694b1804626ba3bad078dd2ad7ec5417973b459c70a6ed73932180cb321a03529e1d2a809d2abbd750cdb4a3ed31cb83c90ce2ba07493c2e647f1901d9aa75d39b32dee912963a847c09e1b64b099dbd340be01a0b7a2191508fbe55d0d858b0446cca98c5c3e271a603dbbf3f49c8dfc96d2abf40fa752774bee9415b46cf73f69cdf53afe7297b5d1c33a106060d4171f5ed3036fa5745c73257095189ec9a37a95d2b1a25b59364a93b22a7a1ac948c88e9e39331a9519efc359b89d80642155bcc6370caa0ebae6bdfcb98cd225e94e684ac711e7b637a3dbe8ff0a9ba5ab59ae8c171cdc7cf6808dbb8199435e2c6729670b3376650bdfb37aecc1a87c3c47b673e88eb212c22c5bdae98ee9967aa529690216e32bdcc5724df7d1ebee56f1b546e7876318e6b8bb1dcaae9c8df39de44cfb03d28146754e5a0352d5727caac5ae2ab211a8b0feafc98f7080163e1339f2a33c9a89b26884ac2f4ddc69f1eb81d99f6798f4716b212bc8cdd4e665ad14b6a64d143d922f151a23dce128bc6dfc0a2284b8fe066fa54ddcd2c8d850e8974130fe740a31e41c08694fdd8758804c476fde3a1696a4fc4fdb3e66dc906b55d7ce440cc26b62822898cfcec47b01512cb2c0d86ce8cf24f44b32e400967cdcc37f1b523ba6159e0e22cb1392a0dd9e257d9b66fb61be4a5864e232e583c7c0085692d32e098379efd00f79fb7915903e525bf6612fb2f6c3c2c396853f5e578cfedc6d714600bcd07516958fe503db479a46a69b65945dc081e292e5220ebc3bd495a1ec28d1d9022fb8516043743c85272899d4ee2751c3333294345c998b6a56316a7c33b01510dee8c6603f8e5c25e54bff5f6a810836090109cf781779645d27021ddc5e8ddb86e3915eae3f74943fccdbb5bd5e50d4185febe27d659e25cde1ea33b39d1ca53d1109f6960ced2a8ba00ca64a4bca3e60c805435e174ace34fac4214267d820d7cf460bdeb8de6480bcbb786a2f9b582085a1cf140e16217d799821c719d3bc3c6e42944d0c7896a7f7055790bc40adadbeaecbdc2408ecd0b9795b62994c71aa27f959d8dbe4c9dbe4db48e87d40ec3e02d4ef46a66b854532de7e479158ad939d58e1474f6c96611435aaec1562bfc0affa9bf330f61607c38dc54abf00cb0f1ee39f33fa15c60deec4c9637ac572e872dbaa0ca09caedc0921c1d7ed98bf0d22c6077dda350dc0e0bdf72182e7c72ef6a6a4c2dcd9b8fc119be062495d7da151e52d6d362b4f69a782963ff4520b3598c58303c6b6395cc803c33c0d1902c01c98035c114c4503de0a8f1b8ad74520d5f6239f342c66829605c3bcccaa8c165fc5ddef9b32680307f1947dd25f1fbf6f58db7085b2cd5433800c882c7e5dde889876b00fc4aad328782f4cbca8d8582ac363704a84519620b32b410854b68936043a17eb2c5696c113fc7f12ab5faafb3e82a554a252beab62c9a8092cd1d5ba0ef373de9317fad4fc8bce957e33556989cca9ba1277b71ba6d1407720b519c9b32412356e6065a4de072efffdb66657276ccdcb3665992d931afc80968bf8ab68f90445bc5bac8be243ba265c7090c4b4ee0659c9eda68d9e434cd227a5dce29bb18c9027db53ac7c3069c9d07c0ee7d88db8e46736c82d3130987670d46584cca599773f8e0f57858c5dc344274ac0e2e24c908d2f6d3446ac2c3eeae5396e0c5e7720ac5d65847845794cd881c4c1fcfdc01b61f38885b3d52ef300868df7b946bf2adf5b9836b03cca488c58ca17f70a7599f51c0ad26b78b06d44152856056ce0ccd193bcecfea827945c51735f01be3872a602bf4617cbd73699048143c9cc5d95b7aeec9ab1c09ac86fc1bdb85157f45f526f1f069361aab3f9fdcd93c1ac6b831529dbbdd6bb69c9525e9486f54d016a54a5ffffa2380d6a9966ccad50faefe15cf203f4e033d86c364d4f79dc2d32ae1dd69d7f40495e39edd3dba8c0f0c83b35fd680c2169030ef339cce046f0038a26d854e808b027eb1a88433d5e3a35111b4204b5cdb8e6fd095379fd51f33866c49a40ca6ac845e77b247830cce920ff132251284823109471b683c8c323ed6aad15d65ffda3dfbc0524b6b10001b54d6074e5c546b7f6df601f47eb12f289aa8453c99043098bccd9d17fd2305537a2342e5ebb62dd93831f1daa427f4c10bd4e2fd05145280a3336cb71a810ca570726d64e5b3359f4f1ca844971b0f3f5cc3cabff187120680665f6961035f98a619d49454d07abf926fddeb323bdc00e02bbfbfbd5e1548289627f0bc5a2c0f9e8247cc0d58594ebf4a3d50256ceeda8f59cb94bcb59d1c60f81223f2492c515867156c2ff77b3814b3cc494ea6bb2e37de2b972b05860b967168478da629d8687da4b65964283afa8b3b111ef2430f8ba5111d642339075a3eeb8a67a964291a02c3f1426222d9ab2e6a9bc3c0d9aa7c8eb2b97bc95e298a5280d4bf8abb68e729d3f7b40549c9a5dde8e683787bc8b35101cf75f69e43343b0ba417e04125f73fb4792beeff4fd7fdbe902810f46948849be664f8ca8e6254e85f0f4f671d741b9030881a70b01ca95c709b8572941b62bf252527017c3f33f93b1bea8ca98a46e6c87c091c5182fd1bc86793e1767bdb3846ba6c896193ac4f182b51c2a38b05ab05bc6c1967de37c0103d8c96789b4b2927a1be17fcd9078033ac0aa61b0e3c776e3c09c5ef34b5a5536fce0aaf5ad47effa96d7113589d1f7d609a71e4cb69726d37c58568c91e6a939c92827ddcc460089d8f420575cf76c8f60ba0f81555b8df40f1faf4466692b58a43a37aaab6c3228b28d551127f4ad5c1730193bab7bfecdc40f285e163813a7d56334409c8b561e834e791f171e2a0e942d3d52798b2f030fb0938cdc8be43b9504f3e458e67038aaef33d41b7432066f630437e1ae6490695aeb9cd3c9fea6933bf4e069caa36355bcc3a5cc640dc94d6c1fc5a2d3b8eff3ed21ac8feb1ed5dd6110007bd5740a0f897f5e7072ff1fe4161f6983396c48b81b9e52bc38257d12e1cebcb564988345ceab80ea78e8ba02ba3de0f020e585a3e1326eb21005041c4b134e65591f4238027e421b44d78f7d0a1b1f02493575fa5b1ab11df0b02b81e440fc0bbb9c528ada2001e118f36e22a5992d7608cca7d73f8134684d4cfe0aa02613b85c1cb62ee6972ad2d261f2f5d811384f0b82f27f07002c3ce91359197fd605eb52dd741bb6547570e485801ab34c523c77a808b0181934673432e1b3ca45186aa52ef4ea6c8a86bf17a88ae9b61cbcbc8836fd7a06d7bc8ffa7724a1dc41b03f3a713c1032255095073e9d742ff130c8013e8846abd19cdda06dfa1ac0de85df9ef361782e0bed75f4f9883e725ac5392637ca54def1846a2bb5e9ef9298b95cd8e13ba0a3001adc993315b145fc52a54728780e101fa9f9edf22ae30b8d5bf7ddcffea94922b1d312c9733069f51046634214fe2d5befd2a3fc1fe057dc29f21e2e3f24bb5e9b9c9835d6cacaea09defbd023a4ea5d3423da0f3c6f5a48e80bdb6e6cd8833896d5969b83652dea76120a05e0d7355a25f42b440df077d404c6db749a0d1bd8ecf132dcb47e790d1e09f6ef009830777dde0f9aa980ccaf75a8db30f8859ca84b07ae2e122143acafc901b5fd81b0ccbc83609e6e5187231f8968f2334f78ca8ec173201fa2f5dd281630d8913a173a1b8baefd5e9dcae51ad06516fc4ae6948b1898d1b921f9f6428a8d8ed6c922cd63af5e593d6e9da6f816f0857118b9a6730abb509e895687e83afdbabeeb4f03c922cb6cf12ae05a17e3712e3bffddf67ba285f58e581e85736242530d8e60590aeb4b5b2e0df94d5e227a8f83a43a0043a2d56d79b808e46466db1c5c7b9c78b44519664051fa98762be7c01aedeb5b80d69eb81e1c79b58bf43e9e3c78f24529b7ef7dbb35a583140534a47c9717840b18fe6afa40239eb00d0c7cc3097de162838754ed404314ac2d88cc387ed206064879f7f9a69e4b401fb9b90ad1e47678824dc59ebb9365fee4787b28604eb7974aa3a521264c6d57a4c1e873e29a5e20ef71268a5dd5458f334a9aeb50c41a80cbe13639dae48195989837a5c8a135c9be18962118bf114159c3c8649c24843517df19890f165159f2412e4a8dbe68987c20f0663e4845237796c5b1a169ee65e855a8dbc966cb412dcc875561cd5d86b5857a4b8ea0b820185c69e737995182e1ea4ff3ac105cd56e977c1ed96c54bd7bcc453e6061c3e81dd42f1d672b96f1c1c5183513a9e3e56b0328ea1f90377a31f8d28bc4fa9c5948d7ca9444aee84d1ea794ba5a4a86387adea6ac72d9b108163b6283d3cf864a516336628516aed1f2dffa08130bf5d1bf109606cd0965c1f70eb3ed993fea399221845485b30cd343a58e48a10ef57720292e9915ea5e6cacd215346b141b613043a20e18e6653162a81572a179a4272e3267056e0038acc5cab7c2c4fe7444706c3da2abedd64c09224aa09068d5cdf31c5004215358bd09dee46ce6540b95e074ad532e7d1c7de71486ecae0404d307bb5ade97b2f29cfe1e1846f4559dbdbcc348704d00d9c934a985c8224eaaf553e9d1e696d57769d1763bd7e71d723c7f5ca24771d9500d0e7c99cd715f304f38d0912a1f1860ec7c959913437b11a1dd3442da282b9e9c79cd4d470e906a99f74245f2e0ef9f5e8f6a18a5efbb3664cfc7b4b555edb7412ec799f64c79edbbda538310bbc5fef21dc5f155802db69171d65d4235347937abb1e7eb58875d926cd29f5eb502a86ee0042f4d73c482391fbf3caa7a4358c0516d68fe62834731299ae6a497ec681046c3c99f0028dee6a1a12b1bacee0a9c2597354d1129fcd1039cf661c065a4d730a3af56aaa9151e94a31660f3402c8214c063</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-wave">
+      <input class="hbe hbe-input-field hbe-input-field-wave" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-wave" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-wave">密码为我本科阶段所在院校中我参与的信息安全社团所属上级社团的拼音（不使用拼音符号，共13个字符）。</span>
+      </label>
+      <svg class="hbe hbe-graphic hbe-graphic-wave" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/WriteUp/writeup-pwn-so-brop-ret2syscall/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/WriteUp/writeup-pwn-so-brop-ret2syscall/"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        
+        
+          <span>标签:</span>
+          
+  <a href="/tags#撰解" >
+    <span class="tag-code">撰解</span>
+  </a>
+
+        
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/WriteUp/writeup-pwn-so-brop-ret2shellcode/">
+        <span class="nav-arrow">← </span>
+        
+          撰解 【Pwn】栈溢出基本ROP——ret2shellcode
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/WriteUp/writeup-pwn-so-brop-ret2libc/">
+        
+          撰解 【Pwn】栈溢出基本ROP——ret2libc
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 分享 START -->
+    
+    <!-- 分享 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="nav">该文章无目录</ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/blog/WriteUp/writeup-pwn-so-brop-ret2syscall/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+
+
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkaixin.cc",
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>
