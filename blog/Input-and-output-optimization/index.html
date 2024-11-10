@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      输入输出优化代码 | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>输入输出优化代码</h2>
+  <p class="post-date">2018-07-22</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">2k</span>字，大约需要阅读<span class="post-count">10</span>分钟。</i>
+  
+    <section class="markdown-content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="输入输出效率比较"><a href="#输入输出效率比较" class="headerlink" title="输入输出效率比较"></a>输入输出效率比较</h2><p>一份摘自LOJ的一份读入测试数据，若干读入整数速度测试的结果（单位：毫秒）。<br>输入：$3×10^6$个在区间中随机生成的十进制整数。</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Lanuage</th>
+<th>$[0,2)$</th>
+<th>$[0,8)$</th>
+<th>$[0,2^{15})$</th>
+<th>$[0,2^{31})$</th>
+<th>$[0,2^{63})$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fread</td>
+<td>G++ 5.4.0 (-O2)</td>
+<td>13</td>
+<td>13</td>
+<td>39</td>
+<td>70</td>
+<td>111</td>
+</tr>
+<tr>
+<td>getchar</td>
+<td>G++ 5.4.0 (-O2)</td>
+<td>58</td>
+<td>73</td>
+<td>137</td>
+<td>243</td>
+<td>423</td>
+</tr>
+<tr>
+<td>cin(关闭同步)</td>
+<td>G++ 5.4.0 (-O2)</td>
+<td>161</td>
+<td>147</td>
+<td>205</td>
+<td>270</td>
+<td>394</td>
+</tr>
+<tr>
+<td>cin</td>
+<td>G++ 5.4.0 (-O2)</td>
+<td>442</td>
+<td>429</td>
+<td>706</td>
+<td>1039</td>
+<td>1683</td>
+</tr>
+<tr>
+<td>scanf</td>
+<td>G++ 5.4.0 (-O2)</td>
+<td>182</td>
+<td>175</td>
+<td>256</td>
+<td>368</td>
+<td>574</td>
+</tr>
+</tbody></table>
+<p>下面水下一些常用的输出输出方式：</p>
+<h2 id="cin-cout"><a href="#cin-cout" class="headerlink" title="cin&#x2F;cout"></a>cin&#x2F;cout</h2><p>采用C++的特性通配流式输入输出的好处是不用处理变量类型，直接写就可以；但是根据上表可以看到，这种输入输出方式十分的耗时，并不适用于大数据编程。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">short</span> b;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;b&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;c&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="scanf-printf"><a href="#scanf-printf" class="headerlink" title="scanf&#x2F;printf"></a>scanf&#x2F;printf</h2><p>采用传统C语言的输入输出的好处是节省时间，适用于大数据编程，一般的题目都可以用这种方式输入输出来通过；缺点是必须对应数据的类型而且不能少”,”，否则就会CE，scanf不能少”&amp;”否则会导致RE，printf不能加”&amp;”，否则会输出奇奇怪怪的东西（地址）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">short</span> b;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%hd%lld&quot;</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %hd %lld\n&quot;</span>,a,b,c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="cin-cout（关闭同步）"><a href="#cin-cout（关闭同步）" class="headerlink" title="cin&#x2F;cout（关闭同步）"></a>cin&#x2F;cout（关闭同步）</h2><p>我们可以通过写关闭同步的方式来加快流式输入输出，这种方式的好处是可以加快速度，甚至比刚才介绍的传统输入输出方式还要快；但是请注意：请不要在关闭同步之后采用scanf及printf输入输出，否则后果自负！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);<span class="comment">//警告：请不要在关闭同步之后采用scanf及printf输入输出，否则后果自负！</span></span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">short</span> b;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;b&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;c&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="普通版（基于getchar-putchar）优化："><a href="#普通版（基于getchar-putchar）优化：" class="headerlink" title="普通版（基于getchar&#x2F;putchar）优化："></a>普通版（基于getchar&#x2F;putchar）优化：</h2><p>有些时候我们会因为程序的常数不够优秀而被大数据卡爆，或者我们希望暴力能够得到略微高一点的分数，这时候我们就可以采用基于getchar和putchar函数的输入输出优化。一般见到的输入优化定义的函数名是read，但是经过我多次运用，发现我一般用到的情况都是scanf被卡后才用的，所以为了方便我切换函数我使用scan定义函数。</p>
+<p>输入优化：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> __Type_of_scan&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">scan</span><span class="params">(__Type_of_scan &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    __Type_of_scan f=<span class="number">1</span>;x=<span class="number">0</span>;<span class="type">char</span> s=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(s&lt;<span class="string">&#x27;0&#x27;</span>||s&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(s==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;s=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    <span class="keyword">while</span>(s&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;s&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=x*<span class="number">10</span>+s-<span class="string">&#x27;0&#x27;</span>;s=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用法示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">short</span> b;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c;</span><br><span class="line">    <span class="built_in">scan</span>(a),<span class="built_in">scan</span>(b),<span class="built_in">scan</span>(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出优化：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> __Type_of_print&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(__Type_of_print x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>)&#123;<span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>);x=-x;&#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">9</span>)<span class="built_in">print</span>(x/<span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用法示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a=<span class="number">2</span>;</span><br><span class="line">    <span class="type">short</span> b=<span class="number">3</span>;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c=<span class="number">3</span>;</span><br><span class="line">    <span class="built_in">print</span>(a),<span class="built_in">putchar</span>(<span class="string">&#x27; &#x27;</span>),<span class="built_in">print</span>(b),<span class="built_in">putchar</span>(<span class="string">&#x27; &#x27;</span>),<span class="built_in">print</span>(c),<span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="黑科技（基于fread-fwrite）优化："><a href="#黑科技（基于fread-fwrite）优化：" class="headerlink" title="黑科技（基于fread&#x2F;fwrite）优化："></a>黑科技（基于fread&#x2F;fwrite）优化：</h2><p>其实这篇博客之前一直都是基于getchar和putchar函数的输入输出优化。直到2018年9月2日我在学校的一次模拟赛中O(n)算法被毒瘤出题人的数据卡爆，我才开始使用基于fread和fwrite函数的输入输出优化。同之前所说的一样，这里所定义的函数名均为之前的优化代码前加”_”的名字，即_scan和_print。</p>
+<p>其实fread和fwrite有个缺点就是本地测样例比较麻烦（也有可能是我写的代码太蒟蒻了），而且<strong>采用_print函数后，你需要运行fsh函数！！！</strong></p>
+<p>输入优化：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">char</span> <span class="title">gc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> buf[<span class="number">100000</span>],*p1=buf,*p2=buf;</span><br><span class="line">    <span class="keyword">return</span> p1==p2&amp;&amp;(p2=(p1=buf)+<span class="built_in">fread</span>(buf,<span class="number">1</span>,<span class="number">100000</span>,stdin),p1==p2)?EOF:*p1++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> __Type_of__scan&gt;</span><br><span class="line"><span class="type">void</span> _scan(__Type_of__scan &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    __Type_of__scan f=<span class="number">1</span>;x=<span class="number">0</span>;<span class="type">char</span> s=<span class="built_in">gc</span>();</span><br><span class="line">    <span class="keyword">while</span>(s&lt;<span class="string">&#x27;0&#x27;</span>||s&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(s==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;s=<span class="built_in">gc</span>();&#125;</span><br><span class="line">    <span class="keyword">while</span>(s&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;s&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=x*<span class="number">10</span>+s-<span class="string">&#x27;0&#x27;</span>;s=<span class="built_in">gc</span>();&#125;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用法示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">short</span> b;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c;</span><br><span class="line">    _scan(a),_scan(b),_scan(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出优化：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> buf[<span class="number">100000</span>],*pp=buf;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pc</span><span class="params">(<span class="type">const</span> <span class="type">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pp-buf==<span class="number">100000</span>)<span class="built_in">fwrite</span>(buf,<span class="number">1</span>,<span class="number">100000</span>,stdout),pp=buf;</span><br><span class="line">    *pp++=c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> __Type_of__print&gt;</span><br><span class="line"><span class="type">void</span> _print(__Type_of__print x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>)&#123;<span class="built_in">pc</span>(<span class="string">&#x27;-&#x27;</span>);x=-x;&#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">9</span>)_print(x/<span class="number">10</span>);</span><br><span class="line">    <span class="built_in">pc</span>(x%<span class="number">10</span>+<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fsh</span><span class="params">()</span></span>&#123;<span class="built_in">fwrite</span>(buf,<span class="number">1</span>,pp-buf,stdout);pp=buf;&#125;</span><br></pre></td></tr></table></figure>
+<p>用法示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a=<span class="number">2</span>;</span><br><span class="line">    <span class="type">short</span> b=<span class="number">3</span>;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c=<span class="number">3</span>;</span><br><span class="line">    _print(a),<span class="built_in">pc</span>(<span class="string">&#x27; &#x27;</span>),<span class="built_in">fsh</span>(),_print(b),<span class="built_in">pc</span>(<span class="string">&#x27; &#x27;</span>),<span class="built_in">fsh</span>(),_print(c),<span class="built_in">pc</span>(<span class="string">&#x27;\n&#x27;</span>),<span class="built_in">fsh</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="关于一次性输入输出多个数"><a href="#关于一次性输入输出多个数" class="headerlink" title="关于一次性输入输出多个数"></a>关于一次性输入输出多个数</h2><p><strong>警告：可变模板仅在开启 -std&#x3D;c++11 或 -std&#x3D;gnu++11 时可用</strong><br><strong>Warning:variadic templates only available with -std&#x3D;c++11 or -std&#x3D;gnu++11</strong>  </p>
+<p>我们以普通版（基于getchar&#x2F;putchar）优化的为例<br>下面是一个多输入加多输出的示例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpos&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">scan</span><span class="params">(tpos &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tpos f=<span class="number">1</span>;x=<span class="number">0</span>;<span class="type">char</span> s=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(s&lt;<span class="string">&#x27;0&#x27;</span>||s&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(s==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;s=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    <span class="keyword">while</span>(s&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;s&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=x*<span class="number">10</span>+s-<span class="string">&#x27;0&#x27;</span>;s=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpos,<span class="keyword">typename</span>... Tpos&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">scan</span><span class="params">(tpos &amp;x,Tpos&amp;... X)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scan</span>(x),<span class="built_in">scan</span>(X...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpop&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(tpop x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>)<span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>),x=-x;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">9</span>)<span class="built_in">print</span>(x/<span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpop,<span class="keyword">typename</span>... Tpop&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(tpop x,Tpop... X)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(x),<span class="built_in">putchar</span>(<span class="string">&#x27; &#x27;</span>),<span class="built_in">print</span>(X...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">short</span> b;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c;</span><br><span class="line">    <span class="built_in">scan</span>(a,b,c);</span><br><span class="line">    <span class="built_in">print</span>(a,b,c),<span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>简单来说，就是在scan函数的下面加上</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpos,<span class="keyword">typename</span>... Tpos&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">scan</span><span class="params">(tpos &amp;x,Tpos&amp;... X)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scan</span>(x),<span class="built_in">scan</span>(X...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在print函数的下面加上</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpop,<span class="keyword">typename</span>... Tpop&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(tpop x,Tpop... X)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(x),<span class="built_in">putchar</span>(<span class="string">&#x27; &#x27;</span>),<span class="built_in">print</span>(X...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后调用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scan</span>(a,b,c);</span><br><span class="line"><span class="built_in">print</span>(a,b,c),<span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>事实上，你也可以类比此普通版优化，推出黑科技优化的多输入输出<br>下面就是一个例子</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">char</span> <span class="title">gc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> buf[<span class="number">100000</span>],*p1=buf,*p2=buf;</span><br><span class="line">    <span class="keyword">return</span> p1==p2&amp;&amp;(p2=(p1=buf)+<span class="built_in">fread</span>(buf,<span class="number">1</span>,<span class="number">100000</span>,stdin),p1==p2)?EOF:*p1++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpo_s&gt;</span><br><span class="line"><span class="type">void</span> _scan(tpo_s &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">    tpo_s f=<span class="number">1</span>;x=<span class="number">0</span>;<span class="type">char</span> s=<span class="built_in">gc</span>();</span><br><span class="line">    <span class="keyword">while</span>(s&lt;<span class="string">&#x27;0&#x27;</span>||s&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(s==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;s=<span class="built_in">gc</span>();&#125;</span><br><span class="line">    <span class="keyword">while</span>(s&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;s&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=x*<span class="number">10</span>+s-<span class="string">&#x27;0&#x27;</span>;s=<span class="built_in">gc</span>();&#125;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpo_s,<span class="keyword">typename</span>... Tpo_s&gt;</span><br><span class="line"><span class="type">void</span> _scan(tpo_s &amp;x,Tpo_s &amp;...X)</span><br><span class="line">&#123;</span><br><span class="line">    _scan(x),_scan(X...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">char</span> buf[<span class="number">100000</span>],*pp=buf;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pc</span><span class="params">(<span class="type">const</span> <span class="type">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pp-buf==<span class="number">100000</span>)<span class="built_in">fwrite</span>(buf,<span class="number">1</span>,<span class="number">100000</span>,stdout),pp=buf;</span><br><span class="line">    *pp++=c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpo_p&gt;</span><br><span class="line"><span class="type">void</span> _print(tpo_p x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>)&#123;<span class="built_in">pc</span>(<span class="string">&#x27;-&#x27;</span>);x=-x;&#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">9</span>)_print(x/<span class="number">10</span>);</span><br><span class="line">    <span class="built_in">pc</span>(x%<span class="number">10</span>+<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fsh</span><span class="params">()</span></span>&#123;<span class="built_in">fwrite</span>(buf,<span class="number">1</span>,pp-buf,stdout);pp=buf;&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpo_p,<span class="keyword">typename</span>... Tpo_p&gt;</span><br><span class="line"><span class="type">void</span> _print(tpo_p x,Tpo_p ...X)</span><br><span class="line">&#123;</span><br><span class="line">    _print(x),<span class="built_in">pc</span>(<span class="string">&#x27; &#x27;</span>),_print(X...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">short</span> b;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> c;</span><br><span class="line">    _scan(a,b,c);</span><br><span class="line">    _print(a,b,c),<span class="built_in">pc</span>(<span class="string">&#x27;\n&#x27;</span>),<span class="built_in">fsh</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>事实上，这个也就是在_scan函数的下面加上</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpo_s,<span class="keyword">typename</span>... Tpo_s&gt;</span><br><span class="line"><span class="type">void</span> _scan(tpo_s &amp;x,Tpo_s &amp;...X)</span><br><span class="line">&#123;</span><br><span class="line">    _scan(x),_scan(X...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在print函数的下面加上</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> tpo_p,<span class="keyword">typename</span>... Tpo_p&gt;</span><br><span class="line"><span class="type">void</span> _print(tpo_p x,Tpo_p ...X)</span><br><span class="line">&#123;</span><br><span class="line">    _print(x),<span class="built_in">pc</span>(<span class="string">&#x27; &#x27;</span>),_print(X...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后调用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_scan(a,b,c);</span><br><span class="line">_print(a,b,c),<span class="built_in">pc</span>(<span class="string">&#x27;\n&#x27;</span>),<span class="built_in">fsh</span>();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/Input-and-output-optimization/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/Input-and-output-optimization/"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        
+        
+          <span>标签:</span>
+          
+  <a href="/tags#科技" >
+    <span class="tag-code">科技</span>
+  </a>
+
+        
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/Solution/solution-u30206/">
+        <span class="nav-arrow">← </span>
+        
+          题解 U30206 【BZ游戏#1 草雉剑游戏（CZJ Game）】
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/AdobeFlashPlayerOfflineInstaller/">
+        
+          Adobe Flash Player离线安装包
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 分享 START -->
+    
+    <!-- 分享 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%95%88%E7%8E%87%E6%AF%94%E8%BE%83"><span class="toc-nav-text">输入输出效率比较</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#cin-cout"><span class="toc-nav-text">cin&#x2F;cout</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#scanf-printf"><span class="toc-nav-text">scanf&#x2F;printf</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#cin-cout%EF%BC%88%E5%85%B3%E9%97%AD%E5%90%8C%E6%AD%A5%EF%BC%89"><span class="toc-nav-text">cin&#x2F;cout（关闭同步）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%99%AE%E9%80%9A%E7%89%88%EF%BC%88%E5%9F%BA%E4%BA%8Egetchar-putchar%EF%BC%89%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-nav-text">普通版（基于getchar&#x2F;putchar）优化：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%BB%91%E7%A7%91%E6%8A%80%EF%BC%88%E5%9F%BA%E4%BA%8Efread-fwrite%EF%BC%89%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-nav-text">黑科技（基于fread&#x2F;fwrite）优化：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E4%B8%80%E6%AC%A1%E6%80%A7%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%A4%9A%E4%B8%AA%E6%95%B0"><span class="toc-nav-text">关于一次性输入输出多个数</span></a></li></ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/blog/Input-and-output-optimization/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+
+
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkaixin.cc",
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

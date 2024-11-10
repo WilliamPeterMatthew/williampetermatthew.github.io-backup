@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      【宝塔面板使用心得】L02 认识界面与配置 | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>【宝塔面板使用心得】L02 认识界面与配置</h2>
+  <p class="post-date">2022-01-15</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">4.7k</span>字，大约需要阅读<span class="post-count">16</span>分钟。</i>
+  
+    <section class="markdown-content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><blockquote>
+<p><em>本系列心得序号以L开头是Linux面板，以W开头是Windows面板。</em></p>
+</blockquote>
+<h2 id="登录页面"><a href="#登录页面" class="headerlink" title="登录页面"></a>登录页面</h2><p><img src="/pic/btpanell02-01.png" alt="登录页面1"><br><img src="/pic/btpanell02-02.png" alt="登录页面2"><br>上一篇，我们安装了宝塔面板，大家已经见到过这个页面了。点击右上角的二维码或计算机图标可以切换登录方式，从账号密码登录改为二维码登录。二维码登录需要使用宝塔APP，具体绑定方法可以看<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-47408-1-1.html">官方的教程</a>，由于需要在面板安装应用，所以目前只能使用账号密码登录。</p>
+<blockquote>
+<p>如果忘记面板地址和账户密码，可以输入指令 <code>bt 14</code> 查看面板默认的信息。如果修改过了信息，可以按如下步骤修改：<br>域名忘记的，输入指令 <code>bt 12</code> 关闭域名限制并使用IP登录；<br>端口忘记的，输入指令 <code>bt 8</code> 并修改端口；<br>入口忘记的，输入指令 <code>bt 11</code> 关闭入口限制并使用根目录登录；<br>用户名忘记的，输入指令 <code>bt 6</code> 修改宝塔用户名；<br>密码忘记的，输入指令 <code>bt 5</code> 修改宝塔密码。</p>
+</blockquote>
+<p>现在我们登录进去，认识下一个界面。</p>
+<blockquote>
+<p><img src="/pic/btpanell02-03.png" alt="推荐安装套件"><br>登录进入以后，会弹出一个推荐安装套件对话框，这里关闭它，我们稍后就来手动组建套件。</p>
+</blockquote>
+<h2 id="菜单栏"><a href="#菜单栏" class="headerlink" title="菜单栏"></a>菜单栏</h2><p><img src="/pic/btpanell02-04.png" alt="菜单栏"><br>我们首先来认识菜单栏，菜单栏最上方是服务器的IP地址，右边有一个红底的数字，点击会弹出消息盒子，这里有服务器的任务和消息列表，已经在列表里结束的会在执行日志中记录。<br>在下方，依次是首页、网站、FTP、数据库、监控、安全、文件、终端、计划任务、软件商店、面板设置和退出。点击退出项就会退回登录页面，点击其他的项就会跳转到对应页面。在哪个界面，哪个界面对应的项就会突出显示。</p>
+<p>现在我们来看首页吧。</p>
+<h2 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h2><p><img src="/pic/btpanell02-04.png" alt="首页"><br>在首页，你可以看到五个板块。</p>
+<p><strong>第一个板块</strong>，左侧有你登录的宝塔账户名、一个宝塔的广告链接、当前的系统版本（含已经安装的Python版本），还有服务器自上次开机后不间断运行的天数；右侧有当前宝塔面板的版本号以及更新、修复和重启三个链接文字。<br>点击宝塔面板的版本号，可以看到版本迭代的更新日志。当宝塔面板有版本更新时，会有小红点的提示。点击更新文字，会弹出更新版本对话框，有更新则可以点击更新。宝塔面板的测试版是每周更新，正式版是每月更新，许多功能会先在测试版发布，当你想体验测试版功能的时候，可以点击查看详情弹出切换版本对话框，按要求操作即可切换面板为测试版。<br>当宝塔面板出现问题时，例如模块错误之类的，可以点击修复文字进行校验面板文件，若有问题会自动修复。当面板或服务器需要重启时，可以点击重启文字，然后选择重启服务器或者重启面板。</p>
+<p><strong>状态板块</strong>中，你可以看到服务器负载状态、CPU使用率、内存使用率和磁盘使用率。<br>点击内存使用率的图表，可以释放内存。将鼠标放到其他三个图表上，可以查看详细信息。<br>点击负载状态上的问号，可以查看官方给出的<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-11402-1-1.html">负载状态含义</a>说明。</p>
+<p><strong>概览模块</strong>中，你可以看到你的网站数量、FTP数量、数据库数量和安全风险数量。<br>点击前三项都可以直接跳转到对应的页面，点击安全风险可以查看当前的安全风险，然后对应去解决。</p>
+<p><strong>软件模块</strong>有十二个格子，默认已经有一个软件占用了一个格子。这里相当于一个快速访问的位置，向这里添加软件的方法稍后会提到。这里点击软件就可以打开，将鼠标移至软件格子的右上角可以看到一个图标，点击并按住可以拖动改变软件在这十二个格子中的位置。</p>
+<p><strong>最后一个模块</strong>，是服务器的实时数据统计，分流量和磁盘IO两张图表，每个图表右上角的菜单可以改变统计的数据范围。</p>
+<p>现在我们点击左边的面板设置，进入下一个页面。</p>
+<h2 id="面板设置"><a href="#面板设置" class="headerlink" title="面板设置"></a>面板设置</h2><p><img src="/pic/btpanell02-05.png" alt="面板设置"><br>在这里，有一堆开关和一堆文本框。</p>
+<h3 id="开关模块"><a href="#开关模块" class="headerlink" title="开关模块"></a>开关模块</h3><p><strong>关闭宝塔面板</strong>开关，点击即可关闭宝塔面板不再使用。若需要恢复使用，需要输入指令 <code>rm -f /www/server/panel/data/close.pl</code> 将开关的控制文件删除来关闭开关。</p>
+<p><strong>监听IPv6</strong>开关，如果你的服务器支持IPv6可以打开，这样面板就可以通过IPv6地址访问。如果你的服务器为纯IPv6地址，请不要关闭这个选项，如果关闭了，需要输入指令 <code>echo &quot;True&quot; &gt; /www/server/panel/data/ipv6.pl</code> 来开启开关。</p>
+<p><strong>面板SSL</strong>开关，点击后会进入证书页面，你可以粘贴自签证书，也可以选择成Let’s Encrypt的证书输入管理员邮箱让宝塔面板帮你创建一个。笔者的建议是在域名和软件安装完后回来进行。常见问题可以查看<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-4689-1-1.html">官方说明</a>在宝塔面板中，这个证书保存在 <code>/www/server/panel/ssl/certificate.pem</code> 文件中，私钥保存在 <code>/www/server/panel/ssl/privateKey.pem</code> 文件中，如果要关闭面板SSL开关，需要输入指令 <code>rm -f /www/server/panel/data/ssl.pl &amp;&amp; /etc/init.d/bt restart</code> 。</p>
+<p><strong>API接口</strong>开关，当启动了API接口，只有在IP白名单列表中的IP才能访问面板API接口。关于API接口的使用方法，可以查看<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-20376-1-1.html">官方的教程</a>。</p>
+<p><strong>开发者模式</strong>开关，开启后可以更加便于开发，但会占用更多内存。</p>
+<p><strong>离线模式</strong>开关，开启离线模式后，面板不能联网更新和下载软件，所有的安装软件和面板更新均需手动下载离线升级包和软件包进行安装升级。</p>
+<p><strong>动态口令认证</strong>开关，这是一项安全认证设置，你可以使用宝塔App或者谷歌认证器，通过服务器的指引添加动态口令认证。如果不会使用可以查看<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-37437-1-1.html">官方说明</a>。如果要关闭，可以输入指令 <code>bt 24</code> 关闭动态口令认证。</p>
+<p><strong>在线客服</strong>开关，默认是开的，开启后会在右下角显示一个在线客服的浮动标，点击后可以进入和宝塔客服聊天的页面。</p>
+<p><strong>访问设备验证</strong>开关，具体如何使用可以查看<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-77863-1-1.html">官方说明</a>。如果需要关闭，可以输入指令 <code>bt 29</code> 关闭访问设备验证。</p>
+<h3 id="文本框模块"><a href="#文本框模块" class="headerlink" title="文本框模块"></a>文本框模块</h3><p>文本框模块有一个选项卡可以切换，第二个选项卡是从全部设置中摘取与面板安全配置相关的设置（安全入口、BasicAuth认证、密码复杂度验证、密码过期时间、域名和授权IP）。</p>
+<p><strong>别名</strong>，这个就是显示在浏览器标题的名称，可以随便改。</p>
+<p><strong>面板端口</strong>，即宝塔面板运行的端口，十分不推荐大家仍然使用默认端口8888，请修改它。云服务器记得先放行新的端口再进行改端口，<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-1229-1-1.html">腾讯云</a>、<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-2897-1-1.html">阿里云</a>和<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-3923-1-1.html">华为云</a>的放行教程再次列出，其他主机商放行方法类同。如果忘记端口，输入指令 <code>bt 8</code> 并修改端口。</p>
+<p><strong>超时时间</strong>，默认值是86400，单位是秒，也就是1天一共24小时，这里可以根据需要修改。</p>
+<p><strong>安全入口</strong>，是为了让宝塔面板更加安全不被轻易登录而设置的，同样不推荐各位使用默认入口，如果忘记，输入指令 <code>bt 11</code> 关闭入口限制并使用根目录登录。</p>
+<p><strong>BasicAuth认证</strong>，登录面板前增加一层账号密码认证，基于BasicAuth，使用浏览器对话框，可以有效防止面板被扫，具体介绍可以看<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-34374-1-1.html">官方说明</a>。如果忘记账号密码，输入指令 <code>bt 23</code> 关闭BasicAuth认证。</p>
+<p><strong>消息通道</strong>，用于webshell查杀通知，登录告警，具体设置可以看<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-71298-1-1.html">官方的教程</a>。</p>
+<p><strong>登录告警</strong>，需要设置消息通道才能用，当不在IP白名单的设备登录了宝塔面板会向消息通道发送告警，具体设置可以看<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-71298-1-1.html">官方的教程</a>。</p>
+<p><strong>域名</strong>，这个域名指的是面板的访问域名，建议大家不要使用IP访问面板，这样十分不安全，一旦设置，只有该域名能访问宝塔面板。如果忘记域名，输入指令 <code>bt 12</code> 关闭域名限制并使用IP登录。</p>
+<p><strong>授权IP</strong>，即访问宝塔面板的IP白名单，一旦设置，非白名单中的IP无法访问宝塔面板。如果需要关闭白名单，输入指令 <code>bt 13</code> 关闭。</p>
+<p><strong>默认建站目录</strong>，所有的网站默认都会保存到这个目录的子目录中，保持默认值 <code>/www/wwwroot</code> 即可，如果确有需要也可以修改，我们后续一些心得中会默认大家使用的是这个默认值，如果有修改，请在后面的心得中自行修改对应的参数或者命令。</p>
+<p><strong>默认备份目录</strong>，所有的备份文件默认都会保存到这个目录当中，保持默认值 <code>/www/backup</code> 即可，如果确有需要也可以修改，我们后续一些心得中会默认大家使用的是这个默认值，如果有修改，请在后面的心得中自行修改对应的参数或者命令。</p>
+<p><strong>服务器IP</strong>，默认是宝塔面板检测出来的IP，建议各位填写外网IP，如果没有外网需求或者在局域网内使用或者和笔者一样是使用虚拟机测试，则可以填写内网IP，这个IP地址会在宝塔面板的菜单栏显示，部分地方的参数也会默认填写这个值。</p>
+<p><strong>服务器时间</strong>，如果服务器时间不对，可以点击同步按钮同步一下。<br>如果时区不对，可以输入指令 <code>tzselect</code> 选择时区，然后输入 <code>cp /usr/share/zoneinfo/$主时区/$次时区 /etc/localtime</code> 调整时区，其中的主次时区由刚才你选择的时区决定。<br>RedHat和CentOS还可以通过 <code>timeconfig</code> 指令找到时区，Ubuntu还可以通过 <code>dpkg-reconfigure tzdata</code> 指令找到时区。<br>设置服务器自动同步时间的方法我们于下篇再说。</p>
+<p><strong>面板用户</strong>，即登录面板的用户名，如果忘记用户名，输入指令 <code>bt 6</code> 修改宝塔用户名。</p>
+<p><strong>面板密码</strong>，即登录面板的密码，如果忘记密码，输入指令 <code>bt 5</code> 修改宝塔密码。</p>
+<p><strong>密码复杂度验证</strong>，开启后，宝塔密码必须设置成满足复杂度验证规则的，规则为长度大于8位且为大写字母、小写字母、数字、特殊字符至少3项的组合。</p>
+<p><strong>密码过期时间</strong>，设置后，如果上次密码设置后到了过期时间，则面板会强制提示修改密码。将时间设置为 <code>0</code> 天以关闭密码过期时间功能。</p>
+<p><strong>绑定宝塔账号</strong>，即绑定一个宝塔账号，7.8.0版本要求强制绑定宝塔账号，无论是服务器是否开启了离线模式。<br>在离线模式下，由于不会连接宝塔官网，所以会出现无法绑定的情况，所以需要先关闭离线模式，然后再换绑宝塔账号，之后再开启离线模式。<br>如果服务器在开启离线模式的时候直接解绑宝塔账号，需要输入指令 <code>rm -f /www/server/panel/data/not_network.pl</code> 关闭离线模式，然后再绑定宝塔账号，之后再开启离线模式。</p>
+<p><strong>面板菜单栏隐藏</strong>，除了本篇介绍的首页、软件商店、面板设置和退出四个项无法隐藏外，其他项目均可隐藏不显示。注意这里起的作用是在菜单栏隐藏而不是禁用，访问对应地址面板对应的功能仍可正常使用。</p>
+<p><strong>临时访问授权</strong>，可以创建一个临时的访问授权链接，将链接给他人，他人便可以有一次临时访问面板的授权，已经授权的访问会在这里留下记录。</p>
+<p>现在，点击软件商店，我们来配置服务器环境。</p>
+<h2 id="软件商店"><a href="#软件商店" class="headerlink" title="软件商店"></a>软件商店</h2><p><img src="/pic/btpanell02-06.png" alt="软件商店"><br>软件商店是宝塔提供的一键安装软件的一个功能，离线模式下不能正常使用。</p>
+<ul>
+<li>全部就是目前宝塔的全部应用；</li>
+<li>已安装就是服务器已经安装的应用；</li>
+<li>运行环境就是一些常用的运行环境；</li>
+<li>系统工具就是一些管理系统的工具；</li>
+<li>宝塔插件就是宝塔官方提供的免费插件；</li>
+<li>专业版插件就是宝塔官方提供的专业版、企业版免费，其余版本付费的插件；</li>
+<li>企业版插件就是宝塔官方提供的企业版免费其余版本付费的插件；</li>
+<li>第三方应用就是由其他开发者开发的应用，功能也比较多；</li>
+<li>一键部署是一个单独的类别，我们等会儿再说。</li>
+</ul>
+<p>在应用分类的右边有一个更新软件列表的按钮，点击可以获取宝塔官方最新的软件列表。</p>
+<p>接下来是一个广告横幅。如果你有使用专业版和企业版的需求，可以考虑购买对应的版本。</p>
+<p align="right"><em><font size="1"><a href="https://www.bt.cn/?invite_code=MV9rYXV5Z2Y=" target="_blank" rel="noopener">广告：宝塔服务器面板，一键全能部署及管理，送你￥3188礼包，点我领取</a></font></em></p>
+
+<p>然后是一个最近使用入口，和首页的软件模块相比，这里显示的是最近使用的项目而不能自定义。</p>
+<p>之后就是软件列表。软件分免费的和付费的。<br>软件列表会显示一个软件的名称、开发商、说明以及付费软件的到期时间，免费软件和已经购买的软件可以点击操作处的安装文字直接安装。<br>一个软件被安装后，位置处会多一个文件夹的图标，点击即可跳转到安装位置；状态处会显示当前软件的状态，绿色播放图标表示正常运行，红色暂停图标则表示出现问题；首页显示处会多出一个开关，打开开关就会向首页软件模块添加当前软件的图标。<br>同时，一个软件被安装后，操作处会从 <code>安装</code> 变为 <code>更新|设置|修复|卸载</code> 。更新文字只有当软件有新版本时才会显示，点击即可更新软件的新版本；设置文字点击后会进入软件的UI界面，每个软件的界面和内容都有所差异，首页的软件模块和这个页面的最近使用入口都是调用这个设置链接；很多软件会有修复功能，点击后可以对软件的完整性以及功能进行修复；最后是卸载文字，点击后就会将该软件卸载。</p>
+<h3 id="安装套件"><a href="#安装套件" class="headerlink" title="安装套件"></a>安装套件</h3><p>现在我们来配置服务器的运行环境，首先我们来看知名的LNMP和LAMP套件。所谓LNMP，L就是指Linux，N就是指Nginx，M一般指MySQL，也可以指MySQL Mariadb，P一般指PHP，也可以指Perl或Python；LAMP就是将LNMP中N代表的Nginx换成A代表的Apache。<br>宝塔面板在推荐我们安装LNMP的同时还推荐我们安装Pure-Ftpd和phpMyAdmin。Pure-Ftpd可以提供FTP服务，phpMyAdmin提供可视化数据库管理服务。</p>
+<p>宝塔官方给我们推荐的配置是</p>
+<ul>
+<li>Nginx 1.20</li>
+<li>MySQL 5.6</li>
+<li>Pure-Ftpd 1.0.49</li>
+<li>PHP 5.6</li>
+<li>phpMyAdmin 4.4</li>
+</ul>
+<p>你可以跟着官方的安装，当然你也可以自己选择，比如目前我的服务器所运行的这几个软件对应的版本是</p>
+<ul>
+<li>Nginx 1.20</li>
+<li>MySQL Mariadb 10.5</li>
+<li>Pure-Ftpd 1.0.49</li>
+<li>PHP 5.6,7.2,7.4</li>
+<li>phpMyAdmin 5.1</li>
+</ul>
+<p>如果有Java项目需求还可以安装Tomcat，如果有Node项目需求还可以Node.js版本管理器等等，其他软件都可以根据需要自行安装。</p>
+<h3 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h3><p><img src="/pic/btpanell02-07.png" alt="一键部署"><br>一键部署是什么？宝塔为一些诸如WordPress，discuz等常用项目的开发者提供了一个接口，项目开发者可以将项目打包并写一个自动部署脚本方便宝塔面板的用户使用。</p>
+<p>点进一键部署，你会看到现在的列表，除了全部以外，官方还将其中的一些项目进行了分类。<br>每个项目都有名称、版本、简介、支持PHP版本、提供者、评价和操作。<br>点击简介后面的问号，可以跳转到提供者在宝塔论坛发的贴子的地址，点击提供者，可以跳转到提供者的网站，当部署项目出现问题时，可以试着访问这两个地址，往往能够得到解决方法。<br>点击评价可以参与一个项目的评分。<br>点击一键部署，按照要求填写网站的信息即可部署，宝塔面板会自动下载源码，运行自动化脚本，然后告诉你安装入口或者后台账号密码，按照提示即可很方便的完成部署。<br>由于一键部署与创建一个新的网站的区别仅为前者宝塔会自动下载源码，其余填写信息和配置上并无大差，所以笔者就不在这里讲述新建网站等等一系列过程了，详细的过程会放在之后的心得里。</p>
+<h2 id="下篇"><a href="#下篇" class="headerlink" title="下篇"></a>下篇</h2><p>下一篇心得，笔者将带大家对面板的监控、安全、文件、终端、计划任务几个模块进行了解。</p>
+<hr>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/BTPanel-L02/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/BTPanel-L02/"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        
+        
+          <span>标签:</span>
+          
+  <a href="/tags#宝塔面板使用心得" >
+    <span class="tag-code">宝塔面板使用心得</span>
+  </a>
+
+  <a href="/tags#宝塔Linux面板" >
+    <span class="tag-code">宝塔Linux面板</span>
+  </a>
+
+        
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/Solution/solution-apa2022h1/">
+        <span class="nav-arrow">← </span>
+        
+          题解 CPPUAPA 2022年寒假第一次模拟赛
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/WriteUp/writeup-pwn-so-brop-ret2text/">
+        
+          撰解 【Pwn】栈溢出基本ROP——ret2text
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 分享 START -->
+    
+    <!-- 分享 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2"><span class="toc-nav-text">登录页面</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%8F%9C%E5%8D%95%E6%A0%8F"><span class="toc-nav-text">菜单栏</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A6%96%E9%A1%B5"><span class="toc-nav-text">首页</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%9D%A2%E6%9D%BF%E8%AE%BE%E7%BD%AE"><span class="toc-nav-text">面板设置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BC%80%E5%85%B3%E6%A8%A1%E5%9D%97"><span class="toc-nav-text">开关模块</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%87%E6%9C%AC%E6%A1%86%E6%A8%A1%E5%9D%97"><span class="toc-nav-text">文本框模块</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%95%86%E5%BA%97"><span class="toc-nav-text">软件商店</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%85%E5%A5%97%E4%BB%B6"><span class="toc-nav-text">安装套件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2"><span class="toc-nav-text">一键部署</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%8B%E7%AF%87"><span class="toc-nav-text">下篇</span></a></li></ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/blog/BTPanel-L02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+
+
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkaixin.cc",
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      数据构造与对拍程序 | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>数据构造与对拍程序</h2>
+  <p class="post-date">2018-09-10</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">3.3k</span>字，大约需要阅读<span class="post-count">16</span>分钟。</i>
+  
+    <section class="markdown-content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="数据构造"><a href="#数据构造" class="headerlink" title="数据构造"></a>数据构造</h1><p>作为一个<del>毒瘤</del>出题人，我们要学着出<del>毒瘤</del>数据<del>卡做题人</del>；作为一个<del>蒟蒻</del>做题人，我们要学着出<del>毒瘤</del>数据尝试<del>卡自己的程序并</del>调试，下面简单介绍出数据的一些方法。</p>
+<h2 id="总程序的写法"><a href="#总程序的写法" class="headerlink" title="总程序的写法"></a>总程序的写法</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> T=<span class="number">10</span>,L=<span class="number">200</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* problemname=<span class="string">&quot;&quot;</span>;<span class="comment">//your problem&#x27;s name</span></span><br><span class="line"><span class="type">char</span> buf[L]=&#123;&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">randomint</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">rand</span>()+<span class="built_in">rand</span>()*<span class="number">32768</span>)%(r-l+<span class="number">1</span>)+l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">make_data</span><span class="params">(<span class="type">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;    </span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> t=<span class="number">1</span>;t&lt;=T;++t)</span><br><span class="line">    &#123;</span><br><span class="line">        cerr&lt;&lt;<span class="string">&quot;start time=&quot;</span>&lt;&lt;<span class="built_in">clock</span>()&lt;&lt;endl;</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">&quot;%s%d.in&quot;</span>,problemname,t);</span><br><span class="line">        <span class="built_in">freopen</span>(buf,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">make_data</span>(t);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">fclose</span>(stdout);</span><br><span class="line">        cerr&lt;&lt;<span class="string">&quot;t1=&quot;</span>&lt;&lt;<span class="built_in">clock</span>()&lt;&lt;endl;</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">&quot;copy %s%d.in %s.in &gt;nul&quot;</span>,problemname,t,problemname);</span><br><span class="line">        <span class="built_in">system</span>(buf);</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">&quot;\&quot;%s.exe\&quot;&quot;</span>,problemname);</span><br><span class="line">        <span class="built_in">system</span>(buf);</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">&quot;copy %s.out %s%d.ans &gt;nul&quot;</span>,problemname,problemname,t);</span><br><span class="line">        <span class="built_in">system</span>(buf);</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">&quot;del %s.in&quot;</span>,problemname);</span><br><span class="line">        <span class="built_in">system</span>(buf);</span><br><span class="line">        <span class="built_in">sprintf</span>(buf,<span class="string">&quot;del %s.out&quot;</span>,problemname);</span><br><span class="line">        <span class="built_in">system</span>(buf);</span><br><span class="line">        cerr&lt;&lt;<span class="string">&quot;data &quot;</span>&lt;&lt;t&lt;&lt;<span class="string">&quot; has been made.&quot;</span>&lt;&lt;endl;</span><br><span class="line">        cerr&lt;&lt;<span class="string">&quot;end time=&quot;</span>&lt;&lt;<span class="built_in">clock</span>()&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面对上面的程序做出详细解释：</p>
+<p><strong>请在主程序中写上函数srand，否则会导致每次制造出来的数据都一样！</strong><br>T为你要生成的数据组数，L是操作用字符串buf的长度。<br>problemname即为你题目的名称。<br>buf是操作用字符串。<br>C++中的rand()函数可以随机生成一个$[-2^{15},2^{15})$以内的整数，利用组合我们便可以生成一个。randomint是生成一个int范围（$[-2^{31},2^{31})$）内的整数。如果你需要生成一个long long范围（$[-2^{63},2^{63})$）的整数，你可以使用下面的函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">randomlonglong</span><span class="params">(<span class="type">long</span> <span class="type">long</span> l,<span class="type">long</span> <span class="type">long</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">rand</span>()*<span class="number">1ll</span>+<span class="built_in">rand</span>()*<span class="number">32768ll</span>+<span class="built_in">rand</span>()*<span class="number">2147483648ll</span>+<span class="built_in">rand</span>()*<span class="number">140737488355328ll</span>)%(r-l+<span class="number">1ll</span>)+l;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>make_data函数是你需要修改的函数，你在这里输出数据，直接使用标准输出即可，如果你需要按数据点生成，可以使用传过来的t，对于一个随机数可以采用randomint函数实现。<br>最后是主函数，这里面写的是操作，你可以在运行程序时看到程序的运行时间，可以简单检验std的时限。</p>
+<p>这里讲解三个函数的使用方法：</p>
+<ol>
+<li>system用途为执行传过来的参数的字符串内容。例如：system(“pause”)执行的结果为DOS命令中执行pause指令的结果，即“请按任意键继续. . . ”；</li>
+<li>sprintf用法基本同printf，只不过printf是经过缓存区向标准输出输出内容，而sprintf是向第一参数传过来的字符串中写入内容。</li>
+<li>cerr用法同cout，作用是不经过缓存区直接向标准输出输出内容，只会在显示区输出而不会向重定向文件中输出。</li>
+</ol>
+<p><strong>生成时需要注意要把和题目名称相同的标程cpp（例如program.cpp）放在和datamaker同一个文件夹下，同时要注意标程需要写文件输入输出。</strong></p>
+<p>如果在system函数行编译错误，请手动引用&lt;windows.h&gt;库。</p>
+<h2 id="简单数据生成"><a href="#简单数据生成" class="headerlink" title="简单数据生成"></a>简单数据生成</h2><h3 id="1-n的随机排列"><a href="#1-n的随机排列" class="headerlink" title="1~n的随机排列"></a>1~n的随机排列</h3><p>方法一：<br>利用STL库中的next_permutation函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>);</span><br><span class="line"><span class="type">int</span> a[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)a[i]=i;</span><br><span class="line"><span class="type">int</span> T=<span class="built_in">randomint</span>(<span class="number">1</span>,n<span class="comment">/*或者XJB写的一个数，反正要小于n!*/</span>);</span><br><span class="line"><span class="keyword">while</span>(T--)<span class="built_in">next_permutation</span>(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</span><br><span class="line">cout&lt;&lt;n&lt;&lt;endl;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)cout&lt;&lt;a[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：写着简单。</li>
+<li>缺点：next_permutation返回的其实是一个bool，当数列排序到最后一组排列时便不可再次排列，一般是n比较小的时候会出现。</li>
+</ul>
+<p>方法二：<br>利用bool数组判断是否出现。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>);</span><br><span class="line"><span class="type">int</span> a[<span class="number">100005</span>];</span><br><span class="line"><span class="type">bool</span> b[<span class="number">100005</span>];</span><br><span class="line"><span class="type">int</span> l=<span class="number">1</span>,r=n;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,x;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(b[l])l++;</span><br><span class="line">    <span class="keyword">while</span>(b[r])r--;</span><br><span class="line">    <span class="keyword">do</span>&#123;x=<span class="built_in">randomint</span>(l,r);&#125;<span class="keyword">while</span>(b[x]);b[x]=<span class="number">1</span>;</span><br><span class="line">    a[i]=x;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;n&lt;&lt;endl;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)cout&lt;&lt;a[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：可以算是完全随机的排列。</li>
+<li>缺点：写着没那么简单，刚开始这样写可能不会写l和r，这时就会使程序运行时间在某些时候极长（这时候建议srand(19260817)）。</li>
+</ul>
+<h3 id="字符（串）生成"><a href="#字符（串）生成" class="headerlink" title="字符（串）生成"></a>字符（串）生成</h3><p><img src="/pic/0-127.jpg" alt="0-127"><img src="/pic/128-255.jpg" alt="128-255"></p>
+<p>正如上表所示，我们要生成字符串的时候需要注意范围（0<del>127，128</del>255实际有问题），并且33~126的值才有实际意义。<br>实际我们写的时候需要写</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> c=<span class="built_in">randomint</span>(<span class="number">33</span>,<span class="number">126</span>);</span><br></pre></td></tr></table></figure>
+<p>同时，如果你需要一个字符串，可以直接写</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=len;i++)</span><br><span class="line">    s+=(<span class="type">char</span>)<span class="built_in">randomint</span>(<span class="number">33</span>,<span class="number">126</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h3 id="n个点m条边的图"><a href="#n个点m条边的图" class="headerlink" title="n个点m条边的图"></a>n个点m条边的图</h3><p>方法是每次随机选择两个点，并连接一条边。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>),m=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>);</span><br><span class="line"><span class="type">int</span> bian[<span class="number">100005</span>][<span class="number">2</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,x,y;i&lt;=m;i++)</span><br><span class="line">&#123;</span><br><span class="line">    x=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br><span class="line">    y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br><span class="line">    bian[i][<span class="number">0</span>]=x;</span><br><span class="line">    bian[i][<span class="number">1</span>]=y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,n,m);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,bian[i][<span class="number">0</span>],bian[i][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="无自环？"><a href="#无自环？" class="headerlink" title="无自环？"></a>无自环？</h3><p>只需将</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br></pre></td></tr></table></figure>
+<p>替换成</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(x==y);</span><br></pre></td></tr></table></figure>
+<p>即可。</p>
+<h3 id="无重边？"><a href="#无重边？" class="headerlink" title="无重边？"></a>无重边？</h3><p>增加map判重即可，但是要注意你的m限制。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无向无重边</span></span><br><span class="line">    <span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>),m;</span><br><span class="line">    <span class="type">int</span> bian[<span class="number">100005</span>][<span class="number">2</span>];</span><br><span class="line">    map&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;,<span class="type">int</span>&gt;ma;</span><br><span class="line">    <span class="keyword">do</span>&#123;m=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>);&#125;<span class="keyword">while</span>(m*<span class="number">2</span>&gt;n*(n<span class="number">-1</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,x,y;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            x=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br><span class="line">            <span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(x==y);</span><br><span class="line">        &#125;<span class="keyword">while</span>(ma.<span class="built_in">count</span>(<span class="built_in">make_pair</span>(<span class="built_in">min</span>(x,y),<span class="built_in">max</span>(x,y))));</span><br><span class="line">        ma.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="built_in">make_pair</span>(<span class="built_in">min</span>(x,y),<span class="built_in">max</span>(x,y)),i));</span><br><span class="line">        bian[i][<span class="number">0</span>]=x;</span><br><span class="line">        bian[i][<span class="number">1</span>]=y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,n,m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,bian[i][<span class="number">0</span>],bian[i][<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//有向无重边</span></span><br><span class="line">    <span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>),m;</span><br><span class="line">    <span class="type">int</span> bian[<span class="number">100005</span>][<span class="number">2</span>];</span><br><span class="line">    map&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;,<span class="type">int</span>&gt;ma;</span><br><span class="line">    <span class="keyword">do</span>&#123;m=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>);&#125;<span class="keyword">while</span>(m&gt;n*(n<span class="number">-1</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,x,y;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            x=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br><span class="line">            <span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(x==y);</span><br><span class="line">        &#125;<span class="keyword">while</span>(ma.<span class="built_in">count</span>(<span class="built_in">make_pair</span>(x,y));</span><br><span class="line">        ma.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="built_in">make_pair</span>(x,y),i));</span><br><span class="line">        bian[i][<span class="number">0</span>]=x;</span><br><span class="line">        bian[i][<span class="number">1</span>]=y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,n,m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,bian[i][<span class="number">0</span>],bian[i][<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一棵树？"><a href="#一棵树？" class="headerlink" title="一棵树？"></a>一棵树？</h3><p>每次选择已经连接的两个不同父节点的节点建边即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> bian[<span class="number">100005</span>][<span class="number">2</span>];</span><br><span class="line"><span class="type">int</span> fa[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">getfa</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;<span class="keyword">return</span> fa[x]==x?x:fa[x]=<span class="built_in">getfa</span>(fa[x]);&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> fx=<span class="built_in">getfa</span>(x),fy=<span class="built_in">getfa</span>(y);</span><br><span class="line">    <span class="keyword">if</span>(fx==fy)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    fa[fx]=fy;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">make_data</span><span class="params">(<span class="type">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;    </span><br><span class="line">    <span class="built_in">memset</span>(bian,<span class="number">0</span>,<span class="built_in">sizeof</span>(bian));</span><br><span class="line">    <span class="built_in">memset</span>(fa,<span class="number">0</span>,<span class="built_in">sizeof</span>(fa));</span><br><span class="line">    <span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)fa[i]=i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,x,y;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            x=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br><span class="line">            y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(x==y||!<span class="built_in">merge</span>(x,y));</span><br><span class="line">        bian[i][<span class="number">0</span>]=x;</span><br><span class="line">        bian[i][<span class="number">1</span>]=y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,bian[i][<span class="number">0</span>],bian[i][<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一条链？"><a href="#一条链？" class="headerlink" title="一条链？"></a>一条链？</h3><p>树的特殊情况，加上每个点访问次数即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>);</span><br><span class="line"><span class="type">int</span> bian[<span class="number">100005</span>][<span class="number">2</span>];</span><br><span class="line"><span class="type">int</span> dian[<span class="number">100005</span>];</span><br><span class="line"><span class="type">int</span> x=<span class="built_in">randomint</span>(<span class="number">1</span>,n),y;</span><br><span class="line"><span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(x==y);</span><br><span class="line">bian[<span class="number">1</span>][<span class="number">0</span>]=x;</span><br><span class="line">bian[<span class="number">1</span>][<span class="number">1</span>]=y;</span><br><span class="line">dian[x]=<span class="number">1</span>;</span><br><span class="line">dian[y]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">do</span>&#123;x=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(!dian[x]||dian[x]==<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(dian[y]);</span><br><span class="line">    bian[i][<span class="number">0</span>]=x;</span><br><span class="line">    bian[i][<span class="number">1</span>]=y;</span><br><span class="line">    dian[x]=<span class="number">2</span>;</span><br><span class="line">    dian[y]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,bian[i][<span class="number">0</span>],bian[i][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="菊花图？"><a href="#菊花图？" class="headerlink" title="菊花图？"></a>菊花图？</h3><p>树的特殊情况。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>),s=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br><span class="line"><span class="type">int</span> bian[<span class="number">100005</span>][<span class="number">2</span>];</span><br><span class="line"><span class="type">bool</span> dian[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,x,y;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    x=s;</span><br><span class="line">    <span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(dian[y]);</span><br><span class="line">    bian[i][<span class="number">0</span>]=x;</span><br><span class="line">    bian[i][<span class="number">1</span>]=y;</span><br><span class="line">    dian[x]=<span class="number">2</span>;</span><br><span class="line">    dian[y]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,bian[i][<span class="number">0</span>],bian[i][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="蒲公英？"><a href="#蒲公英？" class="headerlink" title="蒲公英？"></a>蒲公英？</h3><p>菊花图+一条链即可。</p>
+<h3 id="连通无向图？"><a href="#连通无向图？" class="headerlink" title="连通无向图？"></a>连通无向图？</h3><p>在树的基础上连边即可</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">5</span>),m;</span><br><span class="line"><span class="type">int</span> bian[<span class="number">100005</span>][<span class="number">2</span>];</span><br><span class="line"><span class="type">bool</span> dian[<span class="number">100005</span>];</span><br><span class="line">map&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;,<span class="type">int</span>&gt;ma;</span><br><span class="line"><span class="keyword">do</span>&#123;m=<span class="built_in">randomint</span>(<span class="number">1</span>,<span class="number">1e5</span>);&#125;<span class="keyword">while</span>(m*<span class="number">2</span>&gt;n*(n<span class="number">-1</span>));</span><br><span class="line"><span class="type">int</span> x=<span class="built_in">randomint</span>(<span class="number">1</span>,n),y;</span><br><span class="line"><span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(x==y);</span><br><span class="line">bian[<span class="number">1</span>][<span class="number">0</span>]=x;</span><br><span class="line">bian[<span class="number">1</span>][<span class="number">1</span>]=y;</span><br><span class="line">dian[x]=<span class="number">1</span>;</span><br><span class="line">dian[y]=<span class="number">1</span>;</span><br><span class="line">ma.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="built_in">make_pair</span>(<span class="built_in">min</span>(x,y),<span class="built_in">max</span>(x,y)),<span class="number">1</span>));</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">do</span>&#123;x=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(!dian[x]);</span><br><span class="line">    <span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(dian[y]);</span><br><span class="line">    bian[i][<span class="number">0</span>]=x;</span><br><span class="line">    bian[i][<span class="number">1</span>]=y;</span><br><span class="line">    dian[x]=<span class="number">1</span>;</span><br><span class="line">    dian[y]=<span class="number">1</span>;</span><br><span class="line">    ma.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="built_in">make_pair</span>(<span class="built_in">min</span>(x,y),<span class="built_in">max</span>(x,y)),i));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=n;i&lt;=m;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="built_in">randomint</span>(<span class="number">1</span>,n);</span><br><span class="line">        <span class="keyword">do</span>&#123;y=<span class="built_in">randomint</span>(<span class="number">1</span>,n);&#125;<span class="keyword">while</span>(x==y);</span><br><span class="line">    &#125;<span class="keyword">while</span>(ma.<span class="built_in">count</span>(<span class="built_in">make_pair</span>(<span class="built_in">min</span>(x,y),<span class="built_in">max</span>(x,y))));</span><br><span class="line">    ma.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="built_in">make_pair</span>(<span class="built_in">min</span>(x,y),<span class="built_in">max</span>(x,y)),i));</span><br><span class="line">    bian[i][<span class="number">0</span>]=x;</span><br><span class="line">    bian[i][<span class="number">1</span>]=y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,n,m);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,bian[i][<span class="number">0</span>],bian[i][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="对拍程序"><a href="#对拍程序" class="headerlink" title="对拍程序"></a>对拍程序</h1><p>在考场上，一般会写一个正确的暴力和自己尝试写的正解，为了校验自己程序的正确性，我们可以利用上面所述的数据构造程序并写一个对拍程序来校验程序的正确性。</p>
+<h2 id="使用bat文件校验"><a href="#使用bat文件校验" class="headerlink" title="使用bat文件校验"></a>使用bat文件校验</h2><p>我们知道Windows系统自带的DOS命令可以很方便的帮助我们完成校验任务，我们不妨学着写一个简单的bat文件方便快捷地进行我们的对拍。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">:again</span><br><span class="line">data.exe &gt; problemname.in</span><br><span class="line">force.exe &lt; problemname.in &gt; problemname.ans</span><br><span class="line">program.exe &lt; problemname.in &gt; problemname.out</span><br><span class="line">fc problemname.ans problemname.out</span><br><span class="line">if not errorlevel 1 goto again</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p>下面对上面的bat文件做出详细解释：</p>
+<p>@echo off的作用是关闭无关显示，如果没有这行，你会看到一堆提示，这都是毫无必要的信息。<br>:again这里是声明一个again名称的运行节点，使执行命令时能够跳转到这行。<br>下面三行分别是 数据生成器 暴力程序 你的程序 三个<strong>已经编译过</strong>的程序。如果你的程序已经写了文件输入输出，请将这三行替换成下面的三行即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data.exe</span><br><span class="line">force.exe</span><br><span class="line">program.exe</span><br></pre></td></tr></table></figure>
+<p>fc是文件比较命令，如果文件比较不出差异会返回0，否则会返回1。<br>if not errorlevel 1 goto again是指如果没有返回1则执行跳转至again运行节点。<br>pause就是暂停程序。</p>
+<p>如果我们的程序已经拍出了不同，我们就应该暂停并查看数据进行调试。</p>
+<p><strong>需要注意的一点是，对拍的时候，需要把已经编译过的数据生成器、暴力程序、你的程序和对拍bat放到同一个文件夹下。</strong></p>
+<h2 id="使用C-写法校验"><a href="#使用C-写法校验" class="headerlink" title="使用C++写法校验"></a>使用C++写法校验</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;data.exe &gt; problemname.in&quot;</span>);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;force.exe &lt; problemname.in &gt; problemname.ans&quot;</span>);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;program.exe &lt; problemname.in &gt; problemname.out&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">system</span>(<span class="string">&quot;fc problemname.ans problemname.out&quot;</span>))<span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同bat的写法，其实就是用C++的system函数执行那些命令而已，但是与bat不同的是此处fc命令的返回值会直接给执行该条命令的system函数，所以不用再写if指令。这样的好处是节省了大脑记忆if命令的空间<del>（当然我作为一个修计算机的肯定是会这条指令的）</del>。</p>
+<p>另外，同bat写法一样，如果你的程序已经写了文件输入输出，请将这三行替换成下面的三行即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">system</span>(<span class="string">&quot;data.exe&quot;</span>);</span><br><span class="line"><span class="built_in">system</span>(<span class="string">&quot;force.exe&quot;</span>);</span><br><span class="line"><span class="built_in">system</span>(<span class="string">&quot;program.exe&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果在system函数行编译错误，请手动引用&lt;windows.h&gt;库。</p>
+<h2 id="次数的显示"><a href="#次数的显示" class="headerlink" title="次数的显示"></a>次数的显示</h2><h3 id="bat"><a href="#bat" class="headerlink" title="bat"></a>bat</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">set t=0</span><br><span class="line">:again</span><br><span class="line">set /a t+=1</span><br><span class="line">echo times: %t%</span><br><span class="line">data.exe &gt; problemname.in</span><br><span class="line">force.exe &lt; problemname.in &gt; problemname.ans</span><br><span class="line">program.exe &lt; problemname.in &gt; problemname.out</span><br><span class="line">fc problemname.ans problemname.out</span><br><span class="line">if not errorlevel 1 goto again</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> t=<span class="number">1</span>;t;t++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;times: %d\n&quot;</span>,t);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;data.exe &gt; problemname.in&quot;</span>);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;force.exe &lt; problemname.in &gt; problemname.ans&quot;</span>);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;program.exe &lt; problemname.in &gt; problemname.out&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">system</span>(<span class="string">&quot;fc problemname.ans problemname.out&quot;</span>))<span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="时间的显示"><a href="#时间的显示" class="headerlink" title="时间的显示"></a>时间的显示</h2><h3 id="bat-1"><a href="#bat-1" class="headerlink" title="bat"></a>bat</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">:again</span><br><span class="line">set t1=%time:~0,2%%time:~3,2%%time:~6,2%</span><br><span class="line">data.exe &gt; problemname.in</span><br><span class="line">set t2=%time:~0,2%%time:~3,2%%time:~6,2%</span><br><span class="line">set /a t3=%t2%-%t1%</span><br><span class="line">echo data    time=%t3% ms</span><br><span class="line">set t1=%time:~0,2%%time:~3,2%%time:~6,2%</span><br><span class="line">force.exe &lt; problemname.in &gt; problemname.ans</span><br><span class="line">set t2=%time:~0,2%%time:~3,2%%time:~6,2%</span><br><span class="line">set /a t3=%t2%-%t1%</span><br><span class="line">echo force    time=%t3% ms</span><br><span class="line">set t1=%time:~0,2%%time:~3,2%%time:~6,2%</span><br><span class="line">program.exe &lt; problemname.in &gt; problemname.out</span><br><span class="line">set t2=%time:~0,2%%time:~3,2%%time:~6,2%</span><br><span class="line">set /a t3=%t2%-%t1%</span><br><span class="line">echo program    time=%t3% ms</span><br><span class="line">fc problemname.ans problemname.out</span><br><span class="line">if not errorlevel 1 goto again</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<h3 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">unsigned</span> <span class="type">int</span> t1=<span class="built_in">clock</span>(),t2,t3;</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;data.exe &gt; problemname.in&quot;</span>);</span><br><span class="line">        t2=<span class="built_in">clock</span>();</span><br><span class="line">        t3=t2-t1;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;data	time=%u ms\n&quot;</span>,t3);</span><br><span class="line">        t1=<span class="built_in">clock</span>();</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;force.exe &lt; problemname.in &gt; problemname.ans&quot;</span>);</span><br><span class="line">        t2=<span class="built_in">clock</span>();</span><br><span class="line">        t3=t2-t1;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;force   time=%u ms\n&quot;</span>,t3);</span><br><span class="line">        t1=<span class="built_in">clock</span>();</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;program.exe &lt; problemname.in &gt; problemname.out&quot;</span>);</span><br><span class="line">        t2=<span class="built_in">clock</span>();</span><br><span class="line">        t3=t2-t1;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;program time=%u ms\n&quot;</span>,t3);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">system</span>(<span class="string">&quot;fc problemname.ans problemname.out&quot;</span>))<span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>文件输入输出时替换模式参照上文。</p>
+<hr>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/data-construction-and-beat-program/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/data-construction-and-beat-program/"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        
+        
+          <span>标签:</span>
+          
+  <a href="/tags#科技" >
+    <span class="tag-code">科技</span>
+  </a>
+
+        
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/strange-computer-knowledge/">
+        <span class="nav-arrow">← </span>
+        
+          一些奇奇怪怪的计算机知识
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/cena-or-lemon-ac-automation/">
+        
+          Cena和Lemon下的AC自动机
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 分享 START -->
+    
+    <!-- 分享 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E6%9E%84%E9%80%A0"><span class="toc-nav-text">数据构造</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%86%99%E6%B3%95"><span class="toc-nav-text">总程序的写法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90"><span class="toc-nav-text">简单数据生成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-n%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%8E%92%E5%88%97"><span class="toc-nav-text">1~n的随机排列</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AD%97%E7%AC%A6%EF%BC%88%E4%B8%B2%EF%BC%89%E7%94%9F%E6%88%90"><span class="toc-nav-text">字符（串）生成</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%BE"><span class="toc-nav-text">图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#n%E4%B8%AA%E7%82%B9m%E6%9D%A1%E8%BE%B9%E7%9A%84%E5%9B%BE"><span class="toc-nav-text">n个点m条边的图</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%A0%E8%87%AA%E7%8E%AF%EF%BC%9F"><span class="toc-nav-text">无自环？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%A0%E9%87%8D%E8%BE%B9%EF%BC%9F"><span class="toc-nav-text">无重边？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80%E6%A3%B5%E6%A0%91%EF%BC%9F"><span class="toc-nav-text">一棵树？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80%E6%9D%A1%E9%93%BE%EF%BC%9F"><span class="toc-nav-text">一条链？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%8F%8A%E8%8A%B1%E5%9B%BE%EF%BC%9F"><span class="toc-nav-text">菊花图？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%92%B2%E5%85%AC%E8%8B%B1%EF%BC%9F"><span class="toc-nav-text">蒲公英？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%9E%E9%80%9A%E6%97%A0%E5%90%91%E5%9B%BE%EF%BC%9F"><span class="toc-nav-text">连通无向图？</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%AF%B9%E6%8B%8D%E7%A8%8B%E5%BA%8F"><span class="toc-nav-text">对拍程序</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8bat%E6%96%87%E4%BB%B6%E6%A0%A1%E9%AA%8C"><span class="toc-nav-text">使用bat文件校验</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8C-%E5%86%99%E6%B3%95%E6%A0%A1%E9%AA%8C"><span class="toc-nav-text">使用C++写法校验</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%AC%A1%E6%95%B0%E7%9A%84%E6%98%BE%E7%A4%BA"><span class="toc-nav-text">次数的显示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#bat"><span class="toc-nav-text">bat</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#C"><span class="toc-nav-text">C++</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%97%B6%E9%97%B4%E7%9A%84%E6%98%BE%E7%A4%BA"><span class="toc-nav-text">时间的显示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#bat-1"><span class="toc-nav-text">bat</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#C-1"><span class="toc-nav-text">C++</span></a></li></ol></li></ol></li></ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/blog/data-construction-and-beat-program/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+
+
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkaixin.cc",
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

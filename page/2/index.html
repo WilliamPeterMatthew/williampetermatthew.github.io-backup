@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/WriteUp/writeup-pwn-so-brop-ret2text/">撰解 【Pwn】栈溢出基本ROP——ret2text</a>
+      </h2>
+      <p class="article-date">2022年6月27日</p>
+      
+      
+        
+  <a href="/tags#撰解" >
+    <span class="tag-code">撰解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          【Pwn】栈溢出基本ROP——ret2text
+        
+      </div>
+      <a class="more" href="/blog/WriteUp/writeup-pwn-so-brop-ret2text/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/BTPanel-L02/">【宝塔面板使用心得】L02 认识界面与配置</a>
+      </h2>
+      <p class="article-date">2022年1月15日</p>
+      
+      
+        
+  <a href="/tags#宝塔面板使用心得" >
+    <span class="tag-code">宝塔面板使用心得</span>
+  </a>
+
+  <a href="/tags#宝塔Linux面板" >
+    <span class="tag-code">宝塔Linux面板</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+本系列心得序号以L开头是Linux面板，以W开头是Windows面板。
+
+登录页面上一篇，我们安装了宝塔面板，大家已经见到过这个页面了。点击右上角的二维码或计算机图标可以切换登录方式，从账号密码登录改为二维码登录。二维码登录需要使用宝塔APP，具体绑定方法可以看官方的教程，由于需要在面板安 ...
+        
+      </div>
+      <a class="more" href="/blog/BTPanel-L02/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-apa2022h1/">题解 CPPUAPA 2022年寒假第一次模拟赛</a>
+      </h2>
+      <p class="article-date">2022年1月9日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          本篇题解所使用的语言是C++，部分其他语言的选手可能需要理解做法后自行编写对应语言的代码。
+L1-1 打个招呼背景这是寒假的第一次模拟赛（可能也是最后一次模拟赛。。），关系到咱们天梯赛等比赛的选拔，希望大家怀着淡淡的喜悦尽情发挥！描述首先打个招呼，在屏幕上输出“HELL0 CPPUAPA!” ...
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-apa2022h1/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/BTPanel-L01/">【宝塔面板使用心得】L01 宝塔面板的安装</a>
+      </h2>
+      <p class="article-date">2022年1月4日</p>
+      
+      
+        
+  <a href="/tags#宝塔面板使用心得" >
+    <span class="tag-code">宝塔面板使用心得</span>
+  </a>
+
+  <a href="/tags#宝塔Linux面板" >
+    <span class="tag-code">宝塔Linux面板</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+本系列心得序号以L开头是Linux面板，以W开头是Windows面板。
+
+什么是宝塔面板？一般，我们的个人电脑的操作系统都会安装带有桌面或者是可视化界面，但是服务器的操作系统为了追求运行服务的性能，不会带有桌面或者是可视化界面。一般服务器操作系统只有一个输入命令的框，这对初入服务器维护的学 ...
+        
+      </div>
+      <a class="more" href="/blog/BTPanel-L01/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/BTPanel-L00/">【宝塔面板使用心得】L00 安装服务器操作系统</a>
+      </h2>
+      <p class="article-date">2022年1月3日</p>
+      
+      
+        
+  <a href="/tags#宝塔面板使用心得" >
+    <span class="tag-code">宝塔面板使用心得</span>
+  </a>
+
+  <a href="/tags#宝塔Linux面板" >
+    <span class="tag-code">宝塔Linux面板</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+本系列心得序号以L开头是Linux面板，以W开头是Windows面板。
+
+与桌面操作系统不同，服务器操作系统一般是安装在大型计算机上，用于提供例如Web、应用、数据库等特定服务的操作系统。
+宝塔面板可以安装在Linux和Windows系统的服务器上。Linux版支持CentOS 7.1+  ...
+        
+      </div>
+      <a class="more" href="/blog/BTPanel-L00/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Cpp-Binary-Storage/">C++内置数据类型与二进制存储</a>
+      </h2>
+      <p class="article-date">2021年8月1日</p>
+      
+      
+        
+  <a href="/tags#科技" >
+    <span class="tag-code">科技</span>
+  </a>
+
+  <a href="/tags#CPPUAPA周刊" >
+    <span class="tag-code">CPPUAPA周刊</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          平时，很多同学因为两个int类型的变量相乘变成了负数的问题而头疼，将变量换成了long long类型后便可以解决，但不知道为什么。本文笔者就将向大家介绍C++内置数据类型与二进制存储，以便大家理解。
+C++内置数据类型C++有非常多的数据类型，尤其是STL预写了十分多的数据类型，本文仅介绍原 ...
+        
+      </div>
+      <a class="more" href="/blog/Cpp-Binary-Storage/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-cppu2021/">题解 CPPU第五届“精武杯”计算机算法设计网络赛</a>
+      </h2>
+      <p class="article-date">2021年5月20日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          本篇题解所使用的语言是C++，部分其他语言的选手可能需要理解做法后自行编写对应语言的代码。
+本次比赛我认为值得一提的是7-1、7-6、7-7、7-10、和7-15，可以考虑重点看看这几道题的代码。
+7-1 连续因子一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3× ...
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-cppu2021/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/reproduction/reproduction-cppu2021/">复现 CPPU第五届“精武杯”电子数据取证竞赛</a>
+      </h2>
+      <p class="article-date">2021年5月19日</p>
+      
+      
+        
+  <a href="/tags#复现" >
+    <span class="tag-code">复现</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          案情简介：某市公安机关在侦办一起贩毒案件中，抓获嫌疑人王勇，缴获毒品数十克。
+        
+      </div>
+      <a class="more" href="/blog/reproduction/reproduction-cppu2021/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Happynintyo/">嘿，看到了就点进来吧！</a>
+      </h2>
+      <p class="article-date">2021年4月20日</p>
+      
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          嘿，那边的路人，你好！可以耽误你几分钟听我讲点什么嘛？
+        
+      </div>
+      <a class="more" href="/blog/Happynintyo/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Course/Python/02/">【Python入门】02 Python基础1——输入输出</a>
+      </h2>
+      <p class="article-date">2021年1月19日</p>
+      
+      
+        
+  <a href="/tags#Python入门" >
+    <span class="tag-code">Python入门</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          在上一期的末尾我们说到三段大差不差的代码
+代码的第一行都有计算100+200的意思，有的也得到了300，第二行都有显示Hello, World!的意思也都输出了
+第一段代码在Python交互模式下输出了
+12300Hello, World!
+
+第二段代码正常运行输出了
+12300Hello, ...
+        
+      </div>
+      <a class="more" href="/blog/Course/Python/02/">查看全文</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/"><span class="page-arrow">← </span>上一页</a>
+  
+  
+    <a href="/page/3/">下一页<span class="page-arrow"> →</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: 
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /js/
+Disallow: /errorpage/
+Sitemap: https://www.gh.zhangkaixin.cc/sitemap.xml
+Sitemap: https://www.gh.zhangkaixin.cc/baidusitemap.xml
+Sitemap: https://www.gh.zhangkaixin.cc/atom.xml

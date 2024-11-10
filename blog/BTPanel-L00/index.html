@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      【宝塔面板使用心得】L00 安装服务器操作系统 | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>【宝塔面板使用心得】L00 安装服务器操作系统</h2>
+  <p class="post-date">2022-01-03</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">1.5k</span>字，大约需要阅读<span class="post-count">5</span>分钟。</i>
+  
+    <section class="markdown-content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><blockquote>
+<p><em>本系列心得序号以L开头是Linux面板，以W开头是Windows面板。</em></p>
+</blockquote>
+<p>与桌面操作系统不同，服务器操作系统一般是安装在大型计算机上，用于提供例如Web、应用、数据库等特定服务的操作系统。</p>
+<p>宝塔面板可以安装在Linux和Windows系统的服务器上。Linux版支持CentOS 7.1+ (Ubuntu16.04+.、Debian9.0+)，Windows版仅支持Windows Server 2008&#x2F;2012&#x2F;2016&#x2F;2019 64位。</p>
+<blockquote>
+<p>本系列心得基于在VMware Workstation 16.x虚拟机运行的Ubuntu20.04，4核，内存4G，硬盘80G上讲解，并安装Linux 7.8.0版，面板部分内容由于机型与版本原因会有所出入，请读者自行甄别。</p>
+</blockquote>
+<h2 id="安装VMware"><a href="#安装VMware" class="headerlink" title="安装VMware"></a>安装VMware</h2><p>打开<a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html">VMware官网</a>，根据你自己系统的类型，点击页面最下方的立即下载。<br><img src="/pic/btpanell00-01.png" alt="官网下载"></p>
+<p>然后点开安装程序，开始安装。<br><img src="/pic/btpanell00-02.png" alt="安装程序1"></p>
+<p>同意许可协议。<br><img src="/pic/btpanell00-03.png" alt="安装程序2"></p>
+<p>此处建议勾选增强型键盘驱动程序。<br><img src="/pic/btpanell00-04.png" alt="安装程序3"></p>
+<p>单击“下一步”即可。<br><img src="/pic/btpanell00-05.png" alt="安装程序4"><br><img src="/pic/btpanell00-06.png" alt="安装程序5"></p>
+<p>单击“安装”，并等待安装进度条。<br><img src="/pic/btpanell00-07.png" alt="安装程序6"></p>
+<p>你可以看到安装已经完毕，可以点击许可证输入密钥或者点击完成后稍后输入密钥，这里点击许可证直接输入密钥。<br><img src="/pic/btpanell00-08.png" alt="安装程序7"></p>
+<blockquote>
+<p>VMware Workstation 作为虚拟机软件中十分经典而且流行的一款，十分建议各位购买正版软件，支持正版。但是，由于学生的经济实力有限或者你只想试用这款软件，往往你不会去购买正版软件（这还真是可惜），而是使用搜索引擎得到VMware Workstation的破解密钥。<br><strong><center>笔者并不会在这里列出那些密钥。</center></strong></p>
+</blockquote>
+<p>输入密钥并点击“输入”。<br><img src="/pic/btpanell00-09.png" alt="安装程序8"></p>
+<p>单击“完成”，结束安装。<br><img src="/pic/btpanell00-10.png" alt="安装程序9"></p>
+<p>Oops!它提示要重启了！笔者建议各位重启自己的电脑，因为VMware Workstation需要一些系统服务支持才能够正常运行。请确认别的工作文件已经保存，然后点击“是”，笔者在这里等待大家几分钟。<br><img src="/pic/btpanell00-11.png" alt="安装程序10"></p>
+<h2 id="安装Linux"><a href="#安装Linux" class="headerlink" title="安装Linux"></a>安装Linux</h2><p>欢迎回到本系列心得！虚拟机准备好了，现在我们来安装操作系统吧！</p>
+<p>Linux的发行版本诸多，这里以算法竞赛、电子数据取证竞赛中都经常用到的一个版本Ubuntu来安装。Ubuntu基于Debian，对各类硬件的支持比较完善，而且界面友好、上手容易，最大的优点是Ubuntu的所有发行版本都免费提供。</p>
+<h3 id="下载Ubuntu镜像"><a href="#下载Ubuntu镜像" class="headerlink" title="下载Ubuntu镜像"></a>下载Ubuntu镜像</h3><p>打开<a target="_blank" rel="noopener" href="http://releases.ubuntu.com/">Ubuntu官网</a>，你会发现页面上方列出了许多Ubuntu的发行版本，这里以<a target="_blank" rel="noopener" href="http://releases.ubuntu.com/focal/">Ubuntu 20.04.3 LTS (Focal Fossa)</a>为例，给大家讲解下安装操作系统的方法。<br><img src="/pic/btpanell00-12.png" alt="Ubuntu官网"></p>
+<p>点开对应版本的页面，你会发现有两个版本的下载页面。第一个版本是Desktop image，这是桌面版本，经常用于个人电脑；第二个版本是Server install image，即服务器版本。这里，选择服务器版本下载，点击右边的超链接即可下载。<br><img src="/pic/btpanell00-13.png" alt="Ubuntu20.04页面"></p>
+<blockquote>
+<p>如果你有想尝试使用Ubuntu系统的想法，可以在看完本系列心得后自行下载桌面版本安装使用。</p>
+</blockquote>
+<h3 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h3><p>现在，我们点开VMware Workstation，你看到了主页选项卡，现在点击“创建新的虚拟机”。<br><img src="/pic/btpanell00-14.png" alt="VM主页"></p>
+<p>选择“自定义(高级)(C)”，并点击“下一步”。<br><img src="/pic/btpanell00-15.png" alt="VM创建1"></p>
+<p>默认Workstation 16.x即可。<br><img src="/pic/btpanell00-16.png" alt="VM创建2"></p>
+<p>请选择“稍后安装操作系统(S)。”。<br><img src="/pic/btpanell00-17.png" alt="VM创建3"></p>
+<p>请将系统选为Linux—Ubuntu 64 位。<br><img src="/pic/btpanell00-18.png" alt="VM创建4"></p>
+<p>你可以自行选择虚拟机名称和它的位置，这不影响使用。<br><img src="/pic/btpanell00-19.png" alt="VM创建5"></p>
+<p>你可以使用默认的处理器配置，也可以和本心得一样，设为2个处理器每个处理器2核的4核配置。<br><img src="/pic/btpanell00-20.png" alt="VM创建6"></p>
+<p>内存可以是推荐的4GB即4096MB，本心得也用的是4GB。<br><img src="/pic/btpanell00-21.png" alt="VM创建7"></p>
+<p>默认NAT模式即可。<br><img src="/pic/btpanell00-22.png" alt="VM创建8"></p>
+<p>推荐的 LSI Logic 即可。<br><img src="/pic/btpanell00-23.png" alt="VM创建9"></p>
+<p>推荐的 SCSI 即可。<br><img src="/pic/btpanell00-24.png" alt="VM创建10"></p>
+<p>选择“创建新虚拟磁盘”。<br><img src="/pic/btpanell00-25.png" alt="VM创建11"></p>
+<p>推荐20GB，你也可以和本心得一样改成80GB。<br><img src="/pic/btpanell00-26.png" alt="VM创建12"></p>
+<p>这里的名称不影响使用，默认即可。<br><img src="/pic/btpanell00-27.png" alt="VM创建13"></p>
+<p>已经准备好创建虚拟机，但是不要急着点完成，这里点击“自定义硬件”。<br><img src="/pic/btpanell00-28.png" alt="VM创建14"></p>
+<p>选择“新 CD&#x2F;DVD (SATA)”，选择“使用 ISO 映像文件”，浏览选中本节刚开始下载的 Ubuntu 20.04 的服务器镜像，然后单击“关闭”。<br><img src="/pic/btpanell00-29.png" alt="VM创建15"></p>
+<p>现在可以点击“完成”了。<br><img src="/pic/btpanell00-28.png" alt="VM创建16"></p>
+<h3 id="安装操作系统"><a href="#安装操作系统" class="headerlink" title="安装操作系统"></a>安装操作系统</h3><p>现在，你已经看到虚拟机的页面，单击“开启此虚拟机”<br><img src="/pic/btpanell00-30.png" alt="VM虚拟机"></p>
+<p>当安装程序的光标在“English”上时，敲回车进行选择。<br><img src="/pic/btpanell00-31.png" alt="安装系统1"></p>
+<p>这里它提示我们有更新，直接选择“Continue without updating”，不要更新。<br><img src="/pic/btpanell00-32.png" alt="安装系统2"></p>
+<p>这里按上下键切换选择项，在Layout这里按空格弹出菜单，上下选择“Chinese”，你会发现Variant现在也是“Chinese”，选中“Done”确认即可。<br><img src="/pic/btpanell00-33.png" alt="安装系统3"></p>
+<p>网络连接这里直接确认过去即可。<br><img src="/pic/btpanell00-34.png" alt="安装系统4"></p>
+<p>代理这里直接确认过去跳过即可。<br><img src="/pic/btpanell00-35.png" alt="安装系统5"></p>
+<p>镜像源这里直接默认即可。<br><img src="/pic/btpanell00-36.png" alt="安装系统6"></p>
+<p>磁盘按默认的整个磁盘安装即可。<br><img src="/pic/btpanell00-37.png" alt="安装系统7"></p>
+<p>存储设置这里直接默认即可。这里，它提示是否确认设置，选择“Continue”确认设置。<br><img src="/pic/btpanell00-38.png" alt="安装系统8"></p>
+<p>资料配置这里按你自己的需要填写。<br><img src="/pic/btpanell00-39.png" alt="安装系统9"></p>
+<p>建议安装OpenSSH，按空格选中。<br><img src="/pic/btpanell00-40.png" alt="安装系统10"></p>
+<p>一些服务器环境，建议不要安装，我们将在宝塔面板中对服务器环境进行安装和配置。确认过后我们等待安装即可。<br><img src="/pic/btpanell00-41.png" alt="安装系统11"></p>
+<p>现在，已经安装完了，选择“Reboot Now”重新启动系统。<br><img src="/pic/btpanell00-42.png" alt="安装系统12"></p>
+<p>这个页面直接敲回车即可，VMware已经帮你把镜像自动移除了。<br><img src="/pic/btpanell00-43.png" alt="安装系统13"></p>
+<p>当你看到login或者静止不动，就说明已经加载完毕，可以输入刚刚设置的用户名和密码登录了。<br><img src="/pic/btpanell00-44.png" alt="安装系统14"></p>
+<p>现在，你已经安装完毕了！可以点击VMware Workstation的我已完成安装了。<br><img src="/pic/btpanell00-45.png" alt="安装系统15"></p>
+<h2 id="下篇"><a href="#下篇" class="headerlink" title="下篇"></a>下篇</h2><p>下一篇心得，笔者向带大家介绍宝塔Linux面板，并且带大家安装面板。</p>
+<hr>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/BTPanel-L00/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/BTPanel-L00/"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        
+        
+          <span>标签:</span>
+          
+  <a href="/tags#宝塔面板使用心得" >
+    <span class="tag-code">宝塔面板使用心得</span>
+  </a>
+
+  <a href="/tags#宝塔Linux面板" >
+    <span class="tag-code">宝塔Linux面板</span>
+  </a>
+
+        
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/Cpp-Binary-Storage/">
+        <span class="nav-arrow">← </span>
+        
+          C++内置数据类型与二进制存储
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/BTPanel-L01/">
+        
+          【宝塔面板使用心得】L01 宝塔面板的安装
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 分享 START -->
+    
+    <!-- 分享 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%85VMware"><span class="toc-nav-text">安装VMware</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%85Linux"><span class="toc-nav-text">安装Linux</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%8B%E8%BD%BDUbuntu%E9%95%9C%E5%83%8F"><span class="toc-nav-text">下载Ubuntu镜像</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-nav-text">创建虚拟机</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-nav-text">安装操作系统</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%8B%E7%AF%87"><span class="toc-nav-text">下篇</span></a></li></ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/blog/BTPanel-L00/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+
+
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkaixin.cc",
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

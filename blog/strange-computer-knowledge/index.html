@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      一些奇奇怪怪的计算机知识 | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>一些奇奇怪怪的计算机知识</h2>
+  <p class="post-date">2018-09-03</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">1.7k</span>字，大约需要阅读<span class="post-count">8</span>分钟。</i>
+  
+    <section class="markdown-content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="时间复杂度符号"><a href="#时间复杂度符号" class="headerlink" title="时间复杂度符号"></a>时间复杂度符号</h1><ul>
+<li>Θ，读音：theta、西塔；既是上界也是下界(tight)，等于的意思。</li>
+<li>Ο，读音：big-oh、欧米可荣（大写）；表示上界(tightness unknown)，小于等于的意思。</li>
+<li>ο，读音：small-oh、欧米可荣（小写）；表示上界(not tight)，小于的意思。</li>
+<li>Ω，读音：big omega、欧米伽（大写）；表示下界(tightness unknown)，大于等于的意思。</li>
+<li>ω，读音：small omega、欧米伽（小写）；表示下界(not tight)，大于的意思。</li>
+</ul>
+<p>Ο是渐进上界，Ω是渐进下界。Θ需同时满足大Ο和Ω，故称为确界（必须同时符合上界和下界）。Ο极其有用，因为它表示了最差性能。</p>
+<h1 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h1><ul>
+<li>1226563rd prime is 19260803</li>
+<li><strong>1226564th prime is 19260817</strong></li>
+<li>1226565th prime is 19260823</li>
+<li>1240302nd prime is 19490963</li>
+<li><strong>1240303rd prime is 19491001</strong></li>
+<li>1240304th prime is 19491007</li>
+<li>19260802nd prime is 359003321</li>
+<li>19260803rd prime is 359003327</li>
+<li>19260804th prime is 359003401</li>
+<li>19260816th prime is 359003639</li>
+<li><strong>19260817th prime is 359003647</strong></li>
+<li>19260818th prime is 359003669</li>
+<li>19260822nd prime is 359003737</li>
+<li>19260823rd prime is 359003747</li>
+<li>19260824th prime is 359003753</li>
+<li>19490962nd prime is 363541751</li>
+<li>19490963rd prime is 363541781</li>
+<li>19490964th prime is 363541807</li>
+<li>19491000th prime is 363542381</li>
+<li><strong>19491001st prime is 363542383</strong></li>
+<li>19491002nd prime is 363542411</li>
+<li>19491006th prime is 363542461</li>
+<li>19491007th prime is 363542477</li>
+<li>19491008th prime is 363542503</li>
+</ul>
+<h1 id="编译错误？"><a href="#编译错误？" class="headerlink" title="编译错误？"></a>编译错误？</h1><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fatal</span> <span class="literal">error</span>: XXX: No such file or directory <span class="comment">#include&lt;XXX&gt;</span><span class="regexp"></span></span><br><span class="line"><span class="regexp">^</span> compilation terminated.</span><br></pre></td></tr></table></figure>
+<p>上述的编译错误是指编译器由于没有发现XXX这个库所以终止了编译，这时候需要检查编译终止的库文件名的拼写是否有问题。</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error: <span class="string">&#x27;XXX&#x27;</span> was <span class="keyword">not</span> declared <span class="keyword">in</span> this scope XXX<span class="comment">(***)</span>;</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
+<p>上述的编译错误是指编译器没有发现你定义的XXX这个函数，这时候需要检查你定义的函数名和使用时的是否一致。</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">error: </span>expected &#x27;,&#x27; or &#x27;;&#x27; before &#x27;XXX&#x27; XXX</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
+<p>上述的编译错误是指编译器在编译XXX和上一条语句是没有发现语句分隔符’,’和’;’，你需要检查上一条语句并添加分隔符。</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">error: </span>&#x27;XXX&#x27; was not declared in this scope ***</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
+<p>上述的编译错误是指编译器在编译<code>***</code>这条语句的时候没有发现其中的XXX代表什么含义，你需要检查这条语句是否写错或者XXX是否被正确地定义。</p>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Can&#x27;t compile file: AAA.cpp: In <span class="function"><span class="keyword">function</span> &#x27;<span class="title">BBB</span>&#x27;:</span></span><br><span class="line">AAA.cpp:<span class="number">7</span>:<span class="number">20</span>: <span class="built_in">error</span>: expected <span class="string">&#x27;:&#x27;</span> before <span class="string">&#x27;;&#x27;</span> token</span><br><span class="line">CCC?DDD;:EEE;</span><br><span class="line">^</span><br><span class="line">AAA.cpp:<span class="number">7</span>:<span class="number">20</span>: <span class="built_in">error</span>: expected primary-expression before <span class="string">&#x27;;&#x27;</span> token</span><br><span class="line">AAA.cpp:<span class="number">7</span>:<span class="number">21</span>: <span class="built_in">error</span>: expected primary-expression before <span class="string">&#x27;:&#x27;</span> token</span><br><span class="line">CCC?DDD;:EEE;</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
+<p>这个错误是我这个大蒟蒻以前犯下的一个错误，这个错误是由于三目运算符的位置中不能有语句分隔符’,’和’;’。</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error: expected primary-expression before <span class="string">&#x27;XXX&#x27;</span> scanf<span class="comment">(***)</span>,XXX;</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
+<p>这个错误是因为scanf不能使用’,’分隔的关系。</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">error: </span>lvalue required as increment operand i=++j++;</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
+<p>这个错误真的是我当时不知道为啥脑子抽掉写的，我也不知道别的运算符使用错误是否会这样提示，但是++只能用在前或后不能同时用。</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">error: </span>expected unqualified-id before &#x27;,&#x27; token typename AAA,,BBB;</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
+<p>这个错误是因为定义类型的时候不能空一个。</p>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">error</span>：conflicting declaration ‘<span class="built_in">typename</span> AAA[***]’ <span class="built_in">typename</span> AAA[***]; ^ note：previous declaration as ‘<span class="built_in">typename</span> AAA’ <span class="built_in">typename</span> AAA;</span><br></pre></td></tr></table></figure>
+<p>这个错误的实质是AAA重复定义，然后会产生很多错误信息。</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Can<span class="symbol">&#x27;t</span> compile <span class="keyword">file</span>: AAA.cpp:<span class="number">3</span>:<span class="number">1</span>: <span class="literal">error</span>: <span class="symbol">&#x27;XXX</span>&#x27; does <span class="keyword">not</span> name a <span class="keyword">type</span></span><br><span class="line">XXX BBB;</span><br><span class="line">^</span><br></pre></td></tr></table></figure>
+<p>这是由于类型定义错误产生的错误。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">error：<span class="type">name</span> lookup <span class="keyword">of</span> <span class="string">&#x27;i&#x27;</span> changed <span class="keyword">for</span> ISO <span class="string">&#x27;for&#x27;</span> scoping [-fpermissive] i ^</span><br><span class="line">note：<span class="keyword">if</span> you use ‘-fpermissive’ G++ will accept your code </span><br><span class="line"><span class="built_in">warning</span>：right operand <span class="keyword">of</span> comma <span class="keyword">operator</span> has <span class="keyword">no</span> effect [-Wunused-<span class="keyword">value</span>] i ^</span><br></pre></td></tr></table></figure>
+<p>这是由于之前定义的局部变量被重新使用导致的，其本质是未定义。</p>
+<p><em><strong>注：由于洛谷第4代评测机已经推出了中文编译信息，因此上帖可能暂时停止更新</strong></em></p>
+<h1 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h1><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cpp：c <span class="keyword">plus</span> <span class="keyword">plus</span> C++</span><br><span class="line">io(或I<span class="regexp">/O)：Input/</span>Output 输入输出</span><br><span class="line">std：standard 标准</span><br><span class="line"><span class="keyword">int</span>：integer 整型（在C++中也可定义为<span class="keyword">long</span>，其实质为<span class="keyword">long</span> <span class="keyword">int</span>）</span><br><span class="line">shrt：<span class="keyword">short</span> 短整型</span><br></pre></td></tr></table></figure>
+<h1 id="数字-1"><a href="#数字-1" class="headerlink" title="数字"></a>数字</h1><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">2147483648</span>：<span class="number">2</span>的<span class="number">31</span>次方，其负数是int类型的数据最小值</span><br><span class="line"><span class="attribute">2147483647</span>：<span class="number">2</span>的<span class="number">31</span>次方减<span class="number">1</span>，是int类型的数据最大值</span><br><span class="line"><span class="attribute">536870911</span>：int数组下标乘积之和最大值</span><br><span class="line"><span class="attribute">33554432</span>：<span class="number">128</span>MB空间最大可开的int数</span><br></pre></td></tr></table></figure>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int <span class="built_in">isspace</span>(a)<span class="comment">//用于判断字符a是否为分隔符，这包括&#x27; &#x27;(32)、&#x27;\t&#x27;(9)、&#x27;\n&#x27;(10)、&#x27;\v&#x27;(11)、&#x27;\f&#x27;(12)和&#x27;\r&#x27;(13)</span></span><br><span class="line">int <span class="built_in">isprint</span>(a)<span class="comment">//用于判断字符a是否为可打印字符，这包括所有具有占位功能的字符</span></span><br><span class="line">int <span class="built_in">iscntrl</span>(a)<span class="comment">//用于判断字符a是否为控制字符，这除去了上文所述的可打印字符</span></span><br><span class="line">int <span class="built_in">isupper</span>(a)<span class="comment">//用于判断字符a是否为大写字母</span></span><br><span class="line">int <span class="built_in">islower</span>(a)<span class="comment">//用于判断字符a是否为小写字母</span></span><br><span class="line">int <span class="built_in">isalpha</span>(a)<span class="comment">//用于判断字符a是否为字母</span></span><br><span class="line">int <span class="built_in">isdigit</span>(a)<span class="comment">//用于判断字符a是否为数字</span></span><br><span class="line">int <span class="built_in">ispunct</span>(a)<span class="comment">//用于判断字符a是否为标点符号</span></span><br><span class="line">int <span class="built_in">isxdigit</span>(a)<span class="comment">//用于判断字符a是否为十六进制数字，这包括&#x27;0&#x27;(48)-&#x27;9&#x27;(57)、&#x27;a&#x27;(97)-&#x27;f&#x27;(102)和&#x27;A&#x27;(65)-&#x27;F&#x27;(70)</span></span><br><span class="line">int <span class="built_in">isalnum</span>(a)<span class="comment">//用于判断字符a是否为字母或数字</span></span><br><span class="line">int <span class="built_in">isgragh</span>(a)<span class="comment">//用于判断字符a是否为图形表示的字符，这包括上文所说的可打印字符中除去分隔符的部分</span></span><br><span class="line"><span class="comment">/*C++11警告*/</span>int <span class="built_in">blank</span>(a)<span class="comment">//用途同isspace</span></span><br><span class="line">int <span class="built_in">toupper</span>(a)<span class="comment">//当字符a是小写字母时,改为大写,其余情况不变</span></span><br><span class="line">int <span class="built_in">tolower</span>(a)<span class="comment">//当字符a是大写字母时,改为小写,其余情况不变</span></span><br></pre></td></tr></table></figure>
+<h1 id="这一波优化我看着都怕"><a href="#这一波优化我看着都怕" class="headerlink" title="这一波优化我看着都怕"></a>这一波优化我看着都怕</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;Ofast&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;inline&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fgcse&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fgcse-lm&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fipa-sra&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-ftree-pre&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-ftree-vrp&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fpeephole2&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-ffast-math&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fsched-spec&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;unroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-falign-jumps&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-falign-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-falign-labels&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fdevirtualize&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fcaller-saves&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fcrossjumping&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fthread-jumps&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-funroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fwhole-program&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-freorder-blocks&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fschedule-insns&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;inline-functions&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-ftree-tail-merge&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fschedule-insns2&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fstrict-aliasing&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fstrict-overflow&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-falign-functions&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fcse-skip-blocks&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fcse-follow-jumps&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fsched-interblock&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fpartial-inlining&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;no-stack-protector&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-freorder-functions&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-findirect-inlining&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fhoist-adjacent-loads&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-frerun-cse-after-loop&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;inline-small-functions&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-finline-small-functions&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-ftree-switch-conversion&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-foptimize-sibling-calls&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fexpensive-optimizations&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-funsafe-loop-optimizations&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;inline-functions-called-once&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;-fdelete-null-pointer-checks&quot;</span>)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/strange-computer-knowledge/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/strange-computer-knowledge/"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        
+        
+          <span>标签:</span>
+          
+  <a href="/tags#不知道什么东西" >
+    <span class="tag-code">不知道什么东西</span>
+  </a>
+
+        
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/friend-links/">
+        <span class="nav-arrow">← </span>
+        
+          【置顶】我和友链了解一下
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/data-construction-and-beat-program/">
+        
+          数据构造与对拍程序
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 分享 START -->
+    
+    <!-- 分享 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%AC%A6%E5%8F%B7"><span class="toc-nav-text">时间复杂度符号</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%95%B0%E5%AD%97"><span class="toc-nav-text">数字</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%EF%BC%9F"><span class="toc-nav-text">编译错误？</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%BC%A9%E5%86%99"><span class="toc-nav-text">缩写</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%95%B0%E5%AD%97-1"><span class="toc-nav-text">数字</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-nav-text">函数</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E8%BF%99%E4%B8%80%E6%B3%A2%E4%BC%98%E5%8C%96%E6%88%91%E7%9C%8B%E7%9D%80%E9%83%BD%E6%80%95"><span class="toc-nav-text">这一波优化我看着都怕</span></a></li></ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/blog/strange-computer-knowledge/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+
+
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkaixin.cc",
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

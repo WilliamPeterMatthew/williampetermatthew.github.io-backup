@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Course/Python/01/">【Python入门】01 环境设置＆交互模式</a>
+      </h2>
+      <p class="article-date">2021年1月13日</p>
+      
+      
+        
+  <a href="/tags#Python入门" >
+    <span class="tag-code">Python入门</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          额，值得说明的是，这篇文章其实是在2019年1月13日写的，在两年后的2021年1月14日，在展开了对我的博客的大规模修复的工作时，这个当时被我鸽了的内容就得以残喘。至于当时写这篇博客的原因，其实是为了给我一个学长写教程，但显然文字教程不如实际教学，故我也就鸽了文字版的。今天，我开始重构这个 ...
+        
+      </div>
+      <a class="more" href="/blog/Course/Python/01/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Autobiography-03/">不要看这篇文章</a>
+      </h2>
+      <p class="article-date">2020年12月6日</p>
+      
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          中国人民警察大学 张开昕
+
+&emsp;&emsp;学弟学妹们好，我相信你们翻开这册书的时候，一定多少都带有渴望从中汲取学习方法的想法。你们已经读了一些我们班通过报送、强基、高考进入清北等名校的同学的文章，相信你们已感受颇多；但很可惜，我并不优秀，不能给你们很好的学习方法，正如我在标题中提到 ...
+        
+      </div>
+      <a class="more" href="/blog/Autobiography-03/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Autobiography-02/">信竞要以和为贵，要讲码德！</a>
+      </h2>
+      <p class="article-date">2020年11月23日</p>
+      
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          &emsp;&emsp;同学们好啊，我是中国人民警察大学学员张开昕。刚才有个同学问我说开昕发生什么事了？我说怎么回事？给我发了一个张照片，我一看！噢！原来是昨天有两个年轻人，十六七岁，一个拿了数学的省一，一个拿了物理的省一。
+&emsp;&emsp;塔们说，诶，有一个说是我在教室里学习编程不 ...
+        
+      </div>
+      <a class="more" href="/blog/Autobiography-02/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-L1-001/">题解 L1-001 【Hello World】</a>
+      </h2>
+      <p class="article-date">2020年11月6日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          PTA L1-001:
+本题是语言入门题，作为新手，你只需要照代码打出即可。
+1234567#include&lt;iostream&gt;using namespace std;int main()&#123;    cout&lt;&lt;&quot;Hello World!&quot; ...
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-L1-001/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Xin-Experience/01W/">【昕体验01】闭眼倾听，世界更美丽</a>
+      </h2>
+      <p class="article-date">2020年7月19日</p>
+      
+      
+        
+  <a href="/tags#昕体验" >
+    <span class="tag-code">昕体验</span>
+  </a>
+
+  <a href="/tags#TalkBack" >
+    <span class="tag-code">TalkBack</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+
+“给明眼人写盲人应用评测，你也是评测界的一股清流。”
+——某刘姓博客主
+
+TalkBack体验&emsp;&emsp;因为个人原因，最近几天我不能用眼睛直视手机、电脑等电子产品；不过接打电话、听听歌曲还是可以的。但是不甘于放下手机的我于是想起了Google提供的无障碍服务中的TalkBa ...
+        
+      </div>
+      <a class="more" href="/blog/Xin-Experience/01W/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/HappyGrownup/">成人快乐</a>
+      </h2>
+      <p class="article-date">2020年4月20日</p>
+      
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          终于&emsp;&emsp;2020年4月20日10点55分，我18岁了。&emsp;&emsp;十分感谢一路上陪伴我的家人，朋友，同学，老师，以及那些给过我一个温暖的微笑的亲爱的陌生人，感谢你们让我坚持走到现在。也要和那些冷眼相待我的人说声感谢，感谢你们让我认识到了社会。&emsp;&em ...
+        
+      </div>
+      <a class="more" href="/blog/HappyGrownup/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Song-Download/">下歌</a>
+      </h2>
+      <p class="article-date">2019年10月1日</p>
+      
+      
+        
+  <a href="/tags#科技" >
+    <span class="tag-code">科技</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+文章以 Google Chrome 浏览器作示例。视频文件较大建议下载到本地观看。视频文件较大建议下载到本地观看。  
+
+网易云音乐视频(function(){var player = new DPlayer({"container":document.getElementById("dp ...
+        
+      </div>
+      <a class="more" href="/blog/Song-Download/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Autobiography-01/">张开昕自传</a>
+      </h2>
+      <p class="article-date">2019年8月1日</p>
+      
+      
+        
+  <a href="/tags#日志" >
+    <span class="tag-code">日志</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+    
+
+
+序言&emsp;&emsp;建国70年，师留此任，欲以文言之语述人物之传。左思右想，虑吾实无大好，且朋稀少，应无人会记吾，且吾不熟他人，不便写他人，故作此传。虽拙，无趣，但以吾本人所记，无知己可懂，只为终任。
+正文&emsp;&emsp;开昕，张氏，河南洛阳人也，未有字。因名 ...
+        
+      </div>
+      <a class="more" href="/blog/Autobiography-01/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-t74818/">题解 T74818 【[开昕生日愚人题#6]有规律数列】</a>
+      </h2>
+      <p class="article-date">2019年5月3日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguT74818:
+去年我们的无规律数列是纽结数，今年的也和纽结有关。当环是被奇次翻折后粘贴的，则剪开后应是翻折次数纽结的第一个即X_1（X是翻着次数，下同）；当为偶次，则应是双圈纽结的第一个即X^2_1。但是由于不存在1_1（因为单独的交点可以折为没有交点），所以应该输出0_1。
+
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-t74818/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-t74817/">题解 T74817 【[开昕生日愚人题#5]质数的检验】</a>
+      </h2>
+      <p class="article-date">2019年5月3日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguT74817:
+这题是打表题，你需要先打出一些特殊数的表，然后if&#x2F;switch判断并输出即可（当然如果你是神仙的话也可以尝试现场筛素数）。
+
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-t74817/">查看全文</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/page/2/"><span class="page-arrow">← </span>上一页</a>
+  
+  
+    <a href="/page/4/">下一页<span class="page-arrow"> →</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

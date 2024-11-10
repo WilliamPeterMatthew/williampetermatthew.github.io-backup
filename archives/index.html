@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Archives</h2>
+  <p class="post-date">文章归档</p>
+</div>
+<main class="app-body" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2024
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/blog/Essay/Essay-01/" class="archive-title">记一次服务器迁移</a>
+        <p class="archive-date">02-17</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2023
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/blog/Book-Exercises-of-PLC-5th-THQ-2/" class="archive-title">《Ｃ程序设计（第五版）谭浩强 著》课后习题（第6-10章）</a>
+        <p class="archive-date">10-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Book-Exercises-of-PLC-5th-THQ-1/" class="archive-title">《Ｃ程序设计（第五版）谭浩强 著》课后习题（第1-5章）</a>
+        <p class="archive-date">10-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2022
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/blog/Docker-Compose-Network-Segment-Conflict/" class="archive-title">一种解决 Docker Compose 网段冲突的方法</a>
+        <p class="archive-date">09-06</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/reproduction/reproduction-bluehat2022-pre/" class="archive-title">复现 第六届“蓝帽杯”全国大学生网络安全技能大赛 初赛 电子取证部分</a>
+        <p class="archive-date">07-10</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/WriteUp/writeup-isa2022shm1/" class="archive-title">撰解 CPPUISA 2022年暑假第一次作业</a>
+        <p class="archive-date">07-01</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/WriteUp/writeup-pwn-so-brop-ret2libc/" class="archive-title">撰解 【Pwn】栈溢出基本ROP——ret2libc</a>
+        <p class="archive-date">06-30</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/WriteUp/writeup-pwn-so-brop-ret2syscall/" class="archive-title">撰解 【Pwn】栈溢出基本ROP——ret2syscall</a>
+        <p class="archive-date">06-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/WriteUp/writeup-pwn-so-brop-ret2shellcode/" class="archive-title">撰解 【Pwn】栈溢出基本ROP——ret2shellcode</a>
+        <p class="archive-date">06-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/WriteUp/writeup-pwn-so-brop-ret2text/" class="archive-title">撰解 【Pwn】栈溢出基本ROP——ret2text</a>
+        <p class="archive-date">06-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/BTPanel-L02/" class="archive-title">【宝塔面板使用心得】L02 认识界面与配置</a>
+        <p class="archive-date">01-15</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-apa2022h1/" class="archive-title">题解 CPPUAPA 2022年寒假第一次模拟赛</a>
+        <p class="archive-date">01-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/BTPanel-L01/" class="archive-title">【宝塔面板使用心得】L01 宝塔面板的安装</a>
+        <p class="archive-date">01-04</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/BTPanel-L00/" class="archive-title">【宝塔面板使用心得】L00 安装服务器操作系统</a>
+        <p class="archive-date">01-03</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2021
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/blog/Cpp-Binary-Storage/" class="archive-title">C++内置数据类型与二进制存储</a>
+        <p class="archive-date">08-01</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-cppu2021/" class="archive-title">题解 CPPU第五届“精武杯”计算机算法设计网络赛</a>
+        <p class="archive-date">05-20</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/reproduction/reproduction-cppu2021/" class="archive-title">复现 CPPU第五届“精武杯”电子数据取证竞赛</a>
+        <p class="archive-date">05-19</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Happynintyo/" class="archive-title">嘿，看到了就点进来吧！</a>
+        <p class="archive-date">04-20</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Course/Python/02/" class="archive-title">【Python入门】02 Python基础1——输入输出</a>
+        <p class="archive-date">01-19</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Course/Python/01/" class="archive-title">【Python入门】01 环境设置＆交互模式</a>
+        <p class="archive-date">01-13</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/blog/Autobiography-03/" class="archive-title">不要看这篇文章</a>
+        <p class="archive-date">12-06</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Autobiography-02/" class="archive-title">信竞要以和为贵，要讲码德！</a>
+        <p class="archive-date">11-23</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-L1-001/" class="archive-title">题解 L1-001 【Hello World】</a>
+        <p class="archive-date">11-06</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Xin-Experience/01W/" class="archive-title">【昕体验01】闭眼倾听，世界更美丽</a>
+        <p class="archive-date">07-19</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/HappyGrownup/" class="archive-title">成人快乐</a>
+        <p class="archive-date">04-20</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2019
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/blog/Song-Download/" class="archive-title">下歌</a>
+        <p class="archive-date">10-01</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Autobiography-01/" class="archive-title">张开昕自传</a>
+        <p class="archive-date">08-01</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t74818/" class="archive-title">题解 T74818 【[开昕生日愚人题#6]有规律数列】</a>
+        <p class="archive-date">05-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t74817/" class="archive-title">题解 T74817 【[开昕生日愚人题#5]质数的检验】</a>
+        <p class="archive-date">05-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t74816/" class="archive-title">题解 T74816 【[开昕生日愚人题#4]多项式展开】</a>
+        <p class="archive-date">05-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t74815/" class="archive-title">题解 T74815 【[开昕生日愚人题#3]退役的日子】</a>
+        <p class="archive-date">05-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t74814/" class="archive-title">题解 T74814 【[开昕生日愚人题#2]谁优化了谁】</a>
+        <p class="archive-date">05-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t74813/" class="archive-title">题解 T74813 【[开昕生日愚人题#1]船新的版本】</a>
+        <p class="archive-date">05-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/LinearBasis/" class="archive-title">线性基</a>
+        <p class="archive-date">03-19</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/DynamicPlanning/" class="archive-title">动态规划——洛谷试炼场题目小结</a>
+        <p class="archive-date">03-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Blog-Hexo/" class="archive-title">Hexo博客使用教程</a>
+        <p class="archive-date">03-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Course/Python/Python-05/" class="archive-title">【Python入门】05 咕咕咕</a>
+        <p class="archive-date">03-01</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-MRepresentation/" class="archive-title">最小表示法/最大表示法</a>
+        <p class="archive-date">02-15</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-PalindromicTree/" class="archive-title">回文自动机</a>
+        <p class="archive-date">02-15</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Course/Python/Python-04/" class="archive-title">【Python入门】04 Python基础3——字符串和编码</a>
+        <p class="archive-date">02-15</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/crt-and-excrt/" class="archive-title">crt和excrt</a>
+        <p class="archive-date">02-13</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Polynomial/" class="archive-title">多项式</a>
+        <p class="archive-date">02-11</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Course/Python/Python-03/" class="archive-title">【Python入门】03 Python基础2——代码缩进、数据类型和变量</a>
+        <p class="archive-date">02-08</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Goodbye-Top-Domain/" class="archive-title">再见，极域！</a>
+        <p class="archive-date">01-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/data-2DBinaryIndexTree/" class="archive-title">二维树状数组</a>
+        <p class="archive-date">01-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-SAM/" class="archive-title">后缀自动机</a>
+        <p class="archive-date">01-19</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-SA/" class="archive-title">后缀数组</a>
+        <p class="archive-date">01-14</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-manacher/" class="archive-title">Manacher</a>
+        <p class="archive-date">01-14</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-ACAutomation/" class="archive-title">AC自动机</a>
+        <p class="archive-date">01-14</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-hash/" class="archive-title">字符串哈希</a>
+        <p class="archive-date">01-14</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-trie/" class="archive-title">Trie树，字典树</a>
+        <p class="archive-date">01-14</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Course/Cpp/Cpp-01/" class="archive-title">【C++入门】01 环境设置</a>
+        <p class="archive-date">01-13</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Bisection/" class="archive-title">二分</a>
+        <p class="archive-date">01-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/data-Persistent/" class="archive-title">可持久化数据结构</a>
+        <p class="archive-date">01-07</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/About-NOI-Linux/" class="archive-title">NOI Linux使用心得</a>
+        <p class="archive-date">01-06</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/data-LinkCutTree/" class="archive-title">动态树</a>
+        <p class="archive-date">01-04</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/data-BalancedTree/" class="archive-title">平衡树</a>
+        <p class="archive-date">01-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/data-TreeChainPartition/" class="archive-title">树链剖分</a>
+        <p class="archive-date">01-03</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/blog/data-SegmentTree/" class="archive-title">线段树</a>
+        <p class="archive-date">11-08</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/data-BinaryIndexTree/" class="archive-title">树状数组</a>
+        <p class="archive-date">11-08</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/string-kmp/" class="archive-title">kmp</a>
+        <p class="archive-date">11-08</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/gcd-and-exgcd/" class="archive-title">gcd和exgcd</a>
+        <p class="archive-date">11-07</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t53818/" class="archive-title">题解 T53818 【[退役欢乐赛Day2T3]谁是退役的人】</a>
+        <p class="archive-date">10-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t53817/" class="archive-title">题解 T53817 【[退役欢乐赛Day2T2]谁是最神的人】</a>
+        <p class="archive-date">10-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t53816/" class="archive-title">题解 T53816 【[退役欢乐赛Day2T1]谁是最惨的人】</a>
+        <p class="archive-date">10-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t53815/" class="archive-title">题解 T53815 【[退役欢乐赛Day1T3]高二退役的你】</a>
+        <p class="archive-date">10-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t53814/" class="archive-title">题解 T53814 【[退役欢乐赛Day1T2]高三吊打着你】</a>
+        <p class="archive-date">10-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t53813/" class="archive-title">题解 T53813 【[退役欢乐赛Day1T1]高一机惨着你】</a>
+        <p class="archive-date">10-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-u19727/" class="archive-title">题解 U19727 【PP游戏#1 彩环游戏（Color Rings Game）】</a>
+        <p class="archive-date">10-17</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/noip-summary/" class="archive-title">NOIp2011-2017总结</a>
+        <p class="archive-date">10-16</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/compositor-sequence/" class="archive-title">排序</a>
+        <p class="archive-date">10-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Overloaded-Operators-And-Overloaded-Functions/" class="archive-title">重载运算符和重载函数</a>
+        <p class="archive-date">10-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/high-precision-yes/" class="archive-title">高精度带符号整数算法</a>
+        <p class="archive-date">10-06</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/high-precision-no/" class="archive-title">高精度无符号整数算法</a>
+        <p class="archive-date">09-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Standard-Template-Library/" class="archive-title">STL的一些总结</a>
+        <p class="archive-date">09-18</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/cena-or-lemon-ac-automation/" class="archive-title">Cena和Lemon下的AC自动机</a>
+        <p class="archive-date">09-13</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/data-construction-and-beat-program/" class="archive-title">数据构造与对拍程序</a>
+        <p class="archive-date">09-10</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/strange-computer-knowledge/" class="archive-title">一些奇奇怪怪的计算机知识</a>
+        <p class="archive-date">09-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/friend-links/" class="archive-title">【置顶】我和友链了解一下</a>
+        <p class="archive-date">07-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/AdobeFlashPlayerOfflineInstaller/" class="archive-title">Adobe Flash Player离线安装包</a>
+        <p class="archive-date">07-22</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Input-and-output-optimization/" class="archive-title">输入输出优化代码</a>
+        <p class="archive-date">07-22</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-u30206/" class="archive-title">题解 U30206 【BZ游戏#1 草雉剑游戏（CZJ Game）】</a>
+        <p class="archive-date">07-21</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-u30211/" class="archive-title">题解 U30211 【BZ游戏#6 纸壳箱游戏（ZKX Game）】</a>
+        <p class="archive-date">07-20</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t27533/" class="archive-title">题解 T27533 【[开昕生日愚人题#6]无规律数列】</a>
+        <p class="archive-date">04-18</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t27523/" class="archive-title">题解 T27523 【[开昕生日愚人题#5]三角圆函数】</a>
+        <p class="archive-date">04-16</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t27522/" class="archive-title">题解 T27522 【[开昕生日愚人题#4]二项式展开】</a>
+        <p class="archive-date">04-16</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t27521/" class="archive-title">题解 T27521 【[开昕生日愚人题#3]字符串的值】</a>
+        <p class="archive-date">04-16</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t27516/" class="archive-title">题解 T27516 【[开昕生日愚人题#2]低级计算器】</a>
+        <p class="archive-date">04-16</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-t27508/" class="archive-title">题解 T27508 【[开昕生日愚人题#1]以前的版本】</a>
+        <p class="archive-date">04-16</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-u23374/" class="archive-title">题解 U23374 【PP游戏#6 矩阵游戏（Matrix Game）】</a>
+        <p class="archive-date">04-15</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/blog/Solution/solution-u22412/" class="archive-title">题解 U22412 【PP游戏#5 种树游戏（Tree Game）】</a>
+        <p class="archive-date">04-01</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2002
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/blog/hello-world/" class="archive-title">Hello World</a>
+        <p class="archive-date">04-20</p>
+      </div>
+    
+  </div>
+</section>
+  
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/archives/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
+  })();
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

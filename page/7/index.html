@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/data-BinaryIndexTree/">树状数组</a>
+      </h2>
+      <p class="article-date">2018年11月8日</p>
+      
+      
+        
+  <a href="/tags#数据结构" >
+    <span class="tag-code">数据结构</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          1234int lowbit(int x)&#123;    return x&amp;(-x);&#125;
+树状数组1单点修改，区间查询。
+12//需要先    add(i,a[i]);
+123456void add(int x,long long d)&#123;    for(;x& ...
+        
+      </div>
+      <a class="more" href="/blog/data-BinaryIndexTree/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/string-kmp/">kmp</a>
+      </h2>
+      <p class="article-date">2018年11月8日</p>
+      
+      
+        
+  <a href="/tags#字符串" >
+    <span class="tag-code">字符串</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          字符串的经典类型有一项为单串匹配问题，这是指一个模式串在一个文本串中出现了多少次并求出出现的位置的一个问题。我们称模式串长为$n$，文本串长为$m$，那么有
+
+理论复杂度下界$O(n+m)$。
+
+考虑暴力每次在文本串中的每一个位置从前往后匹配尝试是否正确。
+
+对于随机数据来说十分优秀，甚至有 ...
+        
+      </div>
+      <a class="more" href="/blog/string-kmp/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/gcd-and-exgcd/">gcd和exgcd</a>
+      </h2>
+      <p class="article-date">2018年11月7日</p>
+      
+      
+        
+  <a href="/tags#数学" >
+    <span class="tag-code">数学</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          gcdSTL库中有个template化的非递归版gcd，需要调用&lt;alogorithm&gt;使用方式是
+1c=__gcd(a,b);
+手写的话：
+递归版：
+1int gcd(int a,int b)&#123;return (!b)?a:gcd(b,a%b);&#125;
+非递归版： ...
+        
+      </div>
+      <a class="more" href="/blog/gcd-and-exgcd/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-t53818/">题解 T53818 【[退役欢乐赛Day2T3]谁是退役的人】</a>
+      </h2>
+      <p class="article-date">2018年10月26日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguT53818:
+Splay？Rotate？不不不！这些都是蒟蒻出题人吓唬做题人的道具而已。
+实际上 rotate 操作在这里起到的作用等价于将节点的父节点染为相同颜色。原因就是在rotate(x)之后，x 的原父节点 y 的另一个儿子变成了 x 的后代，而 y 变成了 x 的后代。 ...
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-t53818/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-t53817/">题解 T53817 【[退役欢乐赛Day2T2]谁是最神的人】</a>
+      </h2>
+      <p class="article-date">2018年10月26日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguT53817:
+可以观察到，数据范围贼小，所以首先，有耐性和心态好的人可以通过极其优秀的暴力过掉，然后呢，最强的那个人还考虑了状压DP的做法但我不会但数据小还能想到的办法当然是随机算法——模拟退火！但由于数据忒小了，其实写个真随机性算法每次随机数据排列分组贪心然后取最优即可
+
+如果 ...
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-t53817/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-t53816/">题解 T53816 【[退役欢乐赛Day2T1]谁是最惨的人】</a>
+      </h2>
+      <p class="article-date">2018年10月26日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguT53816:
+按思路模拟即可。
+要点：
+
+注意’\0’会影响字符串输出
+后输入的字符串应覆盖前面输入的字符串
+
+
+如果不知道机房最惨者的英文首字母缩写大写，可以查看博客的友链。
+本题By：Peter_Matthew
+
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-t53816/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-t53815/">题解 T53815 【[退役欢乐赛Day1T3]高二退役的你】</a>
+      </h2>
+      <p class="article-date">2018年10月26日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguT53815:
+在数据不水的情况下
+显然可以用贪心处理，最后选取的子矩阵的和为题目a中一段难度和乘以题目b中一段难度和，我们可以贪心，处理在每一套题目中长度为l的难度和的最小值，这样可以保证在难度不超过C蒟蒻能力的情况下可以AC的题更多。
+
+如果不知道机房中最蒟蒻的人的英文首字母缩 ...
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-t53815/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-t53814/">题解 T53814 【[退役欢乐赛Day1T2]高三吊打着你】</a>
+      </h2>
+      <p class="article-date">2018年10月26日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguT53814:
+很显然，此题是一道搜索水题，适合于初入OI的萌新
+法1：迭代加深，全局设置步数，dfs所有能到达的点若包含则输出当前步数（数据小于50）
+法2：bfs （数据小于1000）两种方式跑，第一次跑到的一定最优
+法2优化：若数据大于2000，我们考虑双向bfs
+当然了，这 ...
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-t53814/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-t53813/">题解 T53813 【[退役欢乐赛Day1T1]高一机惨着你】</a>
+      </h2>
+      <p class="article-date">2018年10月26日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguT53813:
+题意是在说：每次比较被机惨的两个人的话的长度。那么我们每次比较长度，第一个长则为bigger，第二个长则为less，同样长则为XD。
+
+如果不知道机房最强机惨王的英文首字母缩写大写，可以查看博客的友链。
+本题By：Peter_Matthew
+
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-t53813/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Solution/solution-u19727/">题解 U19727 【PP游戏#1 彩环游戏（Color Rings Game）】</a>
+      </h2>
+      <p class="article-date">2018年10月17日</p>
+      
+      
+        
+  <a href="/tags#题解" >
+    <span class="tag-code">题解</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          LuoguU19727:
+按题意模拟暴力即可。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656 ...
+        
+      </div>
+      <a class="more" href="/blog/Solution/solution-u19727/">查看全文</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/page/6/"><span class="page-arrow">← </span>上一页</a>
+  
+  
+    <a href="/page/8/">下一页<span class="page-arrow"> →</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Course/Python/Python-04/">【Python入门】04 Python基础3——字符串和编码</a>
+      </h2>
+      <p class="article-date">2019年2月15日</p>
+      
+      
+        
+  <a href="/tags#Python入门" >
+    <span class="tag-code">Python入门</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          在上一期的末尾我们说到一段代码
+12345678# -*- coding: utf-8 -*-n = 123f = 456.789s1 = &#x27;Hello, world&#x27;s2 = &#x27;Hello, \&#x27;Adam\&#x27;&#x27;s3 = r&#x2 ...
+        
+      </div>
+      <a class="more" href="/blog/Course/Python/Python-04/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/crt-and-excrt/">crt和excrt</a>
+      </h2>
+      <p class="article-date">2019年2月13日</p>
+      
+      
+        
+  <a href="/tags#数学" >
+    <span class="tag-code">数学</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          crt12345678910111213141516171819int exgcd(int a,int b,int &amp;x,int &amp;y)&#123;    if(!b)&#123;x=1,y=0;return a;&#125;    int t=exgcd(b,a%b,y,x ...
+        
+      </div>
+      <a class="more" href="/blog/crt-and-excrt/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Polynomial/">多项式</a>
+      </h2>
+      <p class="article-date">2019年2月11日</p>
+      
+      
+        
+  <a href="/tags#数学" >
+    <span class="tag-code">数学</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          FFT递归版12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include&lt;bits/stdc++.h&gt;#ifndef M_PI#define M_PI     ...
+        
+      </div>
+      <a class="more" href="/blog/Polynomial/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Course/Python/Python-03/">【Python入门】03 Python基础2——代码缩进、数据类型和变量</a>
+      </h2>
+      <p class="article-date">2019年2月8日</p>
+      
+      
+        
+  <a href="/tags#Python入门" >
+    <span class="tag-code">Python入门</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          在上一期的末尾我们说到一段代码
+12345a=100if a&gt;=0:    print(a)else:    print(-a)
+缩进及注释我们发现它采用缩进的方式
+缩进有利有弊，好处是强迫你格式化写代码，但没有规定缩进是几个空格或Tab。按照我们约定俗成的规定，应始终坚持使用 4个空 ...
+        
+      </div>
+      <a class="more" href="/blog/Course/Python/Python-03/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/Goodbye-Top-Domain/">再见，极域！</a>
+      </h2>
+      <p class="article-date">2019年1月29日</p>
+      
+      
+        
+  <a href="/tags#科技" >
+    <span class="tag-code">科技</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          0x00 引言作为学生党的我们，总想在微机课上跨越老师的控制走向那万千互联网，可这时一款名为极域的软件就阻挡了我们，我们的电脑屏幕竟然在这款软件的监控之下，而且更气的是，当我们打开了任务管理器，试图结束掉它时，它提示我们
+拒绝访问
+如果说我能直接结束掉它也行，但是这拒绝访问四个字激怒了我，作 ...
+        
+      </div>
+      <a class="more" href="/blog/Goodbye-Top-Domain/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/data-2DBinaryIndexTree/">二维树状数组</a>
+      </h2>
+      <p class="article-date">2019年1月26日</p>
+      
+      
+        
+  <a href="/tags#数据结构" >
+    <span class="tag-code">数据结构</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          1234int lowbit(int x)&#123;    return x&amp;(-x);&#125;
+二维树状数组1单点修改，矩阵查询。
+12345678void add(int x,int y,long long d)&#123;    int sy=y;    for(;x&l ...
+        
+      </div>
+      <a class="more" href="/blog/data-2DBinaryIndexTree/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/string-SAM/">后缀自动机</a>
+      </h2>
+      <p class="article-date">2019年1月19日</p>
+      
+      
+        
+  <a href="/tags#字符串" >
+    <span class="tag-code">字符串</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          普通的后缀自动机
+代码如下：洛谷P3975 [TJOI2015]弦论
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960 ...
+        
+      </div>
+      <a class="more" href="/blog/string-SAM/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/string-SA/">后缀数组</a>
+      </h2>
+      <p class="article-date">2019年1月14日</p>
+      
+      
+        
+  <a href="/tags#字符串" >
+    <span class="tag-code">字符串</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          后缀数组后缀对于一个串来说，第i个字符开始的串就是后缀。。。举个栗子：对于串ababa来说，ababa、baba、aba、ba、a都是它的后缀
+后缀数组我们将后缀编号（其实就是开始的那个字符在原串中位置）然后按照字典序排序这些后缀，得到了以下顺序
+
+a
+aba
+ababa
+ba
+baba
+
+ ...
+        
+      </div>
+      <a class="more" href="/blog/string-SA/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/string-manacher/">Manacher</a>
+      </h2>
+      <p class="article-date">2019年1月14日</p>
+      
+      
+        
+  <a href="/tags#字符串" >
+    <span class="tag-code">字符串</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          代码如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142#include&lt;bits/stdc++.h&gt;using namespace std;int n,p[51000100 ...
+        
+      </div>
+      <a class="more" href="/blog/string-manacher/">查看全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/string-ACAutomation/">AC自动机</a>
+      </h2>
+      <p class="article-date">2019年1月14日</p>
+      
+      
+        
+  <a href="/tags#字符串" >
+    <span class="tag-code">字符串</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          哇！AC自动机，莫非可以自动AC题目？不，这不可以，不过可以参考我的一篇自动AC机的文章尝试自动AC题目，叫AC自动机的原因是因为它的发明者名为Aho-Corasick，缩写为AC。。。
+AC自动机简单版12345678910111213141516171819202122232425262 ...
+        
+      </div>
+      <a class="more" href="/blog/string-ACAutomation/">查看全文</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/page/4/"><span class="page-arrow">← </span>上一页</a>
+  
+  
+    <a href="/page/6/">下一页<span class="page-arrow"> →</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2024 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>
