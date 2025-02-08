@@ -2,18 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.gh.zhangkaixin.cc/about/index.html</loc>
+    <loc>https://www.gh.zhangkaixin.cc/blog/Autobiography-01/</loc>
     
-    <lastmod>2024-03-02</lastmod>
+    <lastmod>2025-02-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.gh.zhangkaixin.cc/blog/Autobiography-01/</loc>
+    <loc>https://www.gh.zhangkaixin.cc/blog/Autobiography-03/</loc>
     
-    <lastmod>2024-02-23</lastmod>
+    <lastmod>2025-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gh.zhangkaixin.cc/blog/Autobiography-02/</loc>
+    
+    <lastmod>2025-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.gh.zhangkaixin.cc/about/index.html</loc>
+    
+    <lastmod>2024-03-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -822,24 +840,6 @@
   
   <url>
     <loc>https://www.gh.zhangkaixin.cc/blog/BTPanel-L00/</loc>
-    
-    <lastmod>2023-10-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.gh.zhangkaixin.cc/blog/Autobiography-03/</loc>
-    
-    <lastmod>2023-10-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.gh.zhangkaixin.cc/blog/Autobiography-02/</loc>
     
     <lastmod>2023-10-14</lastmod>
     
