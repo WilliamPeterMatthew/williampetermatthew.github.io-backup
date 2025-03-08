@@ -931,6 +931,9 @@ h2.article-head {
 .author .share-icons .icon-dingtalk {
   color: #3296fa;
 }
+.author .share-icons .icon-feishu {
+  color: #3370ff;
+}
 .author .share-icons .icon-zhihu {
   color: #0767c8;
 }
