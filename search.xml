@@ -5250,4 +5250,334 @@
         <tag>Python入门</tag>
       </tags>
   </entry>
+  <entry>
+    <title>字符组——从语言标准看计算机发展</title>
+    <url>/blog/Graph-Sequence/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>翻开2024年10月发布的C语言标准 ISO&#x2F;IEC 9899:2024 和C++语言标准 ISO&#x2F;IEC 14882:2024 ，对比1999年版的C语言标准 ISO&#x2F;IEC 9899:1999 和1998年版的C++语言标准 ISO&#x2F;IEC 14882:1998 ，我们会发现一个已经彻底从C语言和C++语言弃用的特性——三字符组（Trigraph Sequence）。</p>
+<p>这是一个冷门的特性，也因冷门而退出了历史的舞台。</p>
+<h2 id="背景：硬件限制与国际化需求"><a href="#背景：硬件限制与国际化需求" class="headerlink" title="背景：硬件限制与国际化需求"></a>背景：硬件限制与国际化需求</h2><p>在ASCII（美国信息交换标准代码）发布后，ISO（国际标准化组织）和IEC（国际电工委员会）便开始着手制定一份能够国际化推行的一套字符集标准。</p>
+<p>1972年， ISO&#x2F;IEC 646 标准发布。由于当时硬件的限制，字符集一般只能在一字节大小内编码。这是一个7比特的字符集标准，参考了许多国家的国家标准，但主要依照ASCII制定。采用7比特一是因为一字节的8个比特中，往往使用一位比特作为符号位；二是因为ASCII等许多国家的标准已经采用了7比特的字符集，而8比特的字符集尚未得到普遍接纳。</p>
+<p>7比特字符集总共有128个码位可供使用。ISO&#x2F;IEC 646 确定了33个用于控制的符号、10个数字、26个大写字母和26个小写字母对应的码位，一共95个普遍无争议的码位。在此基础上，ISO&#x2F;IEC 646 又确定了21个符号的码位，但由于国家之间符号的形状差异，各国可以按照实际需要进行修改。</p>
+<p>为了表示欧洲等地区各种语言的带附加符号的变音字母，ISO&#x2F;IEC 646 选择不浪费码位，而是采用组合的方式输出：首先写一个普通字母，然后跟一个退格键符（控制符BS，码位0x08），然后再跟一个兼作附加符号的符号。在电传打字机上，可以利用该方法通过在一个位置叠加两个字符达成效果。这些兼作附加符号的符号是：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="right">码位</th>
+<th align="right">附加符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">双引号</td>
+<td align="right">码位0x22</td>
+<td align="right">兼作分音符</td>
+</tr>
+<tr>
+<td align="center">单引号&#x2F;撇号</td>
+<td align="right">码位0x27</td>
+<td align="right">兼作尖音符</td>
+</tr>
+<tr>
+<td align="center">逗号</td>
+<td align="right">码位0x2C</td>
+<td align="right">兼作软音符</td>
+</tr>
+<tr>
+<td align="center">脱字号</td>
+<td align="right">国别用途码位0x5E</td>
+<td align="right">兼作扬抑符</td>
+</tr>
+<tr>
+<td align="center">反引号</td>
+<td align="right">国别用途码位0x96</td>
+<td align="right">兼作重音符</td>
+</tr>
+<tr>
+<td align="center">波浪号</td>
+<td align="right">国别用途码位0x7E</td>
+<td align="right">兼作颚化符</td>
+</tr>
+</tbody></table>
+<p>下面是使用组合方式输出的效果：<br><img src="/pic/GraphSeq05.png" alt="组合方式效果"></p>
+<p>最后， ISO&#x2F;IEC 646 保留了12个码位作为国别用途码位。这12个码位在ASCII中对应的字符分别是 <code>#$@[\]^`&#123;|&#125;~</code> 。</p>
+<p>也许你会注意到，这12个字符中有9个字符是编程常用的字符：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="right">名称</th>
+<th align="right">码位</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>#</code></td>
+<td align="right">井号</td>
+<td align="right">国别用途码位0x23</td>
+<td align="left">常用于宏定义等功能</td>
+</tr>
+<tr>
+<td align="center"><code>[</code></td>
+<td align="right">左方括号</td>
+<td align="right">国别用途码位0x5B</td>
+<td align="left">常用于数组</td>
+</tr>
+<tr>
+<td align="center"><code>\</code></td>
+<td align="right">反斜杠号</td>
+<td align="right">国别用途码位0x5C</td>
+<td align="left">常用于字符转义</td>
+</tr>
+<tr>
+<td align="center"><code>]</code></td>
+<td align="right">右方括号</td>
+<td align="right">国别用途码位0x5D</td>
+<td align="left">常用于数组</td>
+</tr>
+<tr>
+<td align="center"><code>^</code></td>
+<td align="right">脱字号</td>
+<td align="right">国别用途码位0x5E</td>
+<td align="left">常用于异或运算等</td>
+</tr>
+<tr>
+<td align="center"><code>&#123;</code></td>
+<td align="right">左花括号</td>
+<td align="right">国别用途码位0x7B</td>
+<td align="left">常用于定义块来隔离</td>
+</tr>
+<tr>
+<td align="center"><code>|</code></td>
+<td align="right">分隔符号</td>
+<td align="right">国别用途码位0x7C</td>
+<td align="left">常用于或运算、逻辑或运算等</td>
+</tr>
+<tr>
+<td align="center"><code>&#125;</code></td>
+<td align="right">右花括号</td>
+<td align="right">国别用途码位0x7D</td>
+<td align="left">常用于定义块来隔离</td>
+</tr>
+<tr>
+<td align="center"><code>~</code></td>
+<td align="right">波浪号</td>
+<td align="right">国别用途码位0x7E</td>
+<td align="left">常用于取反运算等</td>
+</tr>
+</tbody></table>
+<p>然而不是所有国家都会为了编程而将自己国家的字符集设定的和ASCII一致。</p>
+<ul>
+<li>英国标准 BSI 4730 、法国标准 AFNOR NF Z 62010-1982 、爱尔兰标准 NSAI 433:1996 等标准将0x23用于英镑符号 <code>￡</code> 来同时使用美元符号和英镑符号。</li>
+<li>丹麦标准 DS 2089 、挪威标准 NS 4551 、瑞典标准 SEN 85 02 00 、加拿大标准 CSA Z243.4-1985 等标准将0x5B到0x5E视为大写字母的延续区、将0x7B到0x7E视为小写字母的延续区，把无法通过 ISO&#x2F;IEC 646 提供的组合方式输出的字符（例如 <code>ÆØÅ</code> 和对应的小写 <code>æøå</code> ）和经常使用而组合方式输出过于繁琐的字符（例如 <code>ÉÄÖÅÜ</code> 和对应的小写 <code>éäöåü</code> ）放到这一区域。</li>
+<li>日本标准 JIS C 6220-1969 将0x5c用于人民币和日元符号 <code>￥</code> ，韩国标准 KS C 5636-1989 将0x5c用于韩元符号 <code>₩</code> 。</li>
+</ul>
+<p>上述国家的字符集设定由于和ASCII不一致，导致国家之间的键盘布局有较大差异。例如，英国、法国、爱尔兰等将0x23定义为其他字符的国家难以输入井号 <code>#</code> 。</p>
+<h2 id="起源：替代方法解决问题"><a href="#起源：替代方法解决问题" class="headerlink" title="起源：替代方法解决问题"></a>起源：替代方法解决问题</h2><p>为了解决该问题，C&#x2F;C++标准定义了字符组。</p>
+<h3 id="三字符组"><a href="#三字符组" class="headerlink" title="三字符组"></a>三字符组</h3><p>在 ISO&#x2F;IEC 9899:1999 和 ISO&#x2F;IEC 14882:1998 中，定义了九种三字符组，覆盖了上述常用而可能在一些国家难以输入的符号。这些三字符组是：</p>
+<table>
+<thead>
+<tr>
+<th align="center">三字符组</th>
+<th align="center">替代为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>??=</code></td>
+<td align="center"><code>#</code></td>
+</tr>
+<tr>
+<td align="center"><code>??(</code></td>
+<td align="center"><code>[</code></td>
+</tr>
+<tr>
+<td align="center"><code>??/</code></td>
+<td align="center"><code>\</code></td>
+</tr>
+<tr>
+<td align="center"><code>??)</code></td>
+<td align="center"><code>]</code></td>
+</tr>
+<tr>
+<td align="center"><code>??&#39;</code></td>
+<td align="center"><code>^</code></td>
+</tr>
+<tr>
+<td align="center"><code>??&lt;</code></td>
+<td align="center"><code>&#123;</code></td>
+</tr>
+<tr>
+<td align="center"><code>??!</code></td>
+<td align="center"><code>|</code></td>
+</tr>
+<tr>
+<td align="center"><code>??&gt;</code></td>
+<td align="center"><code>&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>??-</code></td>
+<td align="center"><code>~</code></td>
+</tr>
+</tbody></table>
+<p>同时，还给出了两个示例：</p>
+<p>例子1：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">??=define <span class="built_in">arraycheck</span>(a, b) a??(b??) ??!??! b??(a??)</span><br></pre></td></tr></table></figure>
+
+<p>将会在编译时被替换为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> arraycheck(a, b) a[b] || b[a]</span></span><br></pre></td></tr></table></figure>
+
+<p>例子2：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Eh???/n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>将会在编译时被替换为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Eh?\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果需要使用连续的两个问号，可以用字符串自动连接 <code>&quot;...?&quot;&quot;?...&quot;</code> 或者使用转义序列 <code>&quot;...?\?...&quot;</code> 。</p>
+<p>虽然这种设计解决了符号的输入问题，但显然导致了代码可读性严重下降。大量使用三字符组会导致代码的逻辑结构难以直观理解。</p>
+<p>此外，由于三字符组在源文件的任何位置出现都会被替换，还会产生编程陷阱。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Code:1(Do you forget it???)\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>原计划，该语句应该输出的是 <code>Code:1(Do you forget it???)</code> 然而实际上却会输出 <code>Code:1(Do you forget it?]</code> 。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">a+=b; <span class="comment">//Why add this???/</span></span><br><span class="line">b+=a;</span><br></pre></td></tr></table></figure>
+
+<p>原计划，这段应该执行两行语句，而由于 <code>??/</code> 会被替换为 <code>\</code> 导致一行注释变成多行注释，使得第二行的语句不会被执行。</p>
+<h3 id="双字符组"><a href="#双字符组" class="headerlink" title="双字符组"></a>双字符组</h3><p>为了解决可读性的问题，ISO和IEC引入了双字符组。</p>
+<table>
+<thead>
+<tr>
+<th align="center">双字符组</th>
+<th align="center">替代为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>&lt;:</code></td>
+<td align="center"><code>[</code></td>
+</tr>
+<tr>
+<td align="center"><code>:&gt;</code></td>
+<td align="center"><code>]</code></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;%</code></td>
+<td align="center"><code>&#123;</code></td>
+</tr>
+<tr>
+<td align="center"><code>%&gt;</code></td>
+<td align="center"><code>&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>%:</code></td>
+<td align="center"><code>#</code></td>
+</tr>
+<tr>
+<td align="center"><code>%:%:</code></td>
+<td align="center"><code>##</code></td>
+</tr>
+</tbody></table>
+<p>此时，第一个例子就可以修改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">%:<span class="function">define <span class="title">arraycheck</span><span class="params">(a, b)</span> a&lt;:b:&gt; ??!??! b&lt;:a:&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>将会在编译时被替换为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> arraycheck(a, b) a[b] || b[a]</span></span><br></pre></td></tr></table></figure>
+
+<p>相较于三字符组来说，双字符组的可读性显然提升。</p>
+<p>同时，双字符组不同于三字符组。双字符组如果出现之字符串字面值、字符常量、程序注释中（如： <code>&quot;Symbol %:Used In Modulo Operation.&quot;</code> ），则不会被替换。此外，双字符组替换仅在编译器对源程序的tokenization阶段（即识别出关键字、标识符等，类似于自然语言的“断词”）发生，仅当双字符组作为一个token或者token的组成部分时（如 <code>%:%:</code> 被替换为预处理运算符 <code>##</code> ）双字符组才会被替换。</p>
+<h3 id="C-的增补关键字"><a href="#C-的增补关键字" class="headerlink" title="C++的增补关键字"></a>C++的增补关键字</h3><p>C++除了支持上述的三字符组与双字符组外，还提供了下列内置的关键字：</p>
+<table>
+<thead>
+<tr>
+<th align="center">关键字</th>
+<th align="center">等价于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>and</code></td>
+<td align="center"><code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td align="center"><code>bitor</code></td>
+<td align="center"><code>|</code></td>
+</tr>
+<tr>
+<td align="center"><code>or</code></td>
+<td align="center"><code>||</code></td>
+</tr>
+<tr>
+<td align="center"><code>xor</code></td>
+<td align="center"><code>^</code></td>
+</tr>
+<tr>
+<td align="center"><code>compl</code></td>
+<td align="center"><code>~</code></td>
+</tr>
+<tr>
+<td align="center"><code>bitand</code></td>
+<td align="center"><code>&amp;</code></td>
+</tr>
+<tr>
+<td align="center"><code>and_eq</code></td>
+<td align="center"><code>&amp;=</code></td>
+</tr>
+<tr>
+<td align="center"><code>or_eq</code></td>
+<td align="center"><code>|=</code></td>
+</tr>
+<tr>
+<td align="center"><code>xor_eq</code></td>
+<td align="center"><code>^=</code></td>
+</tr>
+<tr>
+<td align="center"><code>not</code></td>
+<td align="center"><code>!</code></td>
+</tr>
+<tr>
+<td align="center"><code>not_eq</code></td>
+<td align="center"><code>!=</code></td>
+</tr>
+</tbody></table>
+<p>此时，第一个例子就可以修改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">%:<span class="function">define <span class="title">arraycheck</span><span class="params">(a, b)</span> a&lt;:b:&gt; or b&lt;:a:&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>将会在编译时被替换为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> arraycheck(a, b) a[b] or b[a] <span class="comment">//or 与 || 等价</span></span></span><br></pre></td></tr></table></figure>
+
+<p>通过使用关键字，程序的可读性显然又能提升。</p>
+<h2 id="发展：万国码和兼容性差异"><a href="#发展：万国码和兼容性差异" class="headerlink" title="发展：万国码和兼容性差异"></a>发展：万国码和兼容性差异</h2><p>随着时代的发展，一些原有的硬件限制已不再是问题，而字符组的问题也随之暴露。</p>
+<h3 id="万国码的发展"><a href="#万国码的发展" class="headerlink" title="万国码的发展"></a>万国码的发展</h3><p>ISO和IEC后来发布了 ISO&#x2F;IEC 8859 用于替代 ISO&#x2F;IEC 646 ，这是一系列8比特的字符集。ISO&#x2F;IEC 8859 统一了此前各国各语言的单独编码的混乱局面，将ASCII的全部可打印字符放入通ASCII的码位（因此 ISO&#x2F;IEC 8859 完全兼容7位的ASCII码），同时废弃了 ISO&#x2F;IEC 646 使用的字母、退格键符和符号组合来表示变音字母的方法，而是在单独区域直接编码表示变音字母。</p>
+<p>后来，该标准被 ISO&#x2F;IEC 10646 （等价于Unicode） 替代。这是一个31比特的字符集。自此，由于编码不统一造成的编程字符无法输入的问题就被彻底解决了。</p>
+<h3 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h3><p>由于一些跨平台的项目同时涉及GCC&#x2F;G++编译器和Microsoft Visual C++编译器，但这两个编译器在字符组上的行为不一致，这会引起一些编译的问题。</p>
+<h4 id="三字符组-1"><a href="#三字符组-1" class="headerlink" title="三字符组"></a>三字符组</h4><p>GCC&#x2F;G++自C++17标准开始，编译器不再自动替换三字符组。如果需要使用三字符组替换，需要手动设定编译器命令行选项 <code>-trigraphs</code> 。</p>
+<p>Microsoft Visual C++ 2010版开始，编译器不再自动替换三字符组。如果需要使用三字符组替换，需要手动设定编译器命令行选项 <code>/Zc:trigraphs</code> 。</p>
+<p>同时，这两个编译器还提供了一个头文件 <code>&lt;iso646.h&gt;</code> 。这个头文件实际是一个空文件，如果编译器读到了源文件使用该头文件，则会自动进行三字符组替换。</p>
+<h4 id="双字符组-1"><a href="#双字符组-1" class="headerlink" title="双字符组"></a>双字符组</h4><p>GCC&#x2F;G++支持双字符组的替换，但是Microsoft Visual C++不支持双字符组替换。</p>
+<h4 id="C-的增补关键字-1"><a href="#C-的增补关键字-1" class="headerlink" title="C++的增补关键字"></a>C++的增补关键字</h4><p>GCC&#x2F;G++支持C++的增补关键字，但是Microsoft Visual C++编译器默认不支持C++的增补关键字。如果需要使用C++增补关键字，需要使用头文件 <code>&lt;ciso646&gt;</code> 。这个头文件实际是一个空文件，如果Microsoft Visual C++编译器读到了源文件使用该头文件，则会开启支持C++的增补关键字。</p>
+<h2 id="弃用：语言简化"><a href="#弃用：语言简化" class="headerlink" title="弃用：语言简化"></a>弃用：语言简化</h2><p>GCC&#x2F;G++和Microsoft Visual C++编译器都纷纷弃用了三字符组，减少了历史包袱，简化了编程语言。</p>
+<p>这一变化，反映了编程语言设计范式的转变，即从“机器友好”到“开发者友好”。随着时代的发展，硬件限制已经几乎不存在了，一些入门困难的语言也随之退出了舞台，只有抛弃历史包袱，提升代码可维护性的语言才能在如今的时代继续焕发光芒。正是如此，抛弃三字符组是必然的。</p>
+<p>此外，键盘不存在编程所需的字符的问题也随着越来越智能化的有代码补全功能的IDE所解决。</p>
+<p>在开发者社群中，三字符组的弃用也引发了讨论，有部分开发者反对抛弃三字符组。对此，激进的C++语言选择抛弃来推动语言现代化；保守的C语言选择保留来支持遗留系统（比如一些嵌入式设备）。</p>
+<h2 id="总结：技术演进的启示"><a href="#总结：技术演进的启示" class="headerlink" title="总结：技术演进的启示"></a>总结：技术演进的启示</h2><p>字符组的兴衰其实揭示了一个技术发展中的核心矛盾： <strong>短期实用性</strong> 和 <strong>长期可持续性</strong> 之间的平衡。其兴于早期硬件限制下的务实选择，其衰于现代语言进化的必然选择。</p>
+<blockquote>
+<p>技术标准的价值不在于永恒正确，而在于动态适应人类认知与生产力的发展需求。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>ISO&#x2F;IEC 标准文件 实体出版物：<br><img src="/pic/GraphSeq01.png" alt="ISO/IEC 9899:1999" width="210" height="297"></p>
+<center>ISO/IEC 9899:1999</center>
+<img src="/pic/GraphSeq02.png" alt="ISO/IEC 14882:1998" width="210" height="297">
+<center>ISO/IEC 14882:1998</center>
+<img src="/pic/GraphSeq03.png" alt="ISO/IEC 9899:2024" width="210" height="297">
+<center>ISO/IEC 9899:2024</center>
+<img src="/pic/GraphSeq04.png" alt="ISO/IEC 14882:2024" width="210" height="297">
+<center>ISO/IEC 14882:2024</center>
+
+<p>中文维基百科：<br><a href="https://zh.wikipedia.org/wiki/ISO/IEC_646">ISO&#x2F;IEC 646</a><br><a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859">ISO&#x2F;IEC 8859</a><br><a href="https://zh.wikipedia.org/wiki/ASCII">ASCII</a><br><a href="https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E5%AD%97%E7%AC%A6%E9%9B%86">通用字符集</a><br><a href="https://zh.wikipedia.org/wiki/C%E6%9B%BF%E4%BB%A3%E6%A0%87%E8%AE%B0">C替代标记</a><br><a href="https://zh.wikipedia.org/wiki/%E4%B8%89%E5%AD%97%E7%AC%A6%E7%BB%84%E4%B8%8E%E5%8F%8C%E5%AD%97%E7%AC%A6%E7%BB%84">三字符组与双字符组</a></p>
+<hr>
+<blockquote>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <tags>
+        <tag>科技</tag>
+        <tag>CPPUAPA周刊</tag>
+      </tags>
+  </entry>
 </search>

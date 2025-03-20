@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="A Blog About Information and Technology">
+  <meta name="keyword" content="Computer">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      字符组——从语言标准看计算机发展 | 我有昕想法 | Peter_Matthew的博客
+    
+  </title>
+  <link href="/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/plugins/nprogress/nprogress.min.css" rel="stylesheet">
+  <link href="/css/plugins/highlight.js/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="/js/jquery/jquery.min.js"></script>
+  <script src="/js/geopattern/geopattern.min.js"></script>
+  <script src="/js/nprogress/nprogress.min.js"></script>
+  <!-- <script src="//code.tidio.co/g6zn0ewvu9ieaw5pfegkodcp6eple7el.js" async></script> -->
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/js/mathjax/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+
+    
+<script src="/js/local-search.js"></script>
+
+
+  <script src="/js/comment/av-min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <!-- <script src="/js/comment/Waline.min.js"></script> -->
+  <script src="/js/walinev2/waline.js"></script>
+  <link href="/js/walinev2/waline.css" rel='stylesheet' />
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="我有昕想法 | Peter_Matthew的博客" type="application/atom+xml">
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Peter_Matthew的博客</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">🏠首页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">🔖标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">🗂️归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">📂项目</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">💠关于</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="item-link">📕笔记🔗</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="item-link">📖Wiki🔗</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">🏠首页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🔖标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">🗂️归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">📂项目</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">💠关于</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://note.gh.zhangkaixin.cc/" class="menu-link">📕笔记🔗</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://wiki.zhangkaixin.cc/" class="menu-link">📖Wiki🔗</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="请输入关键词来搜索。" spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>字符组——从语言标准看计算机发展</h2>
+  <p class="post-date">2025-03-20</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+  
+    <i class="fa fa-clock-o">本文共<span class="post-count">3k</span>字，大约需要阅读<span class="post-count">11</span>分钟。</i>
+  
+    <section class="markdown-content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>翻开2024年10月发布的C语言标准 ISO&#x2F;IEC 9899:2024 和C++语言标准 ISO&#x2F;IEC 14882:2024 ，对比1999年版的C语言标准 ISO&#x2F;IEC 9899:1999 和1998年版的C++语言标准 ISO&#x2F;IEC 14882:1998 ，我们会发现一个已经彻底从C语言和C++语言弃用的特性——三字符组（Trigraph Sequence）。</p>
+<p>这是一个冷门的特性，也因冷门而退出了历史的舞台。</p>
+<h2 id="背景：硬件限制与国际化需求"><a href="#背景：硬件限制与国际化需求" class="headerlink" title="背景：硬件限制与国际化需求"></a>背景：硬件限制与国际化需求</h2><p>在ASCII（美国信息交换标准代码）发布后，ISO（国际标准化组织）和IEC（国际电工委员会）便开始着手制定一份能够国际化推行的一套字符集标准。</p>
+<p>1972年， ISO&#x2F;IEC 646 标准发布。由于当时硬件的限制，字符集一般只能在一字节大小内编码。这是一个7比特的字符集标准，参考了许多国家的国家标准，但主要依照ASCII制定。采用7比特一是因为一字节的8个比特中，往往使用一位比特作为符号位；二是因为ASCII等许多国家的标准已经采用了7比特的字符集，而8比特的字符集尚未得到普遍接纳。</p>
+<p>7比特字符集总共有128个码位可供使用。ISO&#x2F;IEC 646 确定了33个用于控制的符号、10个数字、26个大写字母和26个小写字母对应的码位，一共95个普遍无争议的码位。在此基础上，ISO&#x2F;IEC 646 又确定了21个符号的码位，但由于国家之间符号的形状差异，各国可以按照实际需要进行修改。</p>
+<p>为了表示欧洲等地区各种语言的带附加符号的变音字母，ISO&#x2F;IEC 646 选择不浪费码位，而是采用组合的方式输出：首先写一个普通字母，然后跟一个退格键符（控制符BS，码位0x08），然后再跟一个兼作附加符号的符号。在电传打字机上，可以利用该方法通过在一个位置叠加两个字符达成效果。这些兼作附加符号的符号是：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="right">码位</th>
+<th align="right">附加符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">双引号</td>
+<td align="right">码位0x22</td>
+<td align="right">兼作分音符</td>
+</tr>
+<tr>
+<td align="center">单引号&#x2F;撇号</td>
+<td align="right">码位0x27</td>
+<td align="right">兼作尖音符</td>
+</tr>
+<tr>
+<td align="center">逗号</td>
+<td align="right">码位0x2C</td>
+<td align="right">兼作软音符</td>
+</tr>
+<tr>
+<td align="center">脱字号</td>
+<td align="right">国别用途码位0x5E</td>
+<td align="right">兼作扬抑符</td>
+</tr>
+<tr>
+<td align="center">反引号</td>
+<td align="right">国别用途码位0x96</td>
+<td align="right">兼作重音符</td>
+</tr>
+<tr>
+<td align="center">波浪号</td>
+<td align="right">国别用途码位0x7E</td>
+<td align="right">兼作颚化符</td>
+</tr>
+</tbody></table>
+<p>下面是使用组合方式输出的效果：<br><img src="/pic/GraphSeq05.png" alt="组合方式效果"></p>
+<p>最后， ISO&#x2F;IEC 646 保留了12个码位作为国别用途码位。这12个码位在ASCII中对应的字符分别是 <code>#$@[\]^`&#123;|&#125;~</code> 。</p>
+<p>也许你会注意到，这12个字符中有9个字符是编程常用的字符：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="right">名称</th>
+<th align="right">码位</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>#</code></td>
+<td align="right">井号</td>
+<td align="right">国别用途码位0x23</td>
+<td align="left">常用于宏定义等功能</td>
+</tr>
+<tr>
+<td align="center"><code>[</code></td>
+<td align="right">左方括号</td>
+<td align="right">国别用途码位0x5B</td>
+<td align="left">常用于数组</td>
+</tr>
+<tr>
+<td align="center"><code>\</code></td>
+<td align="right">反斜杠号</td>
+<td align="right">国别用途码位0x5C</td>
+<td align="left">常用于字符转义</td>
+</tr>
+<tr>
+<td align="center"><code>]</code></td>
+<td align="right">右方括号</td>
+<td align="right">国别用途码位0x5D</td>
+<td align="left">常用于数组</td>
+</tr>
+<tr>
+<td align="center"><code>^</code></td>
+<td align="right">脱字号</td>
+<td align="right">国别用途码位0x5E</td>
+<td align="left">常用于异或运算等</td>
+</tr>
+<tr>
+<td align="center"><code>&#123;</code></td>
+<td align="right">左花括号</td>
+<td align="right">国别用途码位0x7B</td>
+<td align="left">常用于定义块来隔离</td>
+</tr>
+<tr>
+<td align="center"><code>|</code></td>
+<td align="right">分隔符号</td>
+<td align="right">国别用途码位0x7C</td>
+<td align="left">常用于或运算、逻辑或运算等</td>
+</tr>
+<tr>
+<td align="center"><code>&#125;</code></td>
+<td align="right">右花括号</td>
+<td align="right">国别用途码位0x7D</td>
+<td align="left">常用于定义块来隔离</td>
+</tr>
+<tr>
+<td align="center"><code>~</code></td>
+<td align="right">波浪号</td>
+<td align="right">国别用途码位0x7E</td>
+<td align="left">常用于取反运算等</td>
+</tr>
+</tbody></table>
+<p>然而不是所有国家都会为了编程而将自己国家的字符集设定的和ASCII一致。</p>
+<ul>
+<li>英国标准 BSI 4730 、法国标准 AFNOR NF Z 62010-1982 、爱尔兰标准 NSAI 433:1996 等标准将0x23用于英镑符号 <code>￡</code> 来同时使用美元符号和英镑符号。</li>
+<li>丹麦标准 DS 2089 、挪威标准 NS 4551 、瑞典标准 SEN 85 02 00 、加拿大标准 CSA Z243.4-1985 等标准将0x5B到0x5E视为大写字母的延续区、将0x7B到0x7E视为小写字母的延续区，把无法通过 ISO&#x2F;IEC 646 提供的组合方式输出的字符（例如 <code>ÆØÅ</code> 和对应的小写 <code>æøå</code> ）和经常使用而组合方式输出过于繁琐的字符（例如 <code>ÉÄÖÅÜ</code> 和对应的小写 <code>éäöåü</code> ）放到这一区域。</li>
+<li>日本标准 JIS C 6220-1969 将0x5c用于人民币和日元符号 <code>￥</code> ，韩国标准 KS C 5636-1989 将0x5c用于韩元符号 <code>₩</code> 。</li>
+</ul>
+<p>上述国家的字符集设定由于和ASCII不一致，导致国家之间的键盘布局有较大差异。例如，英国、法国、爱尔兰等将0x23定义为其他字符的国家难以输入井号 <code>#</code> 。</p>
+<h2 id="起源：替代方法解决问题"><a href="#起源：替代方法解决问题" class="headerlink" title="起源：替代方法解决问题"></a>起源：替代方法解决问题</h2><p>为了解决该问题，C&#x2F;C++标准定义了字符组。</p>
+<h3 id="三字符组"><a href="#三字符组" class="headerlink" title="三字符组"></a>三字符组</h3><p>在 ISO&#x2F;IEC 9899:1999 和 ISO&#x2F;IEC 14882:1998 中，定义了九种三字符组，覆盖了上述常用而可能在一些国家难以输入的符号。这些三字符组是：</p>
+<table>
+<thead>
+<tr>
+<th align="center">三字符组</th>
+<th align="center">替代为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>??=</code></td>
+<td align="center"><code>#</code></td>
+</tr>
+<tr>
+<td align="center"><code>??(</code></td>
+<td align="center"><code>[</code></td>
+</tr>
+<tr>
+<td align="center"><code>??/</code></td>
+<td align="center"><code>\</code></td>
+</tr>
+<tr>
+<td align="center"><code>??)</code></td>
+<td align="center"><code>]</code></td>
+</tr>
+<tr>
+<td align="center"><code>??&#39;</code></td>
+<td align="center"><code>^</code></td>
+</tr>
+<tr>
+<td align="center"><code>??&lt;</code></td>
+<td align="center"><code>&#123;</code></td>
+</tr>
+<tr>
+<td align="center"><code>??!</code></td>
+<td align="center"><code>|</code></td>
+</tr>
+<tr>
+<td align="center"><code>??&gt;</code></td>
+<td align="center"><code>&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>??-</code></td>
+<td align="center"><code>~</code></td>
+</tr>
+</tbody></table>
+<p>同时，还给出了两个示例：</p>
+<p>例子1：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">??=define <span class="built_in">arraycheck</span>(a, b) a??(b??) ??!??! b??(a??)</span><br></pre></td></tr></table></figure>
+
+<p>将会在编译时被替换为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> arraycheck(a, b) a[b] || b[a]</span></span><br></pre></td></tr></table></figure>
+
+<p>例子2：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Eh???/n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>将会在编译时被替换为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Eh?\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果需要使用连续的两个问号，可以用字符串自动连接 <code>&quot;...?&quot;&quot;?...&quot;</code> 或者使用转义序列 <code>&quot;...?\?...&quot;</code> 。</p>
+<p>虽然这种设计解决了符号的输入问题，但显然导致了代码可读性严重下降。大量使用三字符组会导致代码的逻辑结构难以直观理解。</p>
+<p>此外，由于三字符组在源文件的任何位置出现都会被替换，还会产生编程陷阱。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Code:1(Do you forget it???)\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>原计划，该语句应该输出的是 <code>Code:1(Do you forget it???)</code> 然而实际上却会输出 <code>Code:1(Do you forget it?]</code> 。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a+=b; <span class="comment">//Why add this???/</span></span><br><span class="line">b+=a;</span><br></pre></td></tr></table></figure>
+
+<p>原计划，这段应该执行两行语句，而由于 <code>??/</code> 会被替换为 <code>\</code> 导致一行注释变成多行注释，使得第二行的语句不会被执行。</p>
+<h3 id="双字符组"><a href="#双字符组" class="headerlink" title="双字符组"></a>双字符组</h3><p>为了解决可读性的问题，ISO和IEC引入了双字符组。</p>
+<table>
+<thead>
+<tr>
+<th align="center">双字符组</th>
+<th align="center">替代为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>&lt;:</code></td>
+<td align="center"><code>[</code></td>
+</tr>
+<tr>
+<td align="center"><code>:&gt;</code></td>
+<td align="center"><code>]</code></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;%</code></td>
+<td align="center"><code>&#123;</code></td>
+</tr>
+<tr>
+<td align="center"><code>%&gt;</code></td>
+<td align="center"><code>&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>%:</code></td>
+<td align="center"><code>#</code></td>
+</tr>
+<tr>
+<td align="center"><code>%:%:</code></td>
+<td align="center"><code>##</code></td>
+</tr>
+</tbody></table>
+<p>此时，第一个例子就可以修改为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%:<span class="function">define <span class="title">arraycheck</span><span class="params">(a, b)</span> a&lt;:b:&gt; ??!??! b&lt;:a:&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>将会在编译时被替换为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> arraycheck(a, b) a[b] || b[a]</span></span><br></pre></td></tr></table></figure>
+
+<p>相较于三字符组来说，双字符组的可读性显然提升。</p>
+<p>同时，双字符组不同于三字符组。双字符组如果出现之字符串字面值、字符常量、程序注释中（如： <code>&quot;Symbol %:Used In Modulo Operation.&quot;</code> ），则不会被替换。此外，双字符组替换仅在编译器对源程序的tokenization阶段（即识别出关键字、标识符等，类似于自然语言的“断词”）发生，仅当双字符组作为一个token或者token的组成部分时（如 <code>%:%:</code> 被替换为预处理运算符 <code>##</code> ）双字符组才会被替换。</p>
+<h3 id="C-的增补关键字"><a href="#C-的增补关键字" class="headerlink" title="C++的增补关键字"></a>C++的增补关键字</h3><p>C++除了支持上述的三字符组与双字符组外，还提供了下列内置的关键字：</p>
+<table>
+<thead>
+<tr>
+<th align="center">关键字</th>
+<th align="center">等价于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>and</code></td>
+<td align="center"><code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td align="center"><code>bitor</code></td>
+<td align="center"><code>|</code></td>
+</tr>
+<tr>
+<td align="center"><code>or</code></td>
+<td align="center"><code>||</code></td>
+</tr>
+<tr>
+<td align="center"><code>xor</code></td>
+<td align="center"><code>^</code></td>
+</tr>
+<tr>
+<td align="center"><code>compl</code></td>
+<td align="center"><code>~</code></td>
+</tr>
+<tr>
+<td align="center"><code>bitand</code></td>
+<td align="center"><code>&amp;</code></td>
+</tr>
+<tr>
+<td align="center"><code>and_eq</code></td>
+<td align="center"><code>&amp;=</code></td>
+</tr>
+<tr>
+<td align="center"><code>or_eq</code></td>
+<td align="center"><code>|=</code></td>
+</tr>
+<tr>
+<td align="center"><code>xor_eq</code></td>
+<td align="center"><code>^=</code></td>
+</tr>
+<tr>
+<td align="center"><code>not</code></td>
+<td align="center"><code>!</code></td>
+</tr>
+<tr>
+<td align="center"><code>not_eq</code></td>
+<td align="center"><code>!=</code></td>
+</tr>
+</tbody></table>
+<p>此时，第一个例子就可以修改为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%:<span class="function">define <span class="title">arraycheck</span><span class="params">(a, b)</span> a&lt;:b:&gt; or b&lt;:a:&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>将会在编译时被替换为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> arraycheck(a, b) a[b] or b[a] <span class="comment">//or 与 || 等价</span></span></span><br></pre></td></tr></table></figure>
+
+<p>通过使用关键字，程序的可读性显然又能提升。</p>
+<h2 id="发展：万国码和兼容性差异"><a href="#发展：万国码和兼容性差异" class="headerlink" title="发展：万国码和兼容性差异"></a>发展：万国码和兼容性差异</h2><p>随着时代的发展，一些原有的硬件限制已不再是问题，而字符组的问题也随之暴露。</p>
+<h3 id="万国码的发展"><a href="#万国码的发展" class="headerlink" title="万国码的发展"></a>万国码的发展</h3><p>ISO和IEC后来发布了 ISO&#x2F;IEC 8859 用于替代 ISO&#x2F;IEC 646 ，这是一系列8比特的字符集。ISO&#x2F;IEC 8859 统一了此前各国各语言的单独编码的混乱局面，将ASCII的全部可打印字符放入通ASCII的码位（因此 ISO&#x2F;IEC 8859 完全兼容7位的ASCII码），同时废弃了 ISO&#x2F;IEC 646 使用的字母、退格键符和符号组合来表示变音字母的方法，而是在单独区域直接编码表示变音字母。</p>
+<p>后来，该标准被 ISO&#x2F;IEC 10646 （等价于Unicode） 替代。这是一个31比特的字符集。自此，由于编码不统一造成的编程字符无法输入的问题就被彻底解决了。</p>
+<h3 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h3><p>由于一些跨平台的项目同时涉及GCC&#x2F;G++编译器和Microsoft Visual C++编译器，但这两个编译器在字符组上的行为不一致，这会引起一些编译的问题。</p>
+<h4 id="三字符组-1"><a href="#三字符组-1" class="headerlink" title="三字符组"></a>三字符组</h4><p>GCC&#x2F;G++自C++17标准开始，编译器不再自动替换三字符组。如果需要使用三字符组替换，需要手动设定编译器命令行选项 <code>-trigraphs</code> 。</p>
+<p>Microsoft Visual C++ 2010版开始，编译器不再自动替换三字符组。如果需要使用三字符组替换，需要手动设定编译器命令行选项 <code>/Zc:trigraphs</code> 。</p>
+<p>同时，这两个编译器还提供了一个头文件 <code>&lt;iso646.h&gt;</code> 。这个头文件实际是一个空文件，如果编译器读到了源文件使用该头文件，则会自动进行三字符组替换。</p>
+<h4 id="双字符组-1"><a href="#双字符组-1" class="headerlink" title="双字符组"></a>双字符组</h4><p>GCC&#x2F;G++支持双字符组的替换，但是Microsoft Visual C++不支持双字符组替换。</p>
+<h4 id="C-的增补关键字-1"><a href="#C-的增补关键字-1" class="headerlink" title="C++的增补关键字"></a>C++的增补关键字</h4><p>GCC&#x2F;G++支持C++的增补关键字，但是Microsoft Visual C++编译器默认不支持C++的增补关键字。如果需要使用C++增补关键字，需要使用头文件 <code>&lt;ciso646&gt;</code> 。这个头文件实际是一个空文件，如果Microsoft Visual C++编译器读到了源文件使用该头文件，则会开启支持C++的增补关键字。</p>
+<h2 id="弃用：语言简化"><a href="#弃用：语言简化" class="headerlink" title="弃用：语言简化"></a>弃用：语言简化</h2><p>GCC&#x2F;G++和Microsoft Visual C++编译器都纷纷弃用了三字符组，减少了历史包袱，简化了编程语言。</p>
+<p>这一变化，反映了编程语言设计范式的转变，即从“机器友好”到“开发者友好”。随着时代的发展，硬件限制已经几乎不存在了，一些入门困难的语言也随之退出了舞台，只有抛弃历史包袱，提升代码可维护性的语言才能在如今的时代继续焕发光芒。正是如此，抛弃三字符组是必然的。</p>
+<p>此外，键盘不存在编程所需的字符的问题也随着越来越智能化的有代码补全功能的IDE所解决。</p>
+<p>在开发者社群中，三字符组的弃用也引发了讨论，有部分开发者反对抛弃三字符组。对此，激进的C++语言选择抛弃来推动语言现代化；保守的C语言选择保留来支持遗留系统（比如一些嵌入式设备）。</p>
+<h2 id="总结：技术演进的启示"><a href="#总结：技术演进的启示" class="headerlink" title="总结：技术演进的启示"></a>总结：技术演进的启示</h2><p>字符组的兴衰其实揭示了一个技术发展中的核心矛盾： <strong>短期实用性</strong> 和 <strong>长期可持续性</strong> 之间的平衡。其兴于早期硬件限制下的务实选择，其衰于现代语言进化的必然选择。</p>
+<blockquote>
+<p>技术标准的价值不在于永恒正确，而在于动态适应人类认知与生产力的发展需求。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>ISO&#x2F;IEC 标准文件 实体出版物：<br><img src="/pic/GraphSeq01.png" alt="ISO/IEC 9899:1999" width="210" height="297"></p>
+<center>ISO/IEC 9899:1999</center>
+<img src="/pic/GraphSeq02.png" alt="ISO/IEC 14882:1998" width="210" height="297">
+<center>ISO/IEC 14882:1998</center>
+<img src="/pic/GraphSeq03.png" alt="ISO/IEC 9899:2024" width="210" height="297">
+<center>ISO/IEC 9899:2024</center>
+<img src="/pic/GraphSeq04.png" alt="ISO/IEC 14882:2024" width="210" height="297">
+<center>ISO/IEC 14882:2024</center>
+
+<p>中文维基百科：<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ISO/IEC_646">ISO&#x2F;IEC 646</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ISO/IEC_8859">ISO&#x2F;IEC 8859</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ASCII">ASCII</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E5%AD%97%E7%AC%A6%E9%9B%86">通用字符集</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/C%E6%9B%BF%E4%BB%A3%E6%A0%87%E8%AE%B0">C替代标记</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%B8%89%E5%AD%97%E7%AC%A6%E7%BB%84%E4%B8%8E%E5%8F%8C%E5%AD%97%E7%AC%A6%E7%BB%84">三字符组与双字符组</a></p>
+<hr>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_80x15.png" alt="知识共享许可协议"></a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="/pic/license/BY-NC-SA_88x31.png" alt="知识共享许可协议"></a></p>
+<p>本作品采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></section>
+    
+    
+        <em class="post-meta-item-text">当前页共有<span class="waline-pageview-count" data-path="/blog/Graph-Sequence/"></span>次阅读，<span class="waline-comment-count" data-path="/blog/Graph-Sequence/"></span>条评论。</em>
+    
+    
+    <!-- Tags START -->
+    
+      <div class="tags">
+        
+        
+          <span>标签:</span>
+          
+  <a href="/tags#科技" >
+    <span class="tag-code">科技</span>
+  </a>
+
+  <a href="/tags#CPPUAPA周刊" >
+    <span class="tag-code">CPPUAPA周刊</span>
+  </a>
+
+        
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/Essay/Essay-01/">
+        <span class="nav-arrow">← </span>
+        
+          记一次服务器迁移
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 分享 START -->
+    
+    <!-- 分享 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+        <!-- Waline START -->
+        <div id="waline"></div>
+        <!-- Waline END -->
+    
+    </article>
+    <!-- Article END -->
+    <!-- Catalog START -->
+    
+        <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      
+        <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%83%8C%E6%99%AF%EF%BC%9A%E7%A1%AC%E4%BB%B6%E9%99%90%E5%88%B6%E4%B8%8E%E5%9B%BD%E9%99%85%E5%8C%96%E9%9C%80%E6%B1%82"><span class="toc-nav-text">背景：硬件限制与国际化需求</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%B5%B7%E6%BA%90%EF%BC%9A%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98"><span class="toc-nav-text">起源：替代方法解决问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%89%E5%AD%97%E7%AC%A6%E7%BB%84"><span class="toc-nav-text">三字符组</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%8C%E5%AD%97%E7%AC%A6%E7%BB%84"><span class="toc-nav-text">双字符组</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#C-%E7%9A%84%E5%A2%9E%E8%A1%A5%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-nav-text">C++的增补关键字</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%91%E5%B1%95%EF%BC%9A%E4%B8%87%E5%9B%BD%E7%A0%81%E5%92%8C%E5%85%BC%E5%AE%B9%E6%80%A7%E5%B7%AE%E5%BC%82"><span class="toc-nav-text">发展：万国码和兼容性差异</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%87%E5%9B%BD%E7%A0%81%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-nav-text">万国码的发展</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-nav-text">兼容性问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%89%E5%AD%97%E7%AC%A6%E7%BB%84-1"><span class="toc-nav-text">三字符组</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%8F%8C%E5%AD%97%E7%AC%A6%E7%BB%84-1"><span class="toc-nav-text">双字符组</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#C-%E7%9A%84%E5%A2%9E%E8%A1%A5%E5%85%B3%E9%94%AE%E5%AD%97-1"><span class="toc-nav-text">C++的增补关键字</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%83%E7%94%A8%EF%BC%9A%E8%AF%AD%E8%A8%80%E7%AE%80%E5%8C%96"><span class="toc-nav-text">弃用：语言简化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A%E6%8A%80%E6%9C%AF%E6%BC%94%E8%BF%9B%E7%9A%84%E5%90%AF%E7%A4%BA"><span class="toc-nav-text">总结：技术演进的启示</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%82%E8%80%83"><span class="toc-nav-text">参考</span></a></li></ol>
+      
+    
+  </div>
+</aside>
+    
+    <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://www.gh.zhangkaixin.cc/blog/Graph-Sequence/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+})();
+</script>
+
+
+
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: "https://api.www.zhangkaixin.cc",
+        comment: true,
+        dark: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['nick', 'mail'],
+        login: 'force',
+        wordLimit: 0,
+        pageSize: 10,
+        copyright: false,
+        pageview: true,
+        lang: 'zh-CN',
+        turnstileKey: '0x4AAAAAAA9fJCTsdUwz-MbJ',
+        emoji: [
+            '//unpkg.com/@waline/emojis@1.0.1/weibo',
+            '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+            '//unpkg.com/@waline/emojis@1.0.1/qq',
+            '//unpkg.com/@waline/emojis@1.0.1/tieba',
+            '//unpkg.com/@waline/emojis@1.0.1/alus',
+            '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+        ]
+    });
+</script>
+
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    博客非常自豪地使用了<a href="https://hexo.io" target="_blank"> Hexo </a>生成 | 主题是<a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank"> Vexo </a>
+    <br>
+    主题作者为<a target="_blank" rel="noopener" href="https://github.com/yanm1ng"> yanm1ng </a> | 经过<a target="_blank" rel="noopener" href="https://github.com/WilliamPeterMatthew"> WilliamPeterMatthew </a>修改
+    <br>
+    使用 CC BY-NC-SA 4.0 许可 | &copy; 2018 - 2025 张开昕 版权所有
+    <br>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><img src="/pic/beian/icp备案.png" width="18" height="18"> 豫ICP备20022692号-1</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41030502000313" target="_blank" rel="noopener nofollow"><img src="/pic/beian/公安备案.png" width="18" height="18"> 豫公网安备 41030502000313号</a>
+    <br>
+    <br>
+    <a href="/NSP-IS-PRC.html" target="_self" rel="noopener nofollow">中华人民共和国国家信息安全等级保护第一级（自主保护级）</a>
+    <br>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("/js/fastclick/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("/js/highlight.js/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>
