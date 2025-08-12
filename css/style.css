@@ -525,7 +525,7 @@ h2.article-head {
 .article-summary pre,
 .markdown-content code,
 .article-summary code {
-  font-family: Consolas, Symbol, "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-family: Consolas, "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
   font-size: 15px;
   tab-size: 4;
 }
